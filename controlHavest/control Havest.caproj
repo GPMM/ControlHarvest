@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>control Havest</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>25900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="weave" sid="202077731437840">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227696163584128" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\weave.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BarraLateral" sid="806534624013700">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="652913411897653">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="750514886578345" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\BarraLateral.png">
+                        <collision-poly>
+                            <point x="0.04" y="0.016" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.04" y="0.984" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Barra" sid="139904569858293">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="715625575814431">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="263132790766065" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Barra.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Besouro" sid="102051997552975">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="410244747294649">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773175957988842" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Besouro.png">
+                        <collision-poly>
+                            <point x="0.24" y="0.321429" />
+                            <point x="0.733333" y="0.357143" />
+                            <point x="0.84" y="0.5" />
+                            <point x="0.733333" y="0.642857" />
+                            <point x="0.493333" y="0.928571" />
+                            <point x="0.0933333" y="0.875" />
+                            <point x="0.0266667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="solido" sid="710488545636943">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="975459816281825">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="930399153708043" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoBesouro" sid="277191561437061">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="469681509155507">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269262300457331" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\BesouroLoja.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0.0166667" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoJoaninha" sid="148638060782771">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="323430877322576">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="788008795968234" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\JoaninhaLoja.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0.0166667" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoAlterar" sid="542531924376542">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="982983005245497" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\atualizar.png">
+                        <collision-poly>
+                            <point x="0.166667" y="0.166667" />
+                            <point x="0.5" y="0.05" />
+                            <point x="0.816667" y="0.183333" />
+                            <point x="0.966667" y="0.5" />
+                            <point x="0.866667" y="0.866667" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0.0333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="colher" sid="443641374471334">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="990147000005908" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\botaoColheita.png">
+                        <collision-poly>
+                            <point x="0.48" y="0.48" />
+                            <point x="0.5" y="0.26" />
+                            <point x="0.82" y="0.18" />
+                            <point x="0.9" y="0.5" />
+                            <point x="0.86" y="0.86" />
+                            <point x="0.5" y="1" />
+                            <point x="0.04" y="0.96" />
+                            <point x="0.28" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoGrama" sid="248258464210302">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="275851100983650">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="971118818618183" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\ButtonPlant.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0.0166667" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoCouve" sid="370417762593225">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="360629236398641">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="977067417940282" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\CouveLoja.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0.0166667" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="119144581217744">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="botaoMilho" sid="940871546231349">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="924768174894374">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799740453853044" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\MilhoLoja.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoTomate" sid="640756403420394">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DragDrop" sid="721277066330227">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="291554367148635" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\TomateLoja.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.05" />
+                            <point x="0.5" y="0.0166667" />
+                            <point x="0.92" y="0.0666667" />
+                            <point x="1" y="0.5" />
+                            <point x="0.94" y="0.95" />
+                            <point x="0.5" y="1" />
+                            <point x="0.06" y="0.95" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Joaninha" sid="876700562005191">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="330946155937669">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459584376690566" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\joaninha.png">
+                        <collision-poly>
+                            <point x="0.106667" y="0.142857" />
+                            <point x="0.493333" y="0" />
+                            <point x="0.893333" y="0.142857" />
+                            <point x="0.96" y="0.5" />
+                            <point x="0.866667" y="0.821429" />
+                            <point x="0.493333" y="0.982143" />
+                            <point x="0.106667" y="0.857143" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="plantaEstagio1" sid="316513082171063">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="891688388897104" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\estagio1.png">
+                        <collision-poly>
+                            <point x="0.1" y="0.119048" />
+                            <point x="0.9" y="0.119048" />
+                            <point x="0.94" y="0.5" />
+                            <point x="0.88" y="0.857143" />
+                            <point x="0.12" y="0.857143" />
+                            <point x="0.04" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="plantaEstagio2" sid="701694340723363">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="743931418758343" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\estagio2.png">
+                        <collision-poly>
+                            <point x="0.08" y="0.0952381" />
+                            <point x="0.5" y="0.119048" />
+                            <point x="0.9" y="0.119048" />
+                            <point x="0.94" y="0.5" />
+                            <point x="0.88" y="0.857143" />
+                            <point x="0.12" y="0.857143" />
+                            <point x="0.04" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Couve" sid="903657254342703">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="627466654902542" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\couve.png">
+                        <collision-poly>
+                            <point x="0.2625" y="0.2625" />
+                            <point x="0.5" y="0.0875" />
+                            <point x="0.85" y="0.15" />
+                            <point x="0.9875" y="0.5" />
+                            <point x="0.775" y="0.775" />
+                            <point x="0.5" y="0.9625" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.075" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Grama" sid="230577099176237">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="874507985794374" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\grass.png">
+                        <collision-poly>
+                            <point x="0.22" y="0.261905" />
+                            <point x="0.5" y="0.238095" />
+                            <point x="0.78" y="0.261905" />
+                            <point x="0.84" y="0.5" />
+                            <point x="0.78" y="0.738095" />
+                            <point x="0.5" y="1" />
+                            <point x="0.04" y="0.952381" />
+                            <point x="0.06" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Milho" sid="487694025749087">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="281481331490189" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\milho.png">
+                        <collision-poly>
+                            <point x="0.3" y="0.171429" />
+                            <point x="0.5" y="0.0428571" />
+                            <point x="0.675" y="0.185714" />
+                            <point x="0.7" y="0.5" />
+                            <point x="0.6" y="0.771429" />
+                            <point x="0.5" y="0.971429" />
+                            <point x="0.5" y="0.714286" />
+                            <point x="0.4" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tomate" sid="743694211223915">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="107465473502745" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\tomate.png">
+                        <collision-poly>
+                            <point x="0.075" y="0.0428571" />
+                            <point x="0.575" y="0.242857" />
+                            <point x="0.85" y="0.5" />
+                            <point x="0.625" y="0.785714" />
+                            <point x="0.5" y="0.971429" />
+                            <point x="0.175" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="playerName" sid="412019369973364">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="texto2" sid="950924503360547">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TiledBackground3" sid="323992364223436">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\fundo.png" />
+        </object-type>
+        <object-type name="TiledBackground5" sid="605713689333544">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\EditLogo.png" />
+        </object-type>
+        <object-type name="Texto1" sid="201253851290264">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="nome" sid="243902468887094">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="botaoOk" sid="427595733672050">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911603704936589" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\ok.png">
+                        <collision-poly>
+                            <point x="0.02" y="0.08" />
+                            <point x="0.5" y="0" />
+                            <point x="0.97" y="0.12" />
+                            <point x="0.99" y="0.48" />
+                            <point x="0.97" y="0.88" />
+                            <point x="0.5" y="0.96" />
+                            <point x="0.03" y="0.88" />
+                            <point x="0" y="0.48" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Tela Inicial.xml</layout>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Tela Inicial.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="15" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

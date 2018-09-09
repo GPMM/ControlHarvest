@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="option" sid="592667800516844" static="0" type="number">0</variable>
+        <variable constant="0" name="playerName" sid="172956593195396" static="0" type="text"></variable>
+        <event-block sid="643220971248079">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="186832106837033" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="285698092123728" type="texto2">
+                    <param id="0" name="Text">&quot;Jogador: &quot;&amp;playerName</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="131089012524757">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="758584810870733" type="Besouro">
+                    <param id="0" name="Object">solido</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="160055806577065" type="Besouro">
+                    <param id="0" name="Degrees">random(90,270)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="299312118062563">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="395312791378709" type="Joaninha">
+                    <param id="0" name="Object">solido</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="474106346768216" type="Joaninha">
+                    <param id="0" name="Degrees">random(90,270)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="804727930664230">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="268339133225229" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoAlterar</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="464389156795180">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="616086794443764" type="System">
+                            <param id="0" name="Variable">option</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="796902172549764" type="botaoBesouro" />
+                        <action id="-9" name="Destroy" sid="857786611707896" type="botaoJoaninha" />
+                        <action id="-3" name="Create object" sid="613738435686553" type="System">
+                            <param id="0" name="Object to create">botaoGrama</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">150</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="258853417903997" type="System">
+                            <param id="0" name="Object to create">botaoCouve</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">230</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="875829326242995" type="System">
+                            <param id="0" name="Object to create">botaoMilho</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">310</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="433685366165409" type="System">
+                            <param id="0" name="Object to create">botaoTomate</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">390</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="701803960698856" type="System">
+                            <param id="0" name="Variable">option</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="145436342025471">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="421204543137435" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="766860698643014" type="botaoGrama" />
+                        <action id="-9" name="Destroy" sid="784578431723010" type="botaoCouve" />
+                        <action id="-9" name="Destroy" sid="745197879952474" type="botaoMilho" />
+                        <action id="-9" name="Destroy" sid="745583543383086" type="botaoTomate" />
+                        <action id="-3" name="Create object" sid="439516909525274" type="System">
+                            <param id="0" name="Object to create">botaoBesouro</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">150</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="181047249973574" type="System">
+                            <param id="0" name="Object to create">botaoJoaninha</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">230</param>
+                            <param id="3" name="Y">445</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="161605061692756" type="System">
+                            <param id="0" name="Variable">option</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="825731532178152">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="725307146148987" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoBesouro</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="851287513182096" type="botaoBesouro">
+                    <param id="0" name="Object">botaoBesouro</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="849175017430297">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="404034893104934" type="botaoBesouro" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="691387759142473" type="botaoBesouro" />
+            </actions>
+            <sub-events>
+                <event-block sid="109042772739660">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="957365581672455" type="botaoBesouro">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="658133519401591" type="botaoBesouro">
+                            <param id="0" name="Object">Besouro</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="336770052151640">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="916219501117044" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoJoaninha</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="790633882608788" type="botaoJoaninha">
+                    <param id="0" name="Object">botaoJoaninha</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="591940904746170">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="943338154781706" type="botaoJoaninha" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="629062889618260" type="botaoJoaninha" />
+            </actions>
+            <sub-events>
+                <event-block sid="685948501906062">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="535230701865635" type="botaoJoaninha">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="856806712437743" type="botaoJoaninha">
+                            <param id="0" name="Object">Joaninha</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="346411198742877">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="266884058130426" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoGrama</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="964791749219835" type="botaoGrama">
+                    <param id="0" name="Object">botaoGrama</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="115290272855648">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="982063707601286" type="botaoGrama" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="198256578655234" type="botaoGrama" />
+            </actions>
+            <sub-events>
+                <event-block sid="781359592086805">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="938037268522248" type="botaoGrama">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="693675616421526" type="botaoGrama">
+                            <param id="0" name="Object">plantaEstagio1</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="156428965544619" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="836130225416981" type="plantaEstagio1" />
+                        <action id="0" name="Spawn another object" sid="473606570356203" type="plantaEstagio1">
+                            <param id="0" name="Object">plantaEstagio2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="407096367449278" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="852679468546215" type="plantaEstagio2" />
+                        <action id="0" name="Spawn another object" sid="830974451886521" type="plantaEstagio2">
+                            <param id="0" name="Object">Grama</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="268976794152151">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="764038425346426" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoCouve</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="798274867319709" type="botaoCouve">
+                    <param id="0" name="Object">botaoCouve</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="703262976541569">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="497594329186356" type="botaoCouve" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="668581114710418" type="botaoCouve" />
+            </actions>
+            <sub-events>
+                <event-block sid="853539093405893">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="720141141140051" type="botaoCouve">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="541285781530313" type="botaoCouve">
+                            <param id="0" name="Object">plantaEstagio1</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="885470697266405" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="712043359299202" type="plantaEstagio1" />
+                        <action id="0" name="Spawn another object" sid="926123267361859" type="plantaEstagio1">
+                            <param id="0" name="Object">plantaEstagio2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="295524180677512" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="967136500620529" type="plantaEstagio2" />
+                        <action id="0" name="Spawn another object" sid="629103239487992" type="plantaEstagio2">
+                            <param id="0" name="Object">Couve</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="866370174863163">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="719234722390126" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoMilho</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="107598309793228" type="botaoMilho">
+                    <param id="0" name="Object">botaoMilho</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="674350969732258">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="540160358383861" type="botaoMilho" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="870159300847468" type="botaoMilho" />
+            </actions>
+            <sub-events>
+                <event-block sid="313176012914429">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="528878476325105" type="botaoMilho">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="309816988558317" type="botaoMilho">
+                            <param id="0" name="Object">plantaEstagio1</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="818198114114815" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="936944869067914" type="plantaEstagio1" />
+                        <action id="0" name="Spawn another object" sid="753311626994036" type="plantaEstagio1">
+                            <param id="0" name="Object">plantaEstagio2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="319535885939212" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="276352085567003" type="plantaEstagio2" />
+                        <action id="0" name="Spawn another object" sid="754198801938209" type="plantaEstagio2">
+                            <param id="0" name="Object">Milho</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="861450387738691">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="359869188776870" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">botaoTomate</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="347289906070062" type="botaoTomate">
+                    <param id="0" name="Object">botaoTomate</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="569712307147508">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="742367241867359" type="botaoTomate" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="641052852578994" type="botaoTomate" />
+            </actions>
+            <sub-events>
+                <event-block sid="906569049379207">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="444784471844413" type="botaoTomate">
+                            <param id="0" name="Object">weave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="129710708456597" type="botaoTomate">
+                            <param id="0" name="Object">plantaEstagio1</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="196095836099206" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="976181106032508" type="plantaEstagio1" />
+                        <action id="0" name="Spawn another object" sid="228584807038401" type="plantaEstagio1">
+                            <param id="0" name="Object">plantaEstagio2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="991752698255889" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="764173294005995" type="plantaEstagio2" />
+                        <action id="0" name="Spawn another object" sid="596156703445768" type="plantaEstagio2">
+                            <param id="0" name="Object">Tomate</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
