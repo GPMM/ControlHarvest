@@ -10,10 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">Layout 1</layout>
-        <layout active="1" order="3">Tela Inicial</layout>
-        <event-sheet order="2">Event sheet 1</event-sheet>
-        <event-sheet order="4">Tela Inicial</event-sheet>
+        <layout order="0">Layout 1</layout>
+        <layout order="2">Tela Inicial</layout>
+        <event-sheet active="1" order="1">Event sheet 1</event-sheet>
+        <event-sheet order="3">Tela Inicial</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -26,10 +26,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
-        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/weave/" />
         <folder expanded="1" path="animation-folder/BarraLateral/" />
         <folder expanded="1" path="animation-folder/Barra/" />
@@ -51,5 +51,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Milho/" />
         <folder expanded="1" path="animation-folder/Tomate/" />
         <folder expanded="1" path="animation-folder/botaoOk/" />
+        <folder expanded="1" path="animation-folder/Cigarrinha/" />
+        <folder expanded="1" path="animation-folder/Grilo/" />
+        <folder expanded="1" path="animation-folder/Lagarta/" />
+        <folder expanded="1" path="animation-folder/Pulgao/" />
+        <folder expanded="1" path="animation-folder/AreaPlanta/" />
     </folders-expanded>
 </c2uistate>

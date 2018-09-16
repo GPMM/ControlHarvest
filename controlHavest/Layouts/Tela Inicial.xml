@@ -88,7 +88,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Texto1" uid="26">
+                <instance type="TextoTelaInicial" uid="26">
                     <properties>
                         <text>Digite seu nome: </text>
                         <initial-visibility>Visible</initial-visibility>
