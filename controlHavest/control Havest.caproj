@@ -83,7 +83,6 @@
                 <instance-variable name="Predacao" sid="938317103126149" type="number" />
                 <instance-variable name="VelocidadeMaxima" sid="472970913634623" type="number" />
                 <instance-variable name="EnergiaMaxima" sid="968328974256978" type="number" />
-                <instance-variable name="ValorCompra" sid="540703980234765" type="number" />
                 <instance-variable name="TempoDeCurva" sid="881066231405747" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="841263402536955" type="number" />
             </instance-variables>
@@ -123,6 +122,9 @@
         </object-type>
         <object-type name="botaoBesouro" sid="277191561437061">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="414272835712791" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="469681509155507">
                     <behavior id="DragnDrop" />
@@ -147,6 +149,9 @@
         </object-type>
         <object-type name="botaoJoaninha" sid="148638060782771">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="601387118570552" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="323430877322576">
                     <behavior id="DragnDrop" />
@@ -209,6 +214,9 @@
         </object-type>
         <object-type name="botaoGrama" sid="248258464210302">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="734650860570398" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="275851100983650">
                     <behavior id="DragnDrop" />
@@ -233,6 +241,9 @@
         </object-type>
         <object-type name="botaoCouve" sid="370417762593225">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="407227919492784" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="360629236398641">
                     <behavior id="DragnDrop" />
@@ -260,6 +271,9 @@
         </object-type>
         <object-type name="botaoMilho" sid="940871546231349">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="297741263374047" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="924768174894374">
                     <behavior id="DragnDrop" />
@@ -284,6 +298,9 @@
         </object-type>
         <object-type name="botaoTomate" sid="640756403420394">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ValorCompra" sid="452219672536549" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="DragDrop" sid="721277066330227">
                     <behavior id="DragnDrop" />
@@ -313,7 +330,6 @@
                 <instance-variable name="Predacao" sid="676704842993935" type="number" />
                 <instance-variable name="VelocidadeMaxima" sid="173315506473558" type="number" />
                 <instance-variable name="EnergiaMaxima" sid="896062769813146" type="number" />
-                <instance-variable name="ValorCompra" sid="139845175531473" type="number" />
                 <instance-variable name="TempoDeCurva" sid="902703754387288" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="588646307627154" type="number" />
             </instance-variables>
@@ -663,15 +679,20 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="FimDeJogo" sid="627373184913973">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Tela Inicial.xml</layout>
-        <layout>Layout 1.xml</layout>
+        <layout>Tela Jogo.xml</layout>
+        <layout>Game Over.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
-        <event-sheet>Tela Inicial.xml</event-sheet>
+        <event-sheet>Tela Jogo sheet.xml</event-sheet>
+        <event-sheet>Tela Inicial sheet.xml</event-sheet>
+        <event-sheet>Game Over sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="15" />

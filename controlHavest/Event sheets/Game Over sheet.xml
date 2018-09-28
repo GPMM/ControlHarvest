@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Over sheet</name>
+    <events>
+        <event-block sid="312118658115740">
+            <conditions>
+                <condition id="3" name="On touched object" sid="990941695229699" type="Touch">
+                    <param id="0" name="Object">botaoOk</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="171101190406511" type="System">
+                    <param id="0" name="Layout">Tela Inicial</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

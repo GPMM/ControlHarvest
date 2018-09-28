@@ -1,0 +1,2276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Tela Jogo sheet</name>
+    <events>
+        <variable constant="0" name="PlantasEmJogo" sid="795911286322433" static="0" type="number">0</variable>
+        <variable constant="0" name="ColherSelecionado" sid="739993857879682" static="0" type="number">0</variable>
+        <variable constant="0" name="redeSelecionado" sid="422567430864163" static="0" type="number">0</variable>
+        <variable constant="0" name="SelecaoPraga" sid="300323947365293" static="0" type="number">0</variable>
+        <variable constant="0" name="Pontuacao" sid="888546487013883" static="0" type="number">400</variable>
+        <variable constant="0" name="option" sid="592667800516844" static="0" type="number">1</variable>
+        <variable constant="0" name="playerName" sid="172956593195396" static="0" type="text"></variable>
+        <event-group description="" sid="331918918925782" title="Sistema">
+            <sub-events>
+                <event-block sid="643220971248079">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="186832106837033" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="685157110825059" type="System" />
+                        <action id="0" name="Set text" sid="285698092123728" type="TextoJogador">
+                            <param id="0" name="Text">&quot;Jogador: &quot;&amp;playerName</param>
+                        </action>
+                        <action id="0" name="Set text" sid="778234586374171" type="TextoPontuacao">
+                            <param id="0" name="Text">&quot;Dinheiro: &quot;&amp;Pontuacao</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="178973053344434" type="Besouro" />
+                        <action id="-9" name="Destroy" sid="189694767944960" type="Joaninha" />
+                        <action id="-9" name="Destroy" sid="640243600069253" type="Cigarrinha" />
+                        <action id="-9" name="Destroy" sid="901024311714875" type="Pulgao" />
+                        <action id="-9" name="Destroy" sid="491406731143146" type="Grilo" />
+                        <action id="-9" name="Destroy" sid="873592848541587" type="Lagarta" />
+                        <action id="-9" name="Destroy" sid="642205212413471" type="plantaEstagio1" />
+                        <action id="-9" name="Destroy" sid="567059280785036" type="plantaEstagio2" />
+                        <action id="-9" name="Destroy" sid="447248935769158" type="Grama" />
+                        <action id="-9" name="Destroy" sid="307804399565984" type="Couve" />
+                        <action id="-9" name="Destroy" sid="216874737537720" type="Milho" />
+                        <action id="-9" name="Destroy" sid="892999374616170" type="Tomate" />
+                        <action id="-9" name="Destroy" sid="803781077830088" type="AreaPlanta" />
+                    </actions>
+                </event-block>
+                <event-block sid="367609290417477">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="657100142722646" type="System">
+                            <param id="0" name="Interval (seconds)">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="295891771579916" type="System">
+                            <param id="0" name="Variable">SelecaoPraga</param>
+                            <param id="1" name="Value">floor(random(4))</param>
+                        </action>
+                        <action id="0" name="Set text" sid="941516745653063" type="TextoJogador">
+                            <param id="0" name="Text">&quot;Jogador: &quot;&amp;playerName</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="117212391320278">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="638302656516513" type="System">
+                                    <param id="0" name="Variable">SelecaoPraga</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="651026606240892" type="System">
+                                    <param id="0" name="Object to create">Lagarta</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(37.5,634.5)</param>
+                                    <param id="3" name="Y">random(28,385)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="818309895038318">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="361294476130152" type="System">
+                                    <param id="0" name="Variable">SelecaoPraga</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="894902302128355" type="System">
+                                    <param id="0" name="Object to create">Cigarrinha</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(37.5,634.5)</param>
+                                    <param id="3" name="Y">random(28,385)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="959280085397643">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="585377109518707" type="System">
+                                    <param id="0" name="Variable">SelecaoPraga</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="802492400885564" type="System">
+                                    <param id="0" name="Object to create">Grilo</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(37.5,634.5)</param>
+                                    <param id="3" name="Y">random(28,385)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="449100376465689">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="571710440266607" type="System">
+                                    <param id="0" name="Variable">SelecaoPraga</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="680370491307670" type="System">
+                                    <param id="0" name="Object to create">Pulgao</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">random(37.5,634.5)</param>
+                                    <param id="3" name="Y">random(28,385)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="765335287539179">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="523544499842877" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="131921693342863">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="604377115567723" type="System">
+                                    <param id="0" name="Object">Besouro</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="976668606988789" type="Besouro">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="175978366272243">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="274508666957282" type="Besouro">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="703202822043671" type="Besouro">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="954768176376110" type="Besouro">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Besouro.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="488892803684264">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="829117584146051" type="System">
+                                    <param id="0" name="Object">Joaninha</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="783785939893592" type="Joaninha">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="575501968604923">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="724348881497653" type="Joaninha">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="794835472835804" type="Joaninha">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="830954303818793" type="Joaninha">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Joaninha.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="117208289138078">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="356156911889443" type="System">
+                                    <param id="0" name="Object">Cigarrinha</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="923742208885538" type="Cigarrinha">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="712789390636411">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="479263704327690" type="Cigarrinha">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="311466478671543" type="Cigarrinha">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="809827576732104" type="Cigarrinha">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Cigarrinha.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="791162898081118">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="499534559153928" type="System">
+                                    <param id="0" name="Object">Lagarta</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="982429307949325" type="Lagarta">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="814466847193411">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="484985460702126" type="Lagarta">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="479732262725910" type="Lagarta">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="515007906176942" type="Lagarta">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Lagarta.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="242485584717630">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="181673212938228" type="System">
+                                    <param id="0" name="Object">Grilo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="545868331002318" type="Grilo">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="726135775450193">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="509792495784146" type="Grilo">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="656850455744284" type="Grilo">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="996322706306026" type="Grilo">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Grilo.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="483588818774399">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="319516332493338" type="System">
+                                    <param id="0" name="Object">Pulgao</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="246220254369162" type="Pulgao">
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="578067188054056">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="828722218183873" type="Pulgao">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-20" name="Rotate toward angle" sid="341692061751462" type="Pulgao">
+                                            <param id="0" name="Degrees">15</param>
+                                            <param id="1" name="Angle">choose(90,-90)</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="945826054195121" type="Pulgao">
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Pulgao.TempoDeCurvaMax</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="584943564349870">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="243211518036677" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="274717401434184" type="TextoPontuacao">
+                            <param id="0" name="Text">&quot;Dinheiro: &quot;&amp;Pontuacao</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="923801935345634">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="706794891842972" type="System" />
+                        <condition id="-14" name="Compare variable" sid="434657150657179" type="System">
+                            <param id="0" name="Variable">Pontuacao</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">75</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="271445423251841" type="System">
+                            <param id="0" name="Variable">PlantasEmJogo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="564059967770249" type="System">
+                            <param id="0" name="Layout">Game Over</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="451311556924339" title="Botoes">
+            <sub-events>
+                <event-group description="" sid="970771635873136" title="Colher">
+                    <sub-events>
+                        <event-block sid="791691609567426">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="275771530670494" type="Touch">
+                                    <param id="0" name="Object">colher</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="927575181739734" type="colher">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="815838396639179" type="System">
+                                    <param id="0" name="Variable">ColherSelecionado</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="544710710731802">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="492797970875044" type="System">
+                                    <param id="0" name="Variable">ColherSelecionado</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="301303990618948">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="894368635759146" type="Touch">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="617180918320570" type="Couve">
+                                            <param id="0" name="Unique ID">AreaPlanta.IdPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="113977238079250" type="AreaPlanta" />
+                                        <action id="-10" name="Add to" sid="896280729778273" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">Couve.ValorVenda</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="413348228668362" type="Couve" />
+                                        <action id="-16" name="Set opacity" sid="122069592551363" type="colher">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="629311496247672" type="System">
+                                            <param id="0" name="Variable">ColherSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="548257196916832" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="956708338155185">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="977226564938676" type="Touch">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="284309370593147" type="Grama">
+                                            <param id="0" name="Unique ID">AreaPlanta.IdPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="888959961289443" type="AreaPlanta" />
+                                        <action id="-10" name="Add to" sid="403596589765363" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">Grama.ValorVenda</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="259198273791507" type="Grama" />
+                                        <action id="-16" name="Set opacity" sid="335343074184809" type="colher">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="898647579664752" type="System">
+                                            <param id="0" name="Variable">ColherSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="409047826771530" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="658479523660069">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="847172843240152" type="Touch">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="902007686977489" type="Milho">
+                                            <param id="0" name="Unique ID">AreaPlanta.IdPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="160149836418779" type="AreaPlanta" />
+                                        <action id="-10" name="Add to" sid="292612003334708" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">Milho.ValorVenda</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="655841616138921" type="Milho" />
+                                        <action id="-16" name="Set opacity" sid="240700207371093" type="colher">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="986799608126929" type="System">
+                                            <param id="0" name="Variable">ColherSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="425270620088783" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="814430986049215">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="729456272412752" type="Touch">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="883447523876377" type="Tomate">
+                                            <param id="0" name="Unique ID">AreaPlanta.IdPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="645071093596497" type="AreaPlanta" />
+                                        <action id="-10" name="Add to" sid="961644909970442" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">Tomate.ValorVenda</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="361615824274278" type="Tomate" />
+                                        <action id="-16" name="Set opacity" sid="295715143361691" type="colher">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="264594111948861" type="System">
+                                            <param id="0" name="Variable">ColherSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="149508969577300" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="973887685727459">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="899735884936570" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="701115295860875" type="colher">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="659937752366393" type="System">
+                                            <param id="0" name="Variable">ColherSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="343270455427012" title="rede">
+                    <sub-events>
+                        <event-block sid="500709981283480">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="794129825573403" type="Touch">
+                                    <param id="0" name="Object">rede</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="663005709818932" type="System">
+                                    <param id="0" name="Variable">Pontuacao</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">80</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="883357580610723" type="rede">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="623312665093270" type="System">
+                                    <param id="0" name="Variable">redeSelecionado</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="307312604553391">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="337265924528612" type="System">
+                                    <param id="0" name="Variable">redeSelecionado</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="177138436414930">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="538719509651386" type="Touch">
+                                            <param id="0" name="Object">Besouro</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="920001542505460" type="Besouro" />
+                                        <action id="-16" name="Set opacity" sid="942320595169371" type="rede">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="101119779316803" type="System">
+                                            <param id="0" name="Variable">redeSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="514842376620598" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">80</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="471929531484252">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="989027044390728" type="Touch">
+                                            <param id="0" name="Object">Joaninha</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="475098942178335" type="Joaninha" />
+                                        <action id="-16" name="Set opacity" sid="650478011599993" type="rede">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="861786403588372" type="System">
+                                            <param id="0" name="Variable">redeSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="473492196369311" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">80</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="846818442411768">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="408183078969819" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="119497386469723" type="rede">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="585438464821000" type="System">
+                                            <param id="0" name="Variable">redeSelecionado</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="396302934651399" title="Plantas">
+                    <sub-events>
+                        <event-block sid="346411198742877">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="266884058130426" type="Touch">
+                                    <param id="0" name="Object">botaoGrama</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="964791749219835" type="botaoGrama">
+                                    <param id="0" name="Object">botaoGrama</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="115290272855648">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="982063707601286" type="botaoGrama" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="198256578655234" type="botaoGrama" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="946817118481153">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="394951067568588" type="botaoGrama">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="781359592086805">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="840943851808392" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="938037268522248" type="botaoGrama">
+                                            <param id="0" name="Object">solido</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="649781865165713">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="975596093823727" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="595739565961325" type="botaoGrama">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="540218888398524" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoGrama.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="432966628273530" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="665459408215299" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoGrama.ValorCompra</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="267437815559055" type="botaoGrama">
+                                            <param id="0" name="Object">plantaEstagio1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="345757258485184" type="botaoGrama">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="991308622092026" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="558541386473982" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="739949325423806" type="plantaEstagio1">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="997034522145382" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="664279849460062" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="766354210688758" type="plantaEstagio2">
+                                            <param id="0" name="Object">Grama</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="893577383190948" type="AreaPlanta">
+                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                            <param id="1" name="Value">Grama.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="861450387738691">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="359869188776870" type="Touch">
+                                    <param id="0" name="Object">botaoTomate</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="347289906070062" type="botaoTomate">
+                                    <param id="0" name="Object">botaoTomate</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="569712307147508">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="742367241867359" type="botaoTomate" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="641052852578994" type="botaoTomate" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="324527998209779">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="695051040667866" type="botaoTomate">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="539078107073944">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="673652161699138" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="484945013758867" type="botaoTomate">
+                                            <param id="0" name="Object">solido</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="906569049379207">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="936775154404171" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="444784471844413" type="botaoTomate">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="304079153041421" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoTomate.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="600071166007708" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="872721591583786" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoTomate.ValorCompra</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="129710708456597" type="botaoTomate">
+                                            <param id="0" name="Object">plantaEstagio1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="770039981163969" type="botaoTomate">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="196095836099206" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="976181106032508" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="228584807038401" type="plantaEstagio1">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="991752698255889" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="764173294005995" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="596156703445768" type="plantaEstagio2">
+                                            <param id="0" name="Object">Tomate</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="982162487533019" type="AreaPlanta">
+                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                            <param id="1" name="Value">Tomate.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="866370174863163">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="719234722390126" type="Touch">
+                                    <param id="0" name="Object">botaoMilho</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="107598309793228" type="botaoMilho">
+                                    <param id="0" name="Object">botaoMilho</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="674350969732258">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="540160358383861" type="botaoMilho" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="870159300847468" type="botaoMilho" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="230709072929721">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="767904633241121" type="botaoMilho">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="770710223220076">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="753235821498894" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="347223162077770" type="botaoMilho">
+                                            <param id="0" name="Object">solido</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="313176012914429">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="434963717442609" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="528878476325105" type="botaoMilho">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="768645653871603" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoMilho.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="974988377197829" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="174567305399455" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoMilho.ValorCompra</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="309816988558317" type="botaoMilho">
+                                            <param id="0" name="Object">plantaEstagio1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="129731561033341" type="botaoMilho">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="818198114114815" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="936944869067914" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="753311626994036" type="plantaEstagio1">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="319535885939212" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="276352085567003" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="754198801938209" type="plantaEstagio2">
+                                            <param id="0" name="Object">Milho</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="145452367929473" type="AreaPlanta">
+                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                            <param id="1" name="Value">Milho.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="268976794152151">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="764038425346426" type="Touch">
+                                    <param id="0" name="Object">botaoCouve</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="798274867319709" type="botaoCouve">
+                                    <param id="0" name="Object">botaoCouve</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="703262976541569">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="497594329186356" type="botaoCouve" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="668581114710418" type="botaoCouve" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="328417444027655">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="647999007774645" type="botaoCouve">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="587563966671427">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="652231692763536" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="506310759199987" type="botaoCouve">
+                                            <param id="0" name="Object">solido</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="853539093405893">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="490626898481010" type="System" />
+                                        <condition id="1" name="Is overlapping another object" sid="720141141140051" type="botaoCouve">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="739481855874029" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoCouve.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="799211665773819" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="573538380475503" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoCouve.ValorCompra</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="541285781530313" type="botaoCouve">
+                                            <param id="0" name="Object">plantaEstagio1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="671479369851473" type="botaoCouve">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="885470697266405" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="712043359299202" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="926123267361859" type="plantaEstagio1">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="295524180677512" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="967136500620529" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="629103239487992" type="plantaEstagio2">
+                                            <param id="0" name="Object">Couve</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="190807942687900" type="AreaPlanta">
+                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                            <param id="1" name="Value">Couve.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="355153867979184" title="PredadoresLoja">
+                    <sub-events>
+                        <event-block sid="336770052151640">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="916219501117044" type="Touch">
+                                    <param id="0" name="Object">botaoJoaninha</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="790633882608788" type="botaoJoaninha">
+                                    <param id="0" name="Object">botaoJoaninha</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="591940904746170">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="943338154781706" type="botaoJoaninha" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="629062889618260" type="botaoJoaninha" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="685948501906062">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="535230701865635" type="botaoJoaninha">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="173253741854794" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoJoaninha.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="856806712437743" type="botaoJoaninha">
+                                            <param id="0" name="Object">Joaninha</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="995750786291690" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoJoaninha.ValorCompra</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="825731532178152">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="725307146148987" type="Touch">
+                                    <param id="0" name="Object">botaoBesouro</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="851287513182096" type="botaoBesouro">
+                                    <param id="0" name="Object">botaoBesouro</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="849175017430297">
+                            <conditions>
+                                <condition behavior="DragDrop" id="2" name="On drop" sid="404034893104934" type="botaoBesouro" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="691387759142473" type="botaoBesouro" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="109042772739660">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="957365581672455" type="botaoBesouro">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="855426020484790" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoBesouro.ValorCompra</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="658133519401591" type="botaoBesouro">
+                                            <param id="0" name="Object">Besouro</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="919515632315465" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoBesouro.ValorCompra</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="804727930664230">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="268339133225229" type="Touch">
+                            <param id="0" name="Object">botaoAlterar</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="464389156795180">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="616086794443764" type="System">
+                                    <param id="0" name="Variable">option</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="796902172549764" type="botaoBesouro" />
+                                <action id="-9" name="Destroy" sid="857786611707896" type="botaoJoaninha" />
+                                <action id="-3" name="Create object" sid="613738435686553" type="System">
+                                    <param id="0" name="Object to create">botaoGrama</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">98</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="258853417903997" type="System">
+                                    <param id="0" name="Object to create">botaoCouve</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">163</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="875829326242995" type="System">
+                                    <param id="0" name="Object to create">botaoMilho</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">228</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="433685366165409" type="System">
+                                    <param id="0" name="Object to create">botaoTomate</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">293</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="701803960698856" type="System">
+                                    <param id="0" name="Variable">option</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="145436342025471">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="421204543137435" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="766860698643014" type="botaoGrama" />
+                                <action id="-9" name="Destroy" sid="784578431723010" type="botaoCouve" />
+                                <action id="-9" name="Destroy" sid="745197879952474" type="botaoMilho" />
+                                <action id="-9" name="Destroy" sid="745583543383086" type="botaoTomate" />
+                                <action id="-3" name="Create object" sid="439516909525274" type="System">
+                                    <param id="0" name="Object to create">botaoBesouro</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">98</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="181047249973574" type="System">
+                                    <param id="0" name="Object to create">botaoJoaninha</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">819</param>
+                                    <param id="3" name="Y">163</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="161605061692756" type="System">
+                                    <param id="0" name="Variable">option</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="260784922299131" title="Regras do Jogo">
+            <sub-events>
+                <event-group description="" sid="888220414248904" title="Energia">
+                    <sub-events>
+                        <event-block sid="173836379019578">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="452003546366639" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="881198106350084">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="455152659586633" type="System">
+                                            <param id="0" name="Object">Lagarta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="832310420340356" type="Lagarta">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="131587301875340" type="Lagarta">
+                                            <param id="0" name="Speed">Lagarta.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="971158396815170">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="528622728872413" type="System">
+                                            <param id="0" name="Object">Cigarrinha</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="472759753986226" type="Cigarrinha">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="372341370608698" type="Cigarrinha">
+                                            <param id="0" name="Speed">Cigarrinha.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="151460229818462">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="797741537560306" type="System">
+                                            <param id="0" name="Object">Grilo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="218820318783509" type="Grilo">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="924612282674465" type="Grilo">
+                                            <param id="0" name="Speed">Grilo.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="883279805647669">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="483455516749536" type="System">
+                                            <param id="0" name="Object">Pulgao</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="785079697551021" type="Pulgao">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="198560054264367" type="Pulgao">
+                                            <param id="0" name="Speed">Pulgao.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="960712875737130">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="143709480680317" type="System">
+                                            <param id="0" name="Object">Besouro</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="158867962799463" type="Besouro">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="460389600252686" type="Besouro">
+                                            <param id="0" name="Speed">Besouro.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="472493672509853">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="920976129813239" type="System">
+                                            <param id="0" name="Object">Joaninha</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="919573034859746" type="Joaninha">
+                                            <param id="0" name="Instance variable">Energia</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="659112680120885" type="Joaninha">
+                                            <param id="0" name="Speed">Joaninha.Bullet.Speed-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="564523136142794">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="284109467801480" type="Besouro">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="574596213546143" type="Besouro" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="296577969245897">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="414293275648231" type="Joaninha">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="857557753302063" type="Joaninha" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="465984520091737">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="478391968781850" type="Lagarta">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="453234821750184" type="Lagarta" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="548485673956483">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="113351196043515" type="Cigarrinha">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="540244787070395" type="Cigarrinha" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="501841846958624">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="927158240644712" type="Grilo">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="570758652069928" type="Grilo" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="286699327288714">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="203042792746540" type="Pulgao">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="664464741975769" type="Pulgao" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="110379701604380" title="Predacao">
+                    <sub-events>
+                        <event-group description="" sid="525986734978433" title="Pragas">
+                            <sub-events>
+                                <event-group description="" sid="953816346557045" title="PulgaoPredacao">
+                                    <sub-events>
+                                        <event-block sid="864461641704811">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="564412039029490" type="Pulgao">
+                                                    <param id="0" name="Object">Tomate</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="157428446813921" type="Pulgao">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="999825478495937" type="Tomate">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="186248842463242" type="Pulgao">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="884138810635125" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="525268462109471" type="Tomate" />
+                                                <action id="-11" name="Add to" sid="394352880595566" type="Pulgao">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Tomate.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="596273164583253" type="Pulgao">
+                                                    <param id="0" name="Speed">Pulgao.VelocidadeMaxima-(100-Pulgao.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="795772391204009" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="201810326670906">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="564605185941447" type="Pulgao">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Pulgao.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="470230725981793" type="Pulgao">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Pulgao.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="394086517881945" type="Pulgao">
+                                                            <param id="0" name="Speed">Pulgao.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="672172666694593">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="718772257738252" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Tomate.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="919329219466692" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="200549850936336" title="GriloPredacao">
+                                    <sub-events>
+                                        <event-block sid="139460676546504">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="172701761293978" type="Grilo">
+                                                    <param id="0" name="Object">Grama</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="464691513484582" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="974115390836232" type="Grama">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="430859974308773" type="Grilo">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="681998850837567" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="231822450442949" type="Grama" />
+                                                <action id="-11" name="Add to" sid="213991161324058" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Grama.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="941042399186447" type="Grilo">
+                                                    <param id="0" name="Speed">Grilo.VelocidadeMaxima-(100-Grilo.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="125238249776447" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="623041486046576">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="185904152692233" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="863621905069498" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="746771028513645" type="Grilo">
+                                                            <param id="0" name="Speed">Grilo.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="342111536731384">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="484774159455952" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Grama.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="557430662974403" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="420974596552622">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="853143825282978" type="Grilo">
+                                                    <param id="0" name="Object">Couve</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="995355821793767" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="800547972568033" type="Couve">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="333954360498265" type="Grilo">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="463892835572268" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="326965126735307" type="Couve" />
+                                                <action id="-11" name="Add to" sid="956743722133375" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Couve.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="875036659205472" type="Grilo">
+                                                    <param id="0" name="Speed">Grilo.VelocidadeMaxima-(100-Grilo.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="865590016001989" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="837151169327974">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="868410460698954" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="586121481943548" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="279754588663135" type="Grilo">
+                                                            <param id="0" name="Speed">Grilo.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="152749742833597">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="133716348493818" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Couve.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="228496990137325" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="284420467541633">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="173476413122623" type="Grilo">
+                                                    <param id="0" name="Object">Milho</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="832521686907968" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="303284825413776" type="Milho">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="273268431005488" type="Grilo">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="521984599800612" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="512063023859593" type="Milho" />
+                                                <action id="-11" name="Add to" sid="471330055977910" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Milho.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="678123569860790" type="Grilo">
+                                                    <param id="0" name="Speed">Grilo.VelocidadeMaxima-(100-Grilo.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="728654893950246" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="743811781573539">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="610982810924190" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="827109939602155" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="182175766530934" type="Grilo">
+                                                            <param id="0" name="Speed">Grilo.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="166146874820803">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="119244009219031" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Milho.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="114561925508575" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="816723737522931">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="933132267378267" type="Grilo">
+                                                    <param id="0" name="Object">Tomate</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="885311371320923" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="700645270127270" type="Tomate">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="504010142792067" type="Grilo">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="277210807994103" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="671625599115731" type="Tomate" />
+                                                <action id="-11" name="Add to" sid="987041501992987" type="Grilo">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Tomate.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="540497016051349" type="Grilo">
+                                                    <param id="0" name="Speed">Grilo.VelocidadeMaxima-(100-Grilo.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="353534859835124" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="503316559970863">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="522871482881926" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="903451194903114" type="Grilo">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Grilo.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="687547449658847" type="Grilo">
+                                                            <param id="0" name="Speed">Grilo.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="259002402598975">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="379094298488720" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Tomate.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="540010030921047" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="178390598841388" title="CigarraPredacao">
+                                    <sub-events>
+                                        <event-block sid="937648548256831">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="626180214933107" type="Cigarrinha">
+                                                    <param id="0" name="Object">Couve</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="781526169616284" type="Cigarrinha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="672274321205072" type="Couve">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="238436503296366" type="Cigarrinha">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="687663669277895" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="141905213920014" type="Couve" />
+                                                <action id="-11" name="Add to" sid="586060573838017" type="Cigarrinha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Couve.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="175457683923184" type="Cigarrinha">
+                                                    <param id="0" name="Speed">Cigarrinha.VelocidadeMaxima-(100-Cigarrinha.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="137166125407221" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="707924993546372">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="619040611368962" type="Cigarrinha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Cigarrinha.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="995424617819553" type="Cigarrinha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Cigarrinha.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="987486168698698" type="Cigarrinha">
+                                                            <param id="0" name="Speed">Cigarrinha.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="912547116017053">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="270006306920299" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Couve.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="870274305937468" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="865963964995723">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="765936868766132" type="Cigarrinha">
+                                                    <param id="0" name="Object">Grama</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="723084132984351" type="Cigarrinha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="325407412774978" type="Grama">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="548831533495825" type="Cigarrinha">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="417821871708343" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="914340342270550" type="Grama" />
+                                                <action id="-11" name="Add to" sid="754759000477121" type="Cigarrinha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Grama.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="915587325073325" type="Cigarrinha">
+                                                    <param id="0" name="Speed">Cigarrinha.VelocidadeMaxima-(100-Cigarrinha.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="431905286910265" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="483945687596952">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="915778828118465" type="Cigarrinha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Cigarrinha.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="820507586549314" type="Cigarrinha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Cigarrinha.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="260259788138976" type="Cigarrinha">
+                                                            <param id="0" name="Speed">Cigarrinha.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="669655000449514">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="419295511890500" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Grama.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="396972421555508" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="811137100976912" title="LagartaPredacao">
+                                    <sub-events>
+                                        <event-block sid="952564429297526">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="516245573899562" type="Lagarta">
+                                                    <param id="0" name="Object">Couve</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="676482904070438" type="Lagarta">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">80</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="207510847529830" type="Couve">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="371069405667766" type="Lagarta">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="629138064127427" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="669284141284975" type="Couve" />
+                                                <action id="-11" name="Add to" sid="845690358781830" type="Lagarta">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Couve.ValorNutricional</param>
+                                                </action>
+                                                <action behavior="Bullet" id="0" name="Set speed" sid="356178281558892" type="Lagarta">
+                                                    <param id="0" name="Speed">Lagarta.VelocidadeMaxima-(100-Lagarta.Energia)</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="728633868741913" type="System">
+                                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="532880233002758">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="740932539643632" type="Lagarta">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Lagarta.EnergiaMaxima</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="481037219056646" type="Lagarta">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Lagarta.EnergiaMaxima</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="540652985449371" type="Lagarta">
+                                                            <param id="0" name="Speed">Lagarta.VelocidadeMaxima</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="146013768762675">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="674952753983337" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Couve.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="600568956137828" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="269338080856716" title="Predadores">
+                            <sub-events>
+                                <event-group description="" sid="144598683656247" title="BesouroPredacao">
+                                    <sub-events>
+                                        <event-block sid="823247382416617">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="990972596829655" type="Besouro">
+                                                    <param id="0" name="Object">Grilo</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="743350825378349" type="Besouro">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">85</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="668926704653417" type="Besouro">
+                                                    <param id="0" name="Instance variable">Predacao</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="701164819707889" type="Grilo">
+                                                    <param id="0" name="Instance variable">Fuga</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="240050552822624">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="715703429438701" type="Besouro">
+                                                            <param id="0" name="Instance variable">Predacao</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">Besouro.Energia</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="737213748670209" type="Grilo">
+                                                            <param id="0" name="Instance variable">Fuga</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Grilo.Energia</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="627793825957624" type="Grilo">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="411708470570546" type="Besouro">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="952246599151506" type="Grilo">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="238042027758877" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="798735092444573" type="Grilo" />
+                                                        <action id="-11" name="Add to" sid="561338636211924" type="Besouro">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Grilo.ValorNutricional</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="280124292462808" type="Besouro">
+                                                            <param id="0" name="Speed">Besouro.VelocidadeMaxima-(100-Besouro.Energia)</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="878432060589171">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="620439057877806" type="Besouro">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Besouro.EnergiaMaxima</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="786618050176612" type="Besouro">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Besouro.EnergiaMaxima</param>
+                                                                </action>
+                                                                <action behavior="Bullet" id="0" name="Set speed" sid="638578215574950" type="Besouro">
+                                                                    <param id="0" name="Speed">Besouro.VelocidadeMaxima</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="381993865404236">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="535043231546112" type="Besouro">
+                                                    <param id="0" name="Object">Pulgao</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="678647833964801" type="Besouro">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">85</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="394009720263231" type="Besouro">
+                                                    <param id="0" name="Instance variable">Predacao</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="817648648997285" type="Pulgao">
+                                                    <param id="0" name="Instance variable">Fuga</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="189666814125442">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="456134259665199" type="Besouro">
+                                                            <param id="0" name="Instance variable">Predacao</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">Besouro.Energia</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="446651085409355" type="Pulgao">
+                                                            <param id="0" name="Instance variable">Fuga</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Pulgao.Energia</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="100289813508820" type="Pulgao">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="961944411490435" type="Besouro">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="109490851035819" type="Pulgao">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="191622661333996" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="339030391373890" type="Pulgao" />
+                                                        <action id="-11" name="Add to" sid="826389800769580" type="Besouro">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Pulgao.ValorNutricional</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="626896913154307" type="Besouro">
+                                                            <param id="0" name="Speed">Besouro.VelocidadeMaxima-(100-Besouro.Energia)</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="900080103839968">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="340187895384826" type="Besouro">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Besouro.EnergiaMaxima</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="435313386962350" type="Besouro">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Besouro.EnergiaMaxima</param>
+                                                                </action>
+                                                                <action behavior="Bullet" id="0" name="Set speed" sid="723907932300662" type="Besouro">
+                                                                    <param id="0" name="Speed">Besouro.VelocidadeMaxima</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="746743460906481" title="JoaninhaPredacao">
+                                    <sub-events>
+                                        <event-block sid="509618714601655">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="132958846760403" type="Joaninha">
+                                                    <param id="0" name="Object">Lagarta</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="341893282067657" type="Joaninha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">85</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="687487264497999" type="Joaninha">
+                                                    <param id="0" name="Instance variable">Predacao</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="113922228501225" type="Lagarta">
+                                                    <param id="0" name="Instance variable">Fuga</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="671709080645287">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="505951975335501" type="Joaninha">
+                                                            <param id="0" name="Instance variable">Predacao</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">Joaninha.Energia</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="486741467961674" type="Lagarta">
+                                                            <param id="0" name="Instance variable">Fuga</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Lagarta.Energia</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="606678164405647" type="Lagarta">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="547197465469753" type="Joaninha">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="299088513679542" type="Lagarta">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="354636350999732" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="590090678955361" type="Lagarta" />
+                                                        <action id="-11" name="Add to" sid="975150301659064" type="Joaninha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Lagarta.ValorNutricional</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="660890018618300" type="Joaninha">
+                                                            <param id="0" name="Speed">Joaninha.VelocidadeMaxima-(100-Joaninha.Energia)</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="770204064441439">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="664815738163247" type="Joaninha">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Joaninha.EnergiaMaxima</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="583006556595285" type="Joaninha">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Joaninha.EnergiaMaxima</param>
+                                                                </action>
+                                                                <action behavior="Bullet" id="0" name="Set speed" sid="892706691751278" type="Joaninha">
+                                                                    <param id="0" name="Speed">Joaninha.VelocidadeMaxima</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="179329263649481">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="308059840785806" type="Joaninha">
+                                                    <param id="0" name="Object">Cigarrinha</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="363097602604988" type="Joaninha">
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">85</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="990615866369042" type="Joaninha">
+                                                    <param id="0" name="Instance variable">Predacao</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="670481362485058" type="Cigarrinha">
+                                                    <param id="0" name="Instance variable">Fuga</param>
+                                                    <param id="1" name="Value">random(0,100)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block any="1" sid="984724417663188">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="166058562560631" type="Joaninha">
+                                                            <param id="0" name="Instance variable">Predacao</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">Joaninha.Energia</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="124932100601760" type="Cigarrinha">
+                                                            <param id="0" name="Instance variable">Fuga</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Cigarrinha.Energia</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="768980074832707" type="Cigarrinha">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="830872400119496" type="Joaninha">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="726980050570918" type="Cigarrinha">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="807292943747768" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="158601008138782" type="Cigarrinha" />
+                                                        <action id="-11" name="Add to" sid="558489705463371" type="Joaninha">
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Cigarrinha.ValorNutricional</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="0" name="Set speed" sid="414651560405022" type="Joaninha">
+                                                            <param id="0" name="Speed">Joaninha.VelocidadeMaxima-(100-Joaninha.Energia)</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="440792261253433">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="438569106717634" type="Joaninha">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Joaninha.EnergiaMaxima</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="997797732476304" type="Joaninha">
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Joaninha.EnergiaMaxima</param>
+                                                                </action>
+                                                                <action behavior="Bullet" id="0" name="Set speed" sid="581518243246124" type="Joaninha">
+                                                                    <param id="0" name="Speed">Joaninha.VelocidadeMaxima</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
