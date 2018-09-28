@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>control Havest</name>
-    <description></description>
+    <description>Jogo de Controle Biológico</description>
     <version>1.0.0.0</version>
-    <author></author>
+    <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <app-id>com.cefet.controlHavest</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25900</saved-with-version>
     <used-plugins>
@@ -32,6 +32,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Tela Inicial</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -55,26 +56,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="BarraLateral" sid="806534624013700">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="652913411897653">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="750514886578345" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\BarraLateral.png">
-                        <collision-poly>
-                            <point x="0.04" y="0.016" />
-                            <point x="1" y="0" />
-                            <point x="1" y="1" />
-                            <point x="0.04" y="0.984" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Barra" sid="139904569858293">
             <plugin id="Sprite" />
             <behaviors>
@@ -84,7 +65,14 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="263132790766065" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Barra.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Barra.png">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -95,6 +83,9 @@
                 <instance-variable name="Predacao" sid="938317103126149" type="number" />
                 <instance-variable name="VelocidadeMaxima" sid="472970913634623" type="number" />
                 <instance-variable name="EnergiaMaxima" sid="968328974256978" type="number" />
+                <instance-variable name="ValorCompra" sid="540703980234765" type="number" />
+                <instance-variable name="TempoDeCurva" sid="881066231405747" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="841263402536955" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="410244747294649">
@@ -199,11 +190,6 @@
         </object-type>
         <object-type name="colher" sid="443641374471334">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="DragDrop" sid="915503675955571">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="990147000005908" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\botaoColheita.png">
@@ -327,6 +313,9 @@
                 <instance-variable name="Predacao" sid="676704842993935" type="number" />
                 <instance-variable name="VelocidadeMaxima" sid="173315506473558" type="number" />
                 <instance-variable name="EnergiaMaxima" sid="896062769813146" type="number" />
+                <instance-variable name="ValorCompra" sid="139845175531473" type="number" />
+                <instance-variable name="TempoDeCurva" sid="902703754387288" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="588646307627154" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="330946155937669">
@@ -519,6 +508,8 @@
                 <instance-variable name="EnergiaMaxima" sid="357048122185510" type="number" />
                 <instance-variable name="Fuga" sid="676667608006856" type="number" />
                 <instance-variable name="ValorNutricional" sid="633278592531425" type="number" />
+                <instance-variable name="TempoDeCurva" sid="755275294587511" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="586451027508989" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="862947570824509">
@@ -550,6 +541,8 @@
                 <instance-variable name="EnergiaMaxima" sid="117848448164677" type="number" />
                 <instance-variable name="Fuga" sid="560587258664597" type="number" />
                 <instance-variable name="ValorNutricional" sid="227142051216799" type="number" />
+                <instance-variable name="TempoDeCurva" sid="799739688434274" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="796946583313242" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="228634405731343">
@@ -581,6 +574,8 @@
                 <instance-variable name="EnergiaMaxima" sid="786675912819053" type="number" />
                 <instance-variable name="Fuga" sid="246326836896781" type="number" />
                 <instance-variable name="ValorNutricional" sid="525260708693602" type="number" />
+                <instance-variable name="TempoDeCurva" sid="494359382697090" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="580345440841189" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="806380608000042">
@@ -612,6 +607,8 @@
                 <instance-variable name="EnergiaMaxima" sid="695893672211466" type="number" />
                 <instance-variable name="Fuga" sid="621626831227981" type="number" />
                 <instance-variable name="ValorNutricional" sid="838128434458878" type="number" />
+                <instance-variable name="TempoDeCurva" sid="597383533508061" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="488374305871754" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="793138580917674">
@@ -634,12 +631,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Teste" sid="671454627373818">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="Teste2" sid="209354478688514">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="AreaPlanta" sid="748869015705909">
             <plugin id="Sprite" />
             <instance-variables>
@@ -656,6 +647,21 @@
         </object-type>
         <object-type name="TextoPontuacao" sid="812550840620528">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="rede" sid="809391178486202">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452904869212048" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509091" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\net-clipart-ncEjMdpcA.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

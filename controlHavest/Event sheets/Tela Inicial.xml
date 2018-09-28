@@ -5,10 +5,8 @@
     <events>
         <event-block sid="509317281204166">
             <conditions>
-                <condition id="6" name="On object clicked" sid="549141767117115" type="Mouse">
-                    <param id="0" name="Mouse button">0</param>
-                    <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">botaoOk</param>
+                <condition id="3" name="On touched object" sid="549141767117115" type="Touch">
+                    <param id="0" name="Object">botaoOk</param>
                 </condition>
             </conditions>
             <actions>
