@@ -3,6 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Tela Jogo sheet</name>
     <events>
+        <variable constant="0" name="lagartas" sid="733816509052921" static="0" type="number">0</variable>
+        <variable constant="0" name="cigarrinhas" sid="948823788572564" static="0" type="number">0</variable>
+        <variable constant="0" name="grilos" sid="171031101834069" static="0" type="number">0</variable>
+        <variable constant="0" name="pulgoes" sid="379412609887518" static="0" type="number">0</variable>
+        <variable constant="0" name="besourosComprados" sid="745174034626111" static="0" type="number">0</variable>
+        <variable constant="0" name="besourosRecolhidos" sid="742693814238272" static="0" type="number">0</variable>
+        <variable constant="0" name="joaninhasComprados" sid="175097512278718" static="0" type="number">0</variable>
+        <variable constant="0" name="joaninhasRecolhidas" sid="683873444762818" static="0" type="number">0</variable>
         <variable constant="0" name="plantasPlantadas" sid="769435404669610" static="0" type="number">0</variable>
         <variable constant="0" name="plantasColhidas" sid="305300653583704" static="0" type="number">0</variable>
         <variable constant="0" name="PlantasEmJogo" sid="795911286322433" static="0" type="number">0</variable>
@@ -42,6 +50,7 @@
                         <action id="-9" name="Destroy" sid="216874737537720" type="Milho" />
                         <action id="-9" name="Destroy" sid="892999374616170" type="Tomate" />
                         <action id="-9" name="Destroy" sid="803781077830088" type="AreaPlanta" />
+                        <action id="-9" name="Destroy" sid="978159474659850" type="botaoFechar" />
                         <action id="-12" name="Set group active" sid="642149665050996" type="System">
                             <param id="0" name="Group name">&quot;Migracao&quot;</param>
                             <param id="1" name="State">0</param>
@@ -308,6 +317,62 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="311507884618781" title="Menu">
+            <sub-events>
+                <event-block sid="503198349801354">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="766242046391590" type="Touch">
+                            <param id="0" name="Object">Menu</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="949611247799895" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="366288774215893" type="telaMenu">
+                            <param id="0" name="X">392</param>
+                            <param id="1" name="Y">240</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="553979613722254" type="telaMenu">
+                            <param id="0" name="Object">botaoFechar</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="342287797475449" type="System">
+                            <param id="0" name="Group name">&quot;Botoes&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="427010042725535" type="telaFundoPopup">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="129633027939575">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="232183391357144" type="Touch">
+                            <param id="0" name="Object">botaoFechar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="161608362692621" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="552563685110747" type="telaMenu">
+                            <param id="0" name="X">-210</param>
+                            <param id="1" name="Y">240</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="188934804350820" type="botaoFechar" />
+                        <action id="-12" name="Set group active" sid="318362592469233" type="System">
+                            <param id="0" name="Group name">&quot;Botoes&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="691735709289796" type="telaFundoPopup">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="451311556924339" title="Botoes">
             <sub-events>
                 <event-group description="" sid="970771635873136" title="Colher">
@@ -540,6 +605,10 @@
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">80</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="799651944570804" type="System">
+                                            <param id="0" name="Variable">besourosRecolhidos</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="471929531484252">
@@ -560,6 +629,10 @@
                                         <action id="-11" name="Subtract from" sid="473492196369311" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">80</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="224345349696573" type="System">
+                                            <param id="0" name="Variable">joaninhasRecolhidas</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1131,6 +1204,10 @@
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoJoaninha.ValorCompra</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="865715124986555" type="System">
+                                            <param id="0" name="Variable">joaninhasComprados</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="680763485452408">
@@ -1197,6 +1274,10 @@
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoBesouro.ValorCompra</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="873409808037610" type="System">
+                                            <param id="0" name="Variable">besourosComprados</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="417579480897740">
@@ -1251,6 +1332,10 @@
                                             <param id="2" name="X">random(37.5,634.5)</param>
                                             <param id="3" name="Y">random(28,385)</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="905224653172413" type="System">
+                                            <param id="0" name="Variable">lagartas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="818309895038318">
@@ -1267,6 +1352,10 @@
                                             <param id="1" name="Layer">2</param>
                                             <param id="2" name="X">random(37.5,634.5)</param>
                                             <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="197882674043815" type="System">
+                                            <param id="0" name="Variable">cigarrinhas</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1285,6 +1374,10 @@
                                             <param id="2" name="X">random(37.5,634.5)</param>
                                             <param id="3" name="Y">random(28,385)</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="697589937733212" type="System">
+                                            <param id="0" name="Variable">grilos</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="449100376465689">
@@ -1301,6 +1394,10 @@
                                             <param id="1" name="Layer">2</param>
                                             <param id="2" name="X">random(37.5,634.5)</param>
                                             <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="501936331069842" type="System">
+                                            <param id="0" name="Variable">pulgoes</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
