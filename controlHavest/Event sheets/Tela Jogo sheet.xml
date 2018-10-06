@@ -3,12 +3,20 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Tela Jogo sheet</name>
     <events>
+        <variable constant="0" name="plantasPlantadas" sid="769435404669610" static="0" type="number">0</variable>
+        <variable constant="0" name="plantasColhidas" sid="305300653583704" static="0" type="number">0</variable>
         <variable constant="0" name="PlantasEmJogo" sid="795911286322433" static="0" type="number">0</variable>
         <variable constant="0" name="ColherSelecionado" sid="739993857879682" static="0" type="number">0</variable>
         <variable constant="0" name="redeSelecionado" sid="422567430864163" static="0" type="number">0</variable>
+        <variable constant="0" name="compraGrama" sid="679569990278116" static="0" type="number">0</variable>
+        <variable constant="0" name="compraMilho" sid="352052884727713" static="0" type="number">0</variable>
+        <variable constant="0" name="compraTomate" sid="905090259889467" static="0" type="number">0</variable>
+        <variable constant="0" name="compraJoaninha" sid="364231172091883" static="0" type="number">0</variable>
+        <variable constant="0" name="compraBesouro" sid="665936864985243" static="0" type="number">0</variable>
+        <variable constant="0" name="sobrepondoPlanta" sid="880283514191620" static="0" type="number">0</variable>
+        <variable constant="0" name="compraCouve" sid="298470912140277" static="0" type="number">0</variable>
         <variable constant="0" name="SelecaoPraga" sid="300323947365293" static="0" type="number">0</variable>
         <variable constant="0" name="Pontuacao" sid="888546487013883" static="0" type="number">400</variable>
-        <variable constant="0" name="option" sid="592667800516844" static="0" type="number">1</variable>
         <variable constant="0" name="playerName" sid="172956593195396" static="0" type="text"></variable>
         <event-group description="" sid="331918918925782" title="Sistema">
             <sub-events>
@@ -18,9 +26,6 @@
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="685157110825059" type="System" />
-                        <action id="0" name="Set text" sid="285698092123728" type="TextoJogador">
-                            <param id="0" name="Text">&quot;Jogador: &quot;&amp;playerName</param>
-                        </action>
                         <action id="0" name="Set text" sid="778234586374171" type="TextoPontuacao">
                             <param id="0" name="Text">&quot;Dinheiro: &quot;&amp;Pontuacao</param>
                         </action>
@@ -37,93 +42,26 @@
                         <action id="-9" name="Destroy" sid="216874737537720" type="Milho" />
                         <action id="-9" name="Destroy" sid="892999374616170" type="Tomate" />
                         <action id="-9" name="Destroy" sid="803781077830088" type="AreaPlanta" />
+                        <action id="-12" name="Set group active" sid="642149665050996" type="System">
+                            <param id="0" name="Group name">&quot;Migracao&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
                     </actions>
                 </event-block>
-                <event-block sid="367609290417477">
+                <event-block sid="905422416440940">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="657100142722646" type="System">
-                            <param id="0" name="Interval (seconds)">15</param>
+                        <condition id="-14" name="Compare variable" sid="207621704942987" type="System">
+                            <param id="0" name="Variable">plantasColhidas</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="295891771579916" type="System">
-                            <param id="0" name="Variable">SelecaoPraga</param>
-                            <param id="1" name="Value">floor(random(4))</param>
-                        </action>
-                        <action id="0" name="Set text" sid="941516745653063" type="TextoJogador">
-                            <param id="0" name="Text">&quot;Jogador: &quot;&amp;playerName</param>
+                        <action id="-12" name="Set group active" sid="803039283617360" type="System">
+                            <param id="0" name="Group name">&quot;Migracao&quot;</param>
+                            <param id="1" name="State">1</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="117212391320278">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="638302656516513" type="System">
-                                    <param id="0" name="Variable">SelecaoPraga</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="651026606240892" type="System">
-                                    <param id="0" name="Object to create">Lagarta</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">random(37.5,634.5)</param>
-                                    <param id="3" name="Y">random(28,385)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="818309895038318">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="361294476130152" type="System">
-                                    <param id="0" name="Variable">SelecaoPraga</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="894902302128355" type="System">
-                                    <param id="0" name="Object to create">Cigarrinha</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">random(37.5,634.5)</param>
-                                    <param id="3" name="Y">random(28,385)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="959280085397643">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="585377109518707" type="System">
-                                    <param id="0" name="Variable">SelecaoPraga</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="802492400885564" type="System">
-                                    <param id="0" name="Object to create">Grilo</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">random(37.5,634.5)</param>
-                                    <param id="3" name="Y">random(28,385)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="449100376465689">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="571710440266607" type="System">
-                                    <param id="0" name="Variable">SelecaoPraga</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="680370491307670" type="System">
-                                    <param id="0" name="Object to create">Pulgao</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">random(37.5,634.5)</param>
-                                    <param id="3" name="Y">random(28,385)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="765335287539179">
                     <conditions>
@@ -351,7 +289,6 @@
                 </event-block>
                 <event-block sid="923801935345634">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="706794891842972" type="System" />
                         <condition id="-14" name="Compare variable" sid="434657150657179" type="System">
                             <param id="0" name="Variable">Pontuacao</param>
                             <param id="1" name="Comparison">2</param>
@@ -428,6 +365,10 @@
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="676726054696615" type="System">
+                                            <param id="0" name="Variable">plantasColhidas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="956708338155185">
@@ -455,6 +396,10 @@
                                         </action>
                                         <action id="-11" name="Subtract from" sid="409047826771530" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="756973610632227" type="System">
+                                            <param id="0" name="Variable">plantasColhidas</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
@@ -486,6 +431,10 @@
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="390424573409927" type="System">
+                                            <param id="0" name="Variable">plantasColhidas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="814430986049215">
@@ -513,6 +462,10 @@
                                         </action>
                                         <action id="-11" name="Subtract from" sid="149508969577300" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="448574733096405" type="System">
+                                            <param id="0" name="Variable">plantasColhidas</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
@@ -632,383 +585,495 @@
                     <sub-events>
                         <event-block sid="346411198742877">
                             <conditions>
-                                <condition id="3" name="On touched object" sid="266884058130426" type="Touch">
+                                <condition id="17" name="On tap object" sid="266884058130426" type="Touch">
                                     <param id="0" name="Object">botaoGrama</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="964791749219835" type="botaoGrama">
-                                    <param id="0" name="Object">botaoGrama</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
+                                <action id="-16" name="Set opacity" sid="923781198204125" type="botaoGrama">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="477299885870556" type="System">
+                                    <param id="0" name="Variable">compraGrama</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="115290272855648">
+                        <event-block sid="108880762344060">
                             <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="982063707601286" type="botaoGrama" />
+                                <condition id="-14" name="Compare variable" sid="523788651725178" type="System">
+                                    <param id="0" name="Variable">compraGrama</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="198256578655234" type="botaoGrama" />
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="946817118481153">
+                                <event-block sid="937512941253864">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="394951067568588" type="botaoGrama">
+                                        <condition id="3" name="On touched object" sid="686315275773063" type="Touch">
                                             <param id="0" name="Object">AreaPlanta</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="934371119311136" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
-                                <event-block sid="781359592086805">
+                                <event-block sid="984635486053191">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="840943851808392" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="938037268522248" type="botaoGrama">
-                                            <param id="0" name="Object">solido</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="649781865165713">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="975596093823727" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="595739565961325" type="botaoGrama">
+                                        <condition id="3" name="On touched object" sid="716911712996865" type="Touch">
                                             <param id="0" name="Object">weave</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="540218888398524" type="System">
+                                        <condition id="-14" name="Compare variable" sid="935131992676294" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="943914264094976" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">botaoGrama.ValorCompra</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="432966628273530" type="System">
+                                        <action id="-10" name="Add to" sid="938710065448217" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="665459408215299" type="System">
+                                        <action id="-10" name="Add to" sid="355127326545835" type="System">
+                                            <param id="0" name="Variable">plantasPlantadas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="414776375491612" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoGrama.ValorCompra</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="267437815559055" type="botaoGrama">
-                                            <param id="0" name="Object">plantaEstagio1</param>
+                                        <action id="-3" name="Create object" sid="422269317902407" type="System">
+                                            <param id="0" name="Object to create">plantaEstagio1</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="345757258485184" type="botaoGrama">
-                                            <param id="0" name="Object">AreaPlanta</param>
+                                        <action id="-3" name="Create object" sid="690969813774993" type="System">
+                                            <param id="0" name="Object to create">AreaPlanta</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="991308622092026" type="System">
+                                        <action id="-16" name="Wait" sid="521548285373217" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="558541386473982" type="plantaEstagio1" />
-                                        <action id="0" name="Spawn another object" sid="739949325423806" type="plantaEstagio1">
+                                        <action id="-9" name="Destroy" sid="607149930086077" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="751499781760925" type="plantaEstagio1">
                                             <param id="0" name="Object">plantaEstagio2</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="997034522145382" type="System">
+                                        <action id="-16" name="Wait" sid="366716783865211" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="664279849460062" type="plantaEstagio2" />
-                                        <action id="0" name="Spawn another object" sid="766354210688758" type="plantaEstagio2">
+                                        <action id="-9" name="Destroy" sid="436305608435729" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="229497675137940" type="plantaEstagio2">
                                             <param id="0" name="Object">Grama</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="893577383190948" type="AreaPlanta">
+                                        <action id="-10" name="Set value" sid="330269637433368" type="AreaPlanta">
                                             <param id="0" name="Instance variable">IdPlanta</param>
                                             <param id="1" name="Value">Grama.UID</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="861450387738691">
-                            <conditions>
-                                <condition id="3" name="On touched object" sid="359869188776870" type="Touch">
-                                    <param id="0" name="Object">botaoTomate</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="347289906070062" type="botaoTomate">
-                                    <param id="0" name="Object">botaoTomate</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="569712307147508">
-                            <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="742367241867359" type="botaoTomate" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="641052852578994" type="botaoTomate" />
-                            </actions>
-                            <sub-events>
-                                <event-block sid="324527998209779">
+                                <event-block sid="662464836674559">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="695051040667866" type="botaoTomate">
-                                            <param id="0" name="Object">AreaPlanta</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="539078107073944">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="673652161699138" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="484945013758867" type="botaoTomate">
-                                            <param id="0" name="Object">solido</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="906569049379207">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="936775154404171" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="444784471844413" type="botaoTomate">
-                                            <param id="0" name="Object">weave</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="304079153041421" type="System">
-                                            <param id="0" name="Variable">Pontuacao</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">botaoTomate.ValorCompra</param>
-                                        </condition>
+                                        <condition id="1" name="On any touch end" sid="628848730096201" type="Touch" />
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="600071166007708" type="System">
-                                            <param id="0" name="Variable">PlantasEmJogo</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="-16" name="Set opacity" sid="178765504346400" type="botaoGrama">
+                                            <param id="0" name="Opacity">100</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="872721591583786" type="System">
-                                            <param id="0" name="Variable">Pontuacao</param>
-                                            <param id="1" name="Value">botaoTomate.ValorCompra</param>
+                                        <action id="-9" name="Set value" sid="494076359721485" type="System">
+                                            <param id="0" name="Variable">compraGrama</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="129710708456597" type="botaoTomate">
-                                            <param id="0" name="Object">plantaEstagio1</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="770039981163969" type="botaoTomate">
-                                            <param id="0" name="Object">AreaPlanta</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="196095836099206" type="System">
-                                            <param id="0" name="Seconds">3</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="976181106032508" type="plantaEstagio1" />
-                                        <action id="0" name="Spawn another object" sid="228584807038401" type="plantaEstagio1">
-                                            <param id="0" name="Object">plantaEstagio2</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="991752698255889" type="System">
-                                            <param id="0" name="Seconds">3</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="764173294005995" type="plantaEstagio2" />
-                                        <action id="0" name="Spawn another object" sid="596156703445768" type="plantaEstagio2">
-                                            <param id="0" name="Object">Tomate</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="982162487533019" type="AreaPlanta">
-                                            <param id="0" name="Instance variable">IdPlanta</param>
-                                            <param id="1" name="Value">Tomate.UID</param>
+                                        <action id="-9" name="Set value" sid="400777304952421" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="866370174863163">
+                        <event-block sid="967709250721611">
                             <conditions>
-                                <condition id="3" name="On touched object" sid="719234722390126" type="Touch">
+                                <condition id="17" name="On tap object" sid="865448430242012" type="Touch">
+                                    <param id="0" name="Object">botaoTomate</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="508934201983548" type="botaoTomate">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="658027097602968" type="System">
+                                    <param id="0" name="Variable">compraTomate</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="108531558811584">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="841396501559448" type="System">
+                                    <param id="0" name="Variable">compraTomate</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="113657428646457">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="717400049529441" type="Touch">
+                                            <param id="0" name="Object">AreaPlanta</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="307039851794880" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="929667475100653">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="727419658379355" type="Touch">
+                                            <param id="0" name="Object">weave</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="128688483444372" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">botaoTomate.ValorCompra</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="531985940264281" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="247509519461897" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="594873264212973" type="System">
+                                            <param id="0" name="Variable">plantasPlantadas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="477923413870901" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">botaoTomate.ValorCompra</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="320536183223903" type="System">
+                                            <param id="0" name="Object to create">plantaEstagio1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="807704221845468" type="System">
+                                            <param id="0" name="Object to create">AreaPlanta</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="555518793320981" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="264311883684372" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="383579332556210" type="plantaEstagio1">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="645559565881720" type="System">
+                                            <param id="0" name="Seconds">3</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="672671616953899" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="302684207259814" type="plantaEstagio2">
+                                            <param id="0" name="Object">Tomate</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="843520008533069" type="AreaPlanta">
+                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                            <param id="1" name="Value">Tomate.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="106515432694225">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="274716972288053" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="767668092498904" type="botaoTomate">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="709060605047144" type="System">
+                                            <param id="0" name="Variable">compraTomate</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="768737938106197" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="798163679838634">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="785470359851842" type="Touch">
                                     <param id="0" name="Object">botaoMilho</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="107598309793228" type="botaoMilho">
-                                    <param id="0" name="Object">botaoMilho</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
+                                <action id="-16" name="Set opacity" sid="855624671672522" type="botaoMilho">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="170788501191738" type="System">
+                                    <param id="0" name="Variable">compraMilho</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="674350969732258">
+                        <event-block sid="736628000830690">
                             <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="540160358383861" type="botaoMilho" />
+                                <condition id="-14" name="Compare variable" sid="204622504218716" type="System">
+                                    <param id="0" name="Variable">compraMilho</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="870159300847468" type="botaoMilho" />
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="230709072929721">
+                                <event-block sid="458110471890218">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="767904633241121" type="botaoMilho">
+                                        <condition id="3" name="On touched object" sid="754158613128593" type="Touch">
                                             <param id="0" name="Object">AreaPlanta</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="292116705698065" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
-                                <event-block sid="770710223220076">
+                                <event-block sid="101213893242415">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="753235821498894" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="347223162077770" type="botaoMilho">
-                                            <param id="0" name="Object">solido</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="313176012914429">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="434963717442609" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="528878476325105" type="botaoMilho">
+                                        <condition id="3" name="On touched object" sid="958316829907050" type="Touch">
                                             <param id="0" name="Object">weave</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="768645653871603" type="System">
+                                        <condition id="-14" name="Compare variable" sid="455746510378337" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="491290315123598" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">botaoMilho.ValorCompra</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="974988377197829" type="System">
+                                        <action id="-10" name="Add to" sid="464730551106063" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="174567305399455" type="System">
+                                        <action id="-10" name="Add to" sid="558690351012712" type="System">
+                                            <param id="0" name="Variable">plantasPlantadas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="414034598695053" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoMilho.ValorCompra</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="309816988558317" type="botaoMilho">
-                                            <param id="0" name="Object">plantaEstagio1</param>
+                                        <action id="-3" name="Create object" sid="390873748061731" type="System">
+                                            <param id="0" name="Object to create">plantaEstagio1</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="129731561033341" type="botaoMilho">
-                                            <param id="0" name="Object">AreaPlanta</param>
+                                        <action id="-3" name="Create object" sid="909508645830819" type="System">
+                                            <param id="0" name="Object to create">AreaPlanta</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="818198114114815" type="System">
+                                        <action id="-16" name="Wait" sid="784169362846985" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="936944869067914" type="plantaEstagio1" />
-                                        <action id="0" name="Spawn another object" sid="753311626994036" type="plantaEstagio1">
+                                        <action id="-9" name="Destroy" sid="380796079071915" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="548655987989412" type="plantaEstagio1">
                                             <param id="0" name="Object">plantaEstagio2</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="319535885939212" type="System">
+                                        <action id="-16" name="Wait" sid="177653112024631" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="276352085567003" type="plantaEstagio2" />
-                                        <action id="0" name="Spawn another object" sid="754198801938209" type="plantaEstagio2">
+                                        <action id="-9" name="Destroy" sid="858964409897696" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="655546036335068" type="plantaEstagio2">
                                             <param id="0" name="Object">Milho</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="145452367929473" type="AreaPlanta">
+                                        <action id="-10" name="Set value" sid="824037432149492" type="AreaPlanta">
                                             <param id="0" name="Instance variable">IdPlanta</param>
                                             <param id="1" name="Value">Milho.UID</param>
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="949287843358252">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="290986129270039" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="476386430187472" type="botaoMilho">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="668750054265002" type="System">
+                                            <param id="0" name="Variable">compraMilho</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="316811111694531" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="268976794152151">
+                        <event-block sid="439901072513727">
                             <conditions>
-                                <condition id="3" name="On touched object" sid="764038425346426" type="Touch">
+                                <condition id="17" name="On tap object" sid="748959932497483" type="Touch">
                                     <param id="0" name="Object">botaoCouve</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="798274867319709" type="botaoCouve">
-                                    <param id="0" name="Object">botaoCouve</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
+                                <action id="-16" name="Set opacity" sid="413706582775817" type="botaoCouve">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="148376774601179" type="System">
+                                    <param id="0" name="Variable">compraCouve</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="703262976541569">
+                        <event-block sid="684559892945285">
                             <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="497594329186356" type="botaoCouve" />
+                                <condition id="-14" name="Compare variable" sid="418163061027544" type="System">
+                                    <param id="0" name="Variable">compraCouve</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="668581114710418" type="botaoCouve" />
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="328417444027655">
+                                <event-block sid="103393486527555">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="647999007774645" type="botaoCouve">
+                                        <condition id="3" name="On touched object" sid="669362065754876" type="Touch">
                                             <param id="0" name="Object">AreaPlanta</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="672930763253523" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
-                                <event-block sid="587563966671427">
+                                <event-block sid="560221035334903">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="652231692763536" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="506310759199987" type="botaoCouve">
-                                            <param id="0" name="Object">solido</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="853539093405893">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="490626898481010" type="System" />
-                                        <condition id="1" name="Is overlapping another object" sid="720141141140051" type="botaoCouve">
+                                        <condition id="3" name="On touched object" sid="803133159107033" type="Touch">
                                             <param id="0" name="Object">weave</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="739481855874029" type="System">
+                                        <condition id="-14" name="Compare variable" sid="926630730143813" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="256233261527714" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">botaoCouve.ValorCompra</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Add to" sid="799211665773819" type="System">
+                                        <action id="-10" name="Add to" sid="715666102825791" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="573538380475503" type="System">
+                                        <action id="-10" name="Add to" sid="881934955169974" type="System">
+                                            <param id="0" name="Variable">plantasPlantadas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="102560784591033" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoCouve.ValorCompra</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="541285781530313" type="botaoCouve">
-                                            <param id="0" name="Object">plantaEstagio1</param>
+                                        <action id="-3" name="Create object" sid="261009948671521" type="System">
+                                            <param id="0" name="Object to create">plantaEstagio1</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="671479369851473" type="botaoCouve">
-                                            <param id="0" name="Object">AreaPlanta</param>
+                                        <action id="-3" name="Create object" sid="936586339637321" type="System">
+                                            <param id="0" name="Object to create">AreaPlanta</param>
                                             <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="885470697266405" type="System">
+                                        <action id="-16" name="Wait" sid="811155145251999" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="712043359299202" type="plantaEstagio1" />
-                                        <action id="0" name="Spawn another object" sid="926123267361859" type="plantaEstagio1">
+                                        <action id="-9" name="Destroy" sid="324534638624890" type="plantaEstagio1" />
+                                        <action id="0" name="Spawn another object" sid="101878563296727" type="plantaEstagio1">
                                             <param id="0" name="Object">plantaEstagio2</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="295524180677512" type="System">
+                                        <action id="-16" name="Wait" sid="578524383043709" type="System">
                                             <param id="0" name="Seconds">3</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="967136500620529" type="plantaEstagio2" />
-                                        <action id="0" name="Spawn another object" sid="629103239487992" type="plantaEstagio2">
+                                        <action id="-9" name="Destroy" sid="589351154808769" type="plantaEstagio2" />
+                                        <action id="0" name="Spawn another object" sid="686262950370987" type="plantaEstagio2">
                                             <param id="0" name="Object">Couve</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="190807942687900" type="AreaPlanta">
+                                        <action id="-10" name="Set value" sid="262107822096437" type="AreaPlanta">
                                             <param id="0" name="Instance variable">IdPlanta</param>
                                             <param id="1" name="Value">Couve.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="220453792472367">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="233792562301043" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="419903474441244" type="botaoCouve">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="238747573211720" type="System">
+                                            <param id="0" name="Variable">compraCouve</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="329671448846523" type="System">
+                                            <param id="0" name="Variable">sobrepondoPlanta</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1018,48 +1083,67 @@
                 </event-group>
                 <event-group description="" sid="355153867979184" title="PredadoresLoja">
                     <sub-events>
-                        <event-block sid="336770052151640">
+                        <event-block sid="212462309367974">
                             <conditions>
-                                <condition id="3" name="On touched object" sid="916219501117044" type="Touch">
+                                <condition id="17" name="On tap object" sid="678167640003364" type="Touch">
                                     <param id="0" name="Object">botaoJoaninha</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="790633882608788" type="botaoJoaninha">
-                                    <param id="0" name="Object">botaoJoaninha</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
+                                <action id="-16" name="Set opacity" sid="794096277173703" type="botaoJoaninha">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="884880529325676" type="System">
+                                    <param id="0" name="Variable">compraJoaninha</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="591940904746170">
+                        <event-block sid="938522847108869">
                             <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="943338154781706" type="botaoJoaninha" />
+                                <condition id="-14" name="Compare variable" sid="584061210870187" type="System">
+                                    <param id="0" name="Variable">compraJoaninha</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="629062889618260" type="botaoJoaninha" />
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="685948501906062">
+                                <event-block sid="819954333581290">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="535230701865635" type="botaoJoaninha">
+                                        <condition id="3" name="On touched object" sid="342779617934262" type="Touch">
                                             <param id="0" name="Object">weave</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="173253741854794" type="System">
+                                        <condition id="-14" name="Compare variable" sid="647873912794646" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">botaoJoaninha.ValorCompra</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="856806712437743" type="botaoJoaninha">
-                                            <param id="0" name="Object">Joaninha</param>
+                                        <action id="-3" name="Create object" sid="898973739030772" type="System">
+                                            <param id="0" name="Object to create">Joaninha</param>
                                             <param id="1" name="Layer">2</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="995750786291690" type="System">
+                                        <action id="-11" name="Subtract from" sid="289422782056520" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoJoaninha.ValorCompra</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="680763485452408">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="242940068855367" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="686160910099333" type="botaoJoaninha">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="338567741391464" type="System">
+                                            <param id="0" name="Variable">compraJoaninha</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1067,46 +1151,65 @@
                         </event-block>
                         <event-block sid="825731532178152">
                             <conditions>
-                                <condition id="3" name="On touched object" sid="725307146148987" type="Touch">
+                                <condition id="17" name="On tap object" sid="725307146148987" type="Touch">
                                     <param id="0" name="Object">botaoBesouro</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="851287513182096" type="botaoBesouro">
-                                    <param id="0" name="Object">botaoBesouro</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="Image point">0</param>
+                                <action id="-16" name="Set opacity" sid="782293564008138" type="botaoBesouro">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="505534917900424" type="System">
+                                    <param id="0" name="Variable">compraBesouro</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="849175017430297">
+                        <event-block sid="476994097442231">
                             <conditions>
-                                <condition behavior="DragDrop" id="2" name="On drop" sid="404034893104934" type="botaoBesouro" />
+                                <condition id="-14" name="Compare variable" sid="716377138904348" type="System">
+                                    <param id="0" name="Variable">compraBesouro</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="691387759142473" type="botaoBesouro" />
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="109042772739660">
+                                <event-block sid="273552331852885">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="957365581672455" type="botaoBesouro">
+                                        <condition id="3" name="On touched object" sid="259699863847146" type="Touch">
                                             <param id="0" name="Object">weave</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="855426020484790" type="System">
+                                        <condition id="-14" name="Compare variable" sid="259616453913502" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">botaoBesouro.ValorCompra</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="658133519401591" type="botaoBesouro">
-                                            <param id="0" name="Object">Besouro</param>
+                                        <action id="-3" name="Create object" sid="824777525028947" type="System">
+                                            <param id="0" name="Object to create">Besouro</param>
                                             <param id="1" name="Layer">2</param>
-                                            <param id="2" name="Image point">0</param>
+                                            <param id="2" name="X">Touch.X</param>
+                                            <param id="3" name="Y">Touch.Y</param>
                                         </action>
-                                        <action id="-11" name="Subtract from" sid="919515632315465" type="System">
+                                        <action id="-11" name="Subtract from" sid="547014003043024" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">botaoBesouro.ValorCompra</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="417579480897740">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="180018602151298" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="985741344858290" type="botaoBesouro">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="320333307673348" type="System">
+                                            <param id="0" name="Variable">compraBesouro</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1114,88 +1217,97 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="804727930664230">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="268339133225229" type="Touch">
-                            <param id="0" name="Object">botaoAlterar</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="464389156795180">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="616086794443764" type="System">
-                                    <param id="0" name="Variable">option</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="796902172549764" type="botaoBesouro" />
-                                <action id="-9" name="Destroy" sid="857786611707896" type="botaoJoaninha" />
-                                <action id="-3" name="Create object" sid="613738435686553" type="System">
-                                    <param id="0" name="Object to create">botaoGrama</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">98</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="258853417903997" type="System">
-                                    <param id="0" name="Object to create">botaoCouve</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">163</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="875829326242995" type="System">
-                                    <param id="0" name="Object to create">botaoMilho</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">228</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="433685366165409" type="System">
-                                    <param id="0" name="Object to create">botaoTomate</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">293</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="701803960698856" type="System">
-                                    <param id="0" name="Variable">option</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="145436342025471">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="421204543137435" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="766860698643014" type="botaoGrama" />
-                                <action id="-9" name="Destroy" sid="784578431723010" type="botaoCouve" />
-                                <action id="-9" name="Destroy" sid="745197879952474" type="botaoMilho" />
-                                <action id="-9" name="Destroy" sid="745583543383086" type="botaoTomate" />
-                                <action id="-3" name="Create object" sid="439516909525274" type="System">
-                                    <param id="0" name="Object to create">botaoBesouro</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">98</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="181047249973574" type="System">
-                                    <param id="0" name="Object to create">botaoJoaninha</param>
-                                    <param id="1" name="Layer">3</param>
-                                    <param id="2" name="X">819</param>
-                                    <param id="3" name="Y">163</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="161605061692756" type="System">
-                                    <param id="0" name="Variable">option</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="260784922299131" title="Regras do Jogo">
             <sub-events>
+                <event-group description="" sid="213521277976136" title="Migracao">
+                    <sub-events>
+                        <event-block sid="367609290417477">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="657100142722646" type="System">
+                                    <param id="0" name="Interval (seconds)">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="295891771579916" type="System">
+                                    <param id="0" name="Variable">SelecaoPraga</param>
+                                    <param id="1" name="Value">floor(random(4))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="117212391320278">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="638302656516513" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="651026606240892" type="System">
+                                            <param id="0" name="Object to create">Lagarta</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">random(37.5,634.5)</param>
+                                            <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="818309895038318">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="361294476130152" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="894902302128355" type="System">
+                                            <param id="0" name="Object to create">Cigarrinha</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">random(37.5,634.5)</param>
+                                            <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="959280085397643">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="585377109518707" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="802492400885564" type="System">
+                                            <param id="0" name="Object to create">Grilo</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">random(37.5,634.5)</param>
+                                            <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="449100376465689">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="571710440266607" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="680370491307670" type="System">
+                                            <param id="0" name="Object to create">Pulgao</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">random(37.5,634.5)</param>
+                                            <param id="3" name="Y">random(28,385)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="888220414248904" title="Energia">
                     <sub-events>
                         <event-block sid="173836379019578">
@@ -1220,6 +1332,11 @@
                                         <action behavior="Bullet" id="0" name="Set speed" sid="131587301875340" type="Lagarta">
                                             <param id="0" name="Speed">Lagarta.Bullet.Speed-1</param>
                                         </action>
+                                        <action id="-28" name="Set effect parameter" sid="200137534884137" type="Lagarta">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Lagarta.Energia</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="971158396815170">
@@ -1235,6 +1352,11 @@
                                         </action>
                                         <action behavior="Bullet" id="0" name="Set speed" sid="372341370608698" type="Cigarrinha">
                                             <param id="0" name="Speed">Cigarrinha.Bullet.Speed-1</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="463841721752559" type="Cigarrinha">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Cigarrinha.Energia</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1252,6 +1374,11 @@
                                         <action behavior="Bullet" id="0" name="Set speed" sid="924612282674465" type="Grilo">
                                             <param id="0" name="Speed">Grilo.Bullet.Speed-1</param>
                                         </action>
+                                        <action id="-28" name="Set effect parameter" sid="122378109756834" type="Grilo">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Grilo.Energia</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="883279805647669">
@@ -1267,6 +1394,11 @@
                                         </action>
                                         <action behavior="Bullet" id="0" name="Set speed" sid="198560054264367" type="Pulgao">
                                             <param id="0" name="Speed">Pulgao.Bullet.Speed-1</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="861891648419549" type="Pulgao">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Pulgao.Energia</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1284,6 +1416,11 @@
                                         <action behavior="Bullet" id="0" name="Set speed" sid="460389600252686" type="Besouro">
                                             <param id="0" name="Speed">Besouro.Bullet.Speed-1</param>
                                         </action>
+                                        <action id="-28" name="Set effect parameter" sid="284838408585486" type="Besouro">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Besouro.Energia</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="472493672509853">
@@ -1299,6 +1436,11 @@
                                         </action>
                                         <action behavior="Bullet" id="0" name="Set speed" sid="659112680120885" type="Joaninha">
                                             <param id="0" name="Speed">Joaninha.Bullet.Speed-1</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="334517563410278" type="Joaninha">
+                                            <param id="0" name="Effect">&quot;Grayscale&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100-Joaninha.Energia</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1403,7 +1545,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="884138810635125" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="525268462109471" type="Tomate" />
                                                 <action id="-11" name="Add to" sid="394352880595566" type="Pulgao">
@@ -1474,7 +1616,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="681998850837567" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="231822450442949" type="Grama" />
                                                 <action id="-11" name="Add to" sid="213991161324058" type="Grilo">
@@ -1541,7 +1683,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="463892835572268" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="326965126735307" type="Couve" />
                                                 <action id="-11" name="Add to" sid="956743722133375" type="Grilo">
@@ -1608,7 +1750,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="521984599800612" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="512063023859593" type="Milho" />
                                                 <action id="-11" name="Add to" sid="471330055977910" type="Grilo">
@@ -1675,7 +1817,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="277210807994103" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="671625599115731" type="Tomate" />
                                                 <action id="-11" name="Add to" sid="987041501992987" type="Grilo">
@@ -1746,7 +1888,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="687663669277895" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="141905213920014" type="Couve" />
                                                 <action id="-11" name="Add to" sid="586060573838017" type="Cigarrinha">
@@ -1813,7 +1955,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="417821871708343" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="914340342270550" type="Grama" />
                                                 <action id="-11" name="Add to" sid="754759000477121" type="Cigarrinha">
@@ -1884,7 +2026,7 @@
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="629138064127427" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
+                                                    <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="669284141284975" type="Couve" />
                                                 <action id="-11" name="Add to" sid="845690358781830" type="Lagarta">
@@ -1962,7 +2104,7 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block any="1" sid="240050552822624">
+                                                <event-block sid="240050552822624">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="715703429438701" type="Besouro">
                                                             <param id="0" name="Instance variable">Predacao</param>
@@ -1971,7 +2113,7 @@
                                                         </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="737213748670209" type="Grilo">
                                                             <param id="0" name="Instance variable">Fuga</param>
-                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="1" name="Comparison">3</param>
                                                             <param id="2" name="Value">Grilo.Energia</param>
                                                         </condition>
                                                     </conditions>
@@ -2042,7 +2184,7 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block any="1" sid="189666814125442">
+                                                <event-block sid="189666814125442">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="456134259665199" type="Besouro">
                                                             <param id="0" name="Instance variable">Predacao</param>
@@ -2051,7 +2193,7 @@
                                                         </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="446651085409355" type="Pulgao">
                                                             <param id="0" name="Instance variable">Fuga</param>
-                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="1" name="Comparison">3</param>
                                                             <param id="2" name="Value">Pulgao.Energia</param>
                                                         </condition>
                                                     </conditions>
@@ -2126,7 +2268,7 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block any="1" sid="671709080645287">
+                                                <event-block sid="671709080645287">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="505951975335501" type="Joaninha">
                                                             <param id="0" name="Instance variable">Predacao</param>
@@ -2135,7 +2277,7 @@
                                                         </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="486741467961674" type="Lagarta">
                                                             <param id="0" name="Instance variable">Fuga</param>
-                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="1" name="Comparison">3</param>
                                                             <param id="2" name="Value">Lagarta.Energia</param>
                                                         </condition>
                                                     </conditions>
@@ -2206,7 +2348,7 @@
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block any="1" sid="984724417663188">
+                                                <event-block sid="984724417663188">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="166058562560631" type="Joaninha">
                                                             <param id="0" name="Instance variable">Predacao</param>
@@ -2215,7 +2357,7 @@
                                                         </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="124932100601760" type="Cigarrinha">
                                                             <param id="0" name="Instance variable">Fuga</param>
-                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="1" name="Comparison">3</param>
                                                             <param id="2" name="Value">Cigarrinha.Energia</param>
                                                         </condition>
                                                     </conditions>

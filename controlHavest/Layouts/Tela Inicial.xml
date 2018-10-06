@@ -57,11 +57,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>217</x>
+                        <x>218.565429688</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>420</width>
-                        <height>240</height>
+                        <width>418.434570313</width>
+                        <height>239.105484009</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -88,59 +88,6 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TextoTelaInicial" uid="26">
-                    <properties>
-                        <text>Digite seu nome: </text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-24,700,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>272</x>
-                        <y>248</y>
-                        <z>0</z>
-                        <width>265</width>
-                        <height>54</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="nome" uid="27">
-                    <properties>
-                        <text></text>
-                        <placeholder></placeholder>
-                        <tooltip></tooltip>
-                        <initial-visibility>Visible</initial-visibility>
-                        <enabled>Yes</enabled>
-                        <read-only>No</read-only>
-                        <spell-check>No</spell-check>
-                        <type>Text</type>
-                        <auto-font-size>Yes</auto-font-size>
-                        <id-optional></id-optional>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>272</x>
-                        <y>287</y>
-                        <z>0</z>
-                        <width>301</width>
-                        <height>39</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
                 <instance type="botaoOk" uid="28">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -151,8 +98,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>427</x>
-                        <y>401</y>
+                        <x>428</x>
+                        <y>384</y>
                         <z>0</z>
                         <width>160.324676514</width>
                         <height>40.081169128</height>

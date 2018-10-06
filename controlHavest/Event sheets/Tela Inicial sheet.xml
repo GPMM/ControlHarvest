@@ -10,10 +10,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="754261005552161" type="System">
-                    <param id="0" name="Variable">playerName</param>
-                    <param id="1" name="Value">nome.Text</param>
-                </action>
                 <action id="-2" name="Go to layout" sid="399719331647747" type="System">
                     <param id="0" name="Layout">Tela Jogo</param>
                 </action>

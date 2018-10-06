@@ -19,10 +19,11 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="grayscale">Grayscale</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -91,6 +92,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773175957988842" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Besouro.png">
@@ -125,11 +131,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="414272835712791" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="469681509155507">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269262300457331" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\BesouroLoja.png">
@@ -152,11 +153,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="601387118570552" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="323430877322576">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="788008795968234" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\JoaninhaLoja.png">
@@ -217,11 +213,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="734650860570398" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="275851100983650">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="971118818618183" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\ButtonPlant.png">
@@ -244,11 +235,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="407227919492784" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="360629236398641">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="977067417940282" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\CouveLoja.png">
@@ -274,11 +260,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="297741263374047" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="924768174894374">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799740453853044" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\MilhoLoja.png">
@@ -301,11 +282,6 @@
             <instance-variables>
                 <instance-variable name="ValorCompra" sid="452219672536549" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="DragDrop" sid="721277066330227">
-                    <behavior id="DragnDrop" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="291554367148635" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\TomateLoja.png">
@@ -338,6 +314,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459584376690566" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\joaninha.png">
@@ -480,9 +461,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TextoJogador" sid="950924503360547">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="TiledBackground3" sid="323992364223436">
             <plugin id="TiledBg" />
             <texture original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\fundo.png" />
@@ -532,6 +510,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227149131302205" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Cigarrinha.png">
@@ -565,6 +548,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="323858110190884" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Grilo.png">
@@ -598,6 +586,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601563698203351" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\lagarta.png">
@@ -631,6 +624,11 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="Grayscale">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="637829725198496" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\pulgao.png">
