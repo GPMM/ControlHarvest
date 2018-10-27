@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>control Havest</name>
+    <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.0.0.0</version>
+    <version>1.1.0.1</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -83,21 +83,10 @@
             <instance-variables>
                 <instance-variable name="Energia" sid="334167025968473" type="number" />
                 <instance-variable name="Predacao" sid="938317103126149" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="472970913634623" type="number" />
                 <instance-variable name="EnergiaMaxima" sid="968328974256978" type="number" />
                 <instance-variable name="TempoDeCurva" sid="881066231405747" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="841263402536955" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="410244747294649">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <effects>
-                <effect-type name="Grayscale">
-                    <effect id="grayscale" />
-                </effect-type>
-            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773175957988842" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Besouro.png">
@@ -310,16 +299,6 @@
                 <instance-variable name="TempoDeCurva" sid="902703754387288" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="588646307627154" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="330946155937669">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <effects>
-                <effect-type name="Grayscale">
-                    <effect id="grayscale" />
-                </effect-type>
-            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459584376690566" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\joaninha.png">
@@ -506,16 +485,6 @@
                 <instance-variable name="TempoDeCurva" sid="755275294587511" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="586451027508989" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="862947570824509">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <effects>
-                <effect-type name="Grayscale">
-                    <effect id="grayscale" />
-                </effect-type>
-            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227149131302205" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Cigarrinha.png">
@@ -544,11 +513,6 @@
                 <instance-variable name="TempoDeCurva" sid="799739688434274" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="796946583313242" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="228634405731343">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
             <effects>
                 <effect-type name="Grayscale">
                     <effect id="grayscale" />
@@ -582,16 +546,6 @@
                 <instance-variable name="TempoDeCurva" sid="494359382697090" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="580345440841189" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="806380608000042">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <effects>
-                <effect-type name="Grayscale">
-                    <effect id="grayscale" />
-                </effect-type>
-            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601563698203351" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\lagarta.png">
@@ -620,16 +574,6 @@
                 <instance-variable name="TempoDeCurva" sid="597383533508061" type="number" />
                 <instance-variable name="TempoDeCurvaMax" sid="488374305871754" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="793138580917674">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <effects>
-                <effect-type name="Grayscale">
-                    <effect id="grayscale" />
-                </effect-type>
-            </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="637829725198496" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\pulgao.png">
@@ -744,16 +688,127 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground" sid="141662502708299">
-            <plugin id="TiledBg" />
-            <texture />
-        </object-type>
         <object-type name="telaFundoPopup" sid="640806884469696">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="BrasilFlag" sid="972746197983169">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="968043564376352" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.511628" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\brazil-flag-waving-icon-64.png">
+                        <collision-poly>
+                            <point x="0.078125" y="0.116279" />
+                            <point x="0.5" y="0.0930233" />
+                            <point x="0.921875" y="0.116279" />
+                            <point x="0.921875" y="0.883721" />
+                            <point x="0.5" y="0.906977" />
+                            <point x="0.078125" y="0.883721" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="UsaFlag" sid="836715555714839">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="814265909296367" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.511628" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\united-states-of-america-flag-waving-icon-64.png">
+                        <collision-poly>
+                            <point x="0.125" y="0.186047" />
+                            <point x="0.5" y="0.162791" />
+                            <point x="0.890625" y="0.162791" />
+                            <point x="0.921875" y="0.488372" />
+                            <point x="0.875" y="0.813953" />
+                            <point x="0.5" y="0.837209" />
+                            <point x="0.109375" y="0.837209" />
+                            <point x="0.078125" y="0.488372" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="idiomaSelecao" sid="207331104151782">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="iniciarTexto" sid="847086724179636">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="pontoRepoducao" sid="682349940793277">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="712815684245411" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Inseto" plugin-id="Sprite" sid="815178117630363">
+            <members>
+                <member>Besouro</member>
+                <member>Cigarrinha</member>
+                <member>Grilo</member>
+                <member>Joaninha</member>
+                <member>Lagarta</member>
+                <member>Pulgao</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Energia2" sid="143695799736734" type="number" />
+                <instance-variable name="VelocidadeMax2" sid="378123203188729" type="number" />
+                <instance-variable name="EnergiaMax2" sid="569396499070187" type="number" />
+                <instance-variable name="TempoDeCurva2" sid="702087756487792" type="number" />
+                <instance-variable name="TempoDeCurvaMax2" sid="727229062256064" type="number" />
+                <instance-variable name="Nome" sid="426708037954921" type="string" />
+                <instance-variable name="TempoReproducao" sid="762728080634965" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet2" sid="972012087453345">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Grayscale2">
+                    <effect id="grayscale" />
+                </effect-type>
+            </effects>
+        </family>
+        <family name="Planta" plugin-id="Sprite" sid="495891268923207">
+            <members>
+                <member>Couve</member>
+                <member>Grama</member>
+                <member>Milho</member>
+                <member>Tomate</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Nome" sid="313905935411198" type="string" />
+                <instance-variable name="ValorNutricional2" sid="529036215678101" type="number" />
+                <instance-variable name="ValorDeVenda2" sid="472560062064035" type="number" />
+            </instance-variables>
+        </family>
+        <family name="botaoPlantas" plugin-id="Sprite" sid="851623914142127">
+            <members>
+                <member>botaoCouve</member>
+                <member>botaoGrama</member>
+                <member>botaoMilho</member>
+                <member>botaoTomate</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ValorCompra2" sid="373077022436477" type="number" />
+                <instance-variable name="Nome" sid="409603577633957" type="string" />
+            </instance-variables>
+        </family>
+        <family name="botaoPredadores" plugin-id="Sprite" sid="448883455368340">
+            <members>
+                <member>botaoBesouro</member>
+                <member>botaoJoaninha</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ValorCompra2" sid="405978816627948" type="number" />
+                <instance-variable name="Nome" sid="145037014469578" type="string" />
+            </instance-variables>
+        </family>
+    </families>
     <layout-folder>
         <layout>Tela Inicial.xml</layout>
         <layout>Tela Jogo.xml</layout>

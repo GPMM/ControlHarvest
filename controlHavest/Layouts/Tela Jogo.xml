@@ -240,6 +240,28 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="pontoRepoducao" uid="45">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-46</x>
+                        <y>535</y>
+                        <z>0</z>
+                        <width>30</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -311,6 +333,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Nome>couve</Nome>
+                        <ValorNutricional2>30</ValorNutricional2>
+                        <ValorDeVenda2>230</ValorDeVenda2>
                         <ValorNutricional>30</ValorNutricional>
                         <ValorVenda>230</ValorVenda>
                     </instance-variables>
@@ -337,6 +362,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Nome>grama</Nome>
+                        <ValorNutricional2>20</ValorNutricional2>
+                        <ValorDeVenda2>140</ValorDeVenda2>
                         <ValorNutricional>20</ValorNutricional>
                         <ValorVenda>140</ValorVenda>
                     </instance-variables>
@@ -363,6 +391,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Nome>milho</Nome>
+                        <ValorNutricional2>40</ValorNutricional2>
+                        <ValorDeVenda2>240</ValorDeVenda2>
                         <ValorNutricional>40</ValorNutricional>
                         <ValorVenda>240</ValorVenda>
                     </instance-variables>
@@ -389,6 +420,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Nome>tomate</Nome>
+                        <ValorNutricional2>50</ValorNutricional2>
+                        <ValorDeVenda2>290</ValorDeVenda2>
                         <ValorNutricional>50</ValorNutricional>
                         <ValorVenda>290</ValorVenda>
                     </instance-variables>
@@ -459,15 +493,21 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>200</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.2</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
+                        <Nome>besouro</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
-                        <VelocidadeMaxima>200</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
                         <TempoDeCurva>0.2</TempoDeCurva>
                         <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>200</speed>
                                 <acceleration>0</acceleration>
@@ -479,7 +519,7 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
-                        <effect-instance type="Grayscale">
+                        <effect-instance type="Grayscale2">
                             <parameters>
                                 <intensity>0</intensity>
                             </parameters>
@@ -508,6 +548,13 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>150</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.2</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
+                        <Nome>pulgao</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -517,7 +564,7 @@
                         <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>150</speed>
                                 <acceleration>0</acceleration>
@@ -529,7 +576,7 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
-                        <effect-instance type="Grayscale">
+                        <effect-instance type="Grayscale2">
                             <parameters>
                                 <intensity>0</intensity>
                             </parameters>
@@ -558,6 +605,13 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>150</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.5</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.5</TempoDeCurvaMax2>
+                        <Nome>lagarta</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -567,7 +621,7 @@
                         <TempoDeCurvaMax>0.5</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>150</speed>
                                 <acceleration>0</acceleration>
@@ -579,7 +633,7 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
-                        <effect-instance type="Grayscale">
+                        <effect-instance type="Grayscale2">
                             <parameters>
                                 <intensity>0</intensity>
                             </parameters>
@@ -608,6 +662,13 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>200</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.3</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
+                        <Nome>joaninha</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
                         <VelocidadeMaxima>200</VelocidadeMaxima>
@@ -616,7 +677,7 @@
                         <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>200</speed>
                                 <acceleration>0</acceleration>
@@ -628,7 +689,7 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
-                        <effect-instance type="Grayscale">
+                        <effect-instance type="Grayscale2">
                             <parameters>
                                 <intensity>0</intensity>
                             </parameters>
@@ -657,6 +718,13 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>150</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.3</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
+                        <Nome>grilo</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -666,7 +734,7 @@
                         <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>150</speed>
                                 <acceleration>0</acceleration>
@@ -678,6 +746,11 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
+                        <effect-instance type="Grayscale2">
+                            <parameters>
+                                <intensity>0</intensity>
+                            </parameters>
+                        </effect-instance>
                         <effect-instance type="Grayscale">
                             <parameters>
                                 <intensity>0</intensity>
@@ -707,6 +780,13 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Energia2>100</Energia2>
+                        <VelocidadeMax2>150</VelocidadeMax2>
+                        <EnergiaMax2>100</EnergiaMax2>
+                        <TempoDeCurva2>0.4</TempoDeCurva2>
+                        <TempoDeCurvaMax2>0.4</TempoDeCurvaMax2>
+                        <Nome>cigarrinha</Nome>
+                        <TempoReproducao>5</TempoReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -716,7 +796,7 @@
                         <TempoDeCurvaMax>0.4</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Bullet">
+                        <behavior-instance type="Bullet2">
                             <properties>
                                 <speed>150</speed>
                                 <acceleration>0</acceleration>
@@ -728,7 +808,7 @@
                         </behavior-instance>
                     </behavior-instances>
                     <effect-instances>
-                        <effect-instance type="Grayscale">
+                        <effect-instance type="Grayscale2">
                             <parameters>
                                 <intensity>0</intensity>
                             </parameters>
@@ -776,6 +856,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>150</ValorCompra2>
+                        <Nome>botaoBesouro</Nome>
                         <ValorCompra>150</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -801,6 +883,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>120</ValorCompra2>
+                        <Nome>botaoCouve</Nome>
                         <ValorCompra>120</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -826,6 +910,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>75</ValorCompra2>
+                        <Nome>botaoGrama</Nome>
                         <ValorCompra>75</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -851,6 +937,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>100</ValorCompra2>
+                        <Nome>botaoJoaninha</Nome>
                         <ValorCompra>100</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -876,6 +964,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>120</ValorCompra2>
+                        <Nome>botaoMilho</Nome>
                         <ValorCompra>120</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -901,6 +991,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ValorCompra2>150</ValorCompra2>
+                        <Nome>botaoTomate</Nome>
                         <ValorCompra>150</ValorCompra>
                     </instance-variables>
                     <blend-mode>0</blend-mode>

@@ -3,6 +3,33 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Tela Inicial sheet</name>
     <events>
+        <variable constant="0" name="Idioma" sid="731009031618456" static="0" type="text">br</variable>
+        <event-block sid="106724911472372">
+            <conditions>
+                <condition id="3" name="On touched object" sid="589004564007290" type="Touch">
+                    <param id="0" name="Object">BrasilFlag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="524337943157103" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Value">&quot;br&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="325423666586770">
+            <conditions>
+                <condition id="3" name="On touched object" sid="287491074132403" type="Touch">
+                    <param id="0" name="Object">UsaFlag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="405819296686190" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Value">&quot;us&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="509317281204166">
             <conditions>
                 <condition id="3" name="On touched object" sid="549141767117115" type="Touch">
@@ -12,6 +39,40 @@
             <actions>
                 <action id="-2" name="Go to layout" sid="399719331647747" type="System">
                     <param id="0" name="Layout">Tela Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="560089103141821">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="892044693099081" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;br&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="589686433638233" type="idiomaSelecao">
+                    <param id="0" name="Text">&quot;Idioma&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="470096156046354" type="iniciarTexto">
+                    <param id="0" name="Text">&quot;Iniciar&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="942406132501108">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="280875421029642" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;us&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="332825430277329" type="idiomaSelecao">
+                    <param id="0" name="Text">&quot;Language&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="514931111910510" type="iniciarTexto">
+                    <param id="0" name="Text">&quot;Start&quot;</param>
                 </action>
             </actions>
         </event-block>

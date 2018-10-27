@@ -93,7 +93,7 @@
                 </instance>
                 <instance type="FimDeJogo" uid="40">
                     <properties>
-                        <text>Fim de Jogo! Você ficou sem dinheiro :(</text>
+                        <text></text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial Rounded MT Bold,-48,400,0</font>
                         <color>0,0,0</color>
