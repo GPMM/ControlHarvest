@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.1.0.1</version>
+    <version>1.2.0.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -742,6 +743,27 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="Array" sid="665537130806333">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="TextBox" sid="812567632090417">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="TextoMigracao" sid="573104184432510">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MigracaoFundo" sid="410657569859701">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Flávio\Desktop\TCC\ControlHarvest\código\ControlHarvest\images\BarraLateral.png" />
+        </object-type>
+        <object-type name="AreaColheita" sid="637218489293855">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="152117882639170" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Inseto" plugin-id="Sprite" sid="815178117630363">
@@ -761,6 +783,7 @@
                 <instance-variable name="TempoDeCurvaMax2" sid="727229062256064" type="number" />
                 <instance-variable name="Nome" sid="426708037954921" type="string" />
                 <instance-variable name="TempoReproducao" sid="762728080634965" type="number" />
+                <instance-variable name="taxaDeReproducao" sid="722712951251096" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet2" sid="972012087453345">

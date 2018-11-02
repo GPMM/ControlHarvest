@@ -10,10 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="1">Tela Jogo</layout>
+        <layout order="1">Tela Jogo</layout>
         <layout order="3">Tela Inicial</layout>
         <layout order="5">Game Over</layout>
-        <event-sheet order="2">Tela Jogo sheet</event-sheet>
+        <event-sheet active="1" order="2">Tela Jogo sheet</event-sheet>
         <event-sheet order="4">Tela Inicial sheet</event-sheet>
         <event-sheet order="6">Game Over sheet</event-sheet>
     </open-tabs>
@@ -69,5 +69,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/BrasilFlag/" />
         <folder expanded="1" path="animation-folder/UsaFlag/" />
         <folder expanded="1" path="animation-folder/pontoRepoducao/" />
+        <folder expanded="1" path="animation-folder/AreaColheita/" />
     </folders-expanded>
 </c2uistate>

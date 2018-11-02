@@ -499,7 +499,8 @@
                         <TempoDeCurva2>0.2</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
                         <Nome>besouro</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -554,7 +555,8 @@
                         <TempoDeCurva2>0.2</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
                         <Nome>pulgao</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -611,7 +613,8 @@
                         <TempoDeCurva2>0.5</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.5</TempoDeCurvaMax2>
                         <Nome>lagarta</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -668,7 +671,8 @@
                         <TempoDeCurva2>0.3</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
                         <Nome>joaninha</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
                         <VelocidadeMaxima>200</VelocidadeMaxima>
@@ -724,7 +728,8 @@
                         <TempoDeCurva2>0.3</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
                         <Nome>grilo</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -786,7 +791,8 @@
                         <TempoDeCurva2>0.4</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.4</TempoDeCurvaMax2>
                         <Nome>cigarrinha</Nome>
-                        <TempoReproducao>5</TempoReproducao>
+                        <TempoReproducao>10</TempoReproducao>
+                        <taxaDeReproducao>30</taxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -848,6 +854,26 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="MigracaoFundo" uid="48">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>212.5</x>
+                        <y>185.5</y>
+                        <z>0</z>
+                        <width>429</width>
+                        <height>109</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="botaoBesouro" uid="8">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -1047,16 +1073,65 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3</x>
-                        <y>3</y>
+                        <x>0</x>
+                        <y>0</y>
                         <z>0</z>
-                        <width>223</width>
-                        <height>70</height>
+                        <width>641</width>
+                        <height>63</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TextoMigracao" uid="47">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial Rounded MT Bold,-19,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>220</x>
+                        <y>187.5</y>
+                        <z>0</z>
+                        <width>416</width>
+                        <height>105</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="AreaColheita" uid="49">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>818</x>
+                        <y>449</y>
+                        <z>0</z>
+                        <width>70</width>
+                        <height>60</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>
@@ -1149,6 +1224,14 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="Array" uid="46">
+            <properties>
+                <width>10</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+    </nonworld-instances>
     <effects />
 </c2layout>

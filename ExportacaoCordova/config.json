@@ -1,6 +1,6 @@
 ﻿{
 	"id": "com.cefet.controlHavest",
-	"version": "1.1.0.1",
+	"version": "1.2.0.0",
 	"name": "control Harvest",
 	"description": "Jogo de Controle Biológico",
 	"author": "Flávio Marques",
@@ -28,7 +28,7 @@
 		{ "id": "cordova-plugin-wkwebview-engine", "version": null }
 	],
 	"android": {
-		"min": 21,
+		"min": 23,
 		"target": 26,
 		"plugins": []
 	},
