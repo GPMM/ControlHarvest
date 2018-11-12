@@ -33,7 +33,7 @@
         <event-block sid="509317281204166">
             <conditions>
                 <condition id="3" name="On touched object" sid="549141767117115" type="Touch">
-                    <param id="0" name="Object">botaoOk</param>
+                    <param id="0" name="Object">botaoIniciar</param>
                 </condition>
             </conditions>
             <actions>
@@ -51,8 +51,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="589686433638233" type="idiomaSelecao">
-                    <param id="0" name="Text">&quot;Idioma&quot;</param>
+                <action id="0" name="Set text" sid="589686433638233" type="sobreTexto">
+                    <param id="0" name="Text">&quot;Sobre&quot;</param>
                 </action>
                 <action id="0" name="Set text" sid="470096156046354" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Iniciar&quot;</param>
@@ -68,8 +68,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="332825430277329" type="idiomaSelecao">
-                    <param id="0" name="Text">&quot;Language&quot;</param>
+                <action id="0" name="Set text" sid="332825430277329" type="sobreTexto">
+                    <param id="0" name="Text">&quot;About&quot;</param>
                 </action>
                 <action id="0" name="Set text" sid="514931111910510" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Start&quot;</param>

@@ -69,28 +69,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="botaoOk" uid="39">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>427</x>
-                        <y>399</y>
-                        <z>0</z>
-                        <width>160.324676514</width>
-                        <height>40.081169128</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.519999981</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="FimDeJogo" uid="40">
                     <properties>
                         <text></text>

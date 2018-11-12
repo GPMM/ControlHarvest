@@ -56,7 +56,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Grama/" />
         <folder expanded="1" path="animation-folder/Milho/" />
         <folder expanded="1" path="animation-folder/Tomate/" />
-        <folder expanded="1" path="animation-folder/botaoOk/" />
         <folder expanded="1" path="animation-folder/Cigarrinha/" />
         <folder expanded="1" path="animation-folder/Grilo/" />
         <folder expanded="1" path="animation-folder/Lagarta/" />
@@ -70,5 +69,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/UsaFlag/" />
         <folder expanded="1" path="animation-folder/pontoRepoducao/" />
         <folder expanded="1" path="animation-folder/AreaColheita/" />
+        <folder expanded="1" path="animation-folder/moeda/" />
+        <folder expanded="1" path="animation-folder/botaoSobre/" />
+        <folder expanded="1" path="animation-folder/fundoBandeira/" />
+        <folder expanded="1" path="animation-folder/botaoIniciar/" />
     </folders-expanded>
 </c2uistate>

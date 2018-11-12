@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Tela Jogo sheet</name>
     <events>
+        <variable constant="0" name="gramaProbabilidade" sid="520162327413380" static="0" type="number">0</variable>
+        <variable constant="0" name="couveProbabilidade" sid="295779060179214" static="0" type="number">0</variable>
+        <variable constant="0" name="milhoProbabilidade" sid="392548754585982" static="0" type="number">0</variable>
+        <variable constant="0" name="tomateProbabilidade" sid="303677657368911" static="0" type="number">0</variable>
         <variable constant="0" name="localMigracaoX" sid="919607628624708" static="0" type="number">0</variable>
         <variable constant="0" name="localMigracaoY" sid="589405509239424" static="0" type="number">0</variable>
         <variable constant="0" name="taxaMigracao" sid="976356049012748" static="0" type="number">0</variable>
@@ -55,6 +59,26 @@
                         <action id="-12" name="Set group active" sid="642149665050996" type="System">
                             <param id="0" name="Group name">&quot;Migracao&quot;</param>
                             <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="481476517351268" type="System">
+                            <param id="0" name="Variable">PlantasEmJogo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="332655059759405" type="System">
+                            <param id="0" name="Variable">gramaEmJogo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="281920793664480" type="System">
+                            <param id="0" name="Variable">milhoEmJogo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="481935248163427" type="System">
+                            <param id="0" name="Variable">tomateEmJogo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="634344391319407" type="System">
+                            <param id="0" name="Variable">couveEmJogo</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -186,7 +210,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="387668335001392" type="TextoPontuacao">
-                                    <param id="0" name="Text">&quot;Dinheiro: &quot;&amp;Pontuacao</param>
+                                    <param id="0" name="Text">&quot;&quot;&amp;Pontuacao</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -200,22 +224,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="103894850369387" type="TextoPontuacao">
-                                    <param id="0" name="Text">&quot;Money: &quot;&amp;Pontuacao</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="396919467085169">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="866973647791914" type="Grama" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="256535456135680" type="System">
-                                    <param id="0" name="Variable">gramaEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="787777387075237" type="System">
-                                    <param id="0" name="Variable">PlantasEmJogo</param>
-                                    <param id="1" name="Value">1</param>
+                                    <param id="0" name="Text">&quot;&quot;&amp;Pontuacao</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -230,21 +239,6 @@
                                 </action>
                                 <action id="-11" name="Subtract from" sid="954749973821154" type="System">
                                     <param id="0" name="Variable">PlantasEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="650004017371374">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="198289344735384" type="Couve" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="105878672439993" type="System">
-                                    <param id="0" name="Variable">PlantasEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="872248043695746" type="System">
-                                    <param id="0" name="Variable">couveEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -264,21 +258,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="389637601127227">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="234884199913652" type="Milho" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="865593662867301" type="System">
-                                    <param id="0" name="Variable">PlantasEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="957771588065142" type="System">
-                                    <param id="0" name="Variable">milhoEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="254784203226939">
                             <conditions>
                                 <condition id="-19" name="On destroyed" sid="994386674720451" type="Milho" />
@@ -290,21 +269,6 @@
                                 </action>
                                 <action id="-11" name="Subtract from" sid="658783457240019" type="System">
                                     <param id="0" name="Variable">milhoEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="709465309799277">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="159579103060234" type="Tomate" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="890408336281292" type="System">
-                                    <param id="0" name="Variable">PlantasEmJogo</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="889229528929777" type="System">
-                                    <param id="0" name="Variable">tomateEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -529,7 +493,7 @@
                         </action>
                         <action id="0" name="Spawn another object" sid="553979613722254" type="telaMenu">
                             <param id="0" name="Object">botaoFechar</param>
-                            <param id="1" name="Layer">4</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
                             <param id="2" name="Image point">1</param>
                         </action>
                         <action id="-12" name="Set group active" sid="342287797475449" type="System">
@@ -789,19 +753,23 @@
                                             <param id="0" name="Variable">plantasPlantadas</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="172201089928308" type="System">
+                                            <param id="0" name="Variable">PlantasEmJogo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                         <action id="-11" name="Subtract from" sid="940007925979997" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Value">valorCompra</param>
                                         </action>
                                         <action id="-3" name="Create object" sid="780831549612280" type="System">
                                             <param id="0" name="Object to create">plantaEstagio1</param>
-                                            <param id="1" name="Layer">1</param>
+                                            <param id="1" name="Layer">&quot;plantas&quot;</param>
                                             <param id="2" name="X">Touch.X</param>
                                             <param id="3" name="Y">Touch.Y</param>
                                         </action>
                                         <action id="-3" name="Create object" sid="739209014000059" type="System">
                                             <param id="0" name="Object to create">AreaPlanta</param>
-                                            <param id="1" name="Layer">1</param>
+                                            <param id="1" name="Layer">&quot;plantas&quot;</param>
                                             <param id="2" name="X">Touch.X</param>
                                             <param id="3" name="Y">Touch.Y</param>
                                         </action>
@@ -816,13 +784,17 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="-10" name="Add to" sid="201401565730816" type="System">
+                                                    <param id="0" name="Variable">couveEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="603022195063529" type="System">
                                                     <param id="0" name="Seconds">3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="138107955289173" type="plantaEstagio1" />
                                                 <action id="0" name="Spawn another object" sid="248572562556462" type="plantaEstagio1">
                                                     <param id="0" name="Object">plantaEstagio2</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="109827694555955" type="System">
@@ -831,7 +803,7 @@
                                                 <action id="-9" name="Destroy" sid="548662093634522" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="117091970155978" type="plantaEstagio2">
                                                     <param id="0" name="Object">Couve</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="645823611743917" type="AreaPlanta">
@@ -849,13 +821,17 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="-10" name="Add to" sid="734345254256327" type="System">
+                                                    <param id="0" name="Variable">gramaEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="312673399282516" type="System">
                                                     <param id="0" name="Seconds">3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="391904005178113" type="plantaEstagio1" />
                                                 <action id="0" name="Spawn another object" sid="996611989154223" type="plantaEstagio1">
                                                     <param id="0" name="Object">plantaEstagio2</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="724857680110105" type="System">
@@ -864,7 +840,7 @@
                                                 <action id="-9" name="Destroy" sid="627392791458340" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="881211761379972" type="plantaEstagio2">
                                                     <param id="0" name="Object">Grama</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="753336868174396" type="AreaPlanta">
@@ -882,13 +858,17 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="-10" name="Add to" sid="692143791650379" type="System">
+                                                    <param id="0" name="Variable">milhoEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="622909418416813" type="System">
                                                     <param id="0" name="Seconds">3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="393245071001910" type="plantaEstagio1" />
                                                 <action id="0" name="Spawn another object" sid="481397548891401" type="plantaEstagio1">
                                                     <param id="0" name="Object">plantaEstagio2</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="654255405721220" type="System">
@@ -897,7 +877,7 @@
                                                 <action id="-9" name="Destroy" sid="118573127753750" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="383458548907763" type="plantaEstagio2">
                                                     <param id="0" name="Object">Milho</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="625247293091367" type="AreaPlanta">
@@ -915,13 +895,17 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="-10" name="Add to" sid="268952646538868" type="System">
+                                                    <param id="0" name="Variable">tomateEmJogo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="983519834974587" type="System">
                                                     <param id="0" name="Seconds">3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="231199059016972" type="plantaEstagio1" />
                                                 <action id="0" name="Spawn another object" sid="933680709706606" type="plantaEstagio1">
                                                     <param id="0" name="Object">plantaEstagio2</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="905148974485748" type="System">
@@ -930,7 +914,7 @@
                                                 <action id="-9" name="Destroy" sid="911069150835860" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="816064513114891" type="plantaEstagio2">
                                                     <param id="0" name="Object">Tomate</param>
-                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="790406251777641" type="AreaPlanta">
@@ -1024,7 +1008,7 @@
                                             <actions>
                                                 <action id="-3" name="Create object" sid="238849567301393" type="System">
                                                     <param id="0" name="Object to create">Joaninha</param>
-                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                                     <param id="2" name="X">Touch.X</param>
                                                     <param id="3" name="Y">Touch.Y</param>
                                                 </action>
@@ -1045,7 +1029,7 @@
                                             <actions>
                                                 <action id="-3" name="Create object" sid="303635898122118" type="System">
                                                     <param id="0" name="Object to create">Besouro</param>
-                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                                     <param id="2" name="X">Touch.X</param>
                                                     <param id="3" name="Y">Touch.Y</param>
                                                 </action>
@@ -1083,6 +1067,219 @@
         </event-group>
         <event-group description="" sid="260784922299131" title="Regras do Jogo">
             <sub-events>
+                <event-group description="" sid="975658341887584" title="Perseguicao">
+                    <sub-events>
+                        <event-group description="" sid="243455228151387" title="PragasPersiguicao">
+                            <sub-events>
+                                <event-block sid="200420907956546">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="353254521800417" type="Inseto">
+                                            <param id="0" name="Object">Planta</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="665489562061370" type="Inseto">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="407069872704852">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="741945831911840" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;lagarta&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="879736727448373" type="Planta">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;couve&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="795657729943487" type="Inseto">
+                                                    <param id="0" name="X">Planta.X</param>
+                                                    <param id="1" name="Y">Planta.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="242260264791800">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="366251967166326" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;pulgao&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="585712522471139" type="Planta">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="788736375075181" type="Inseto">
+                                                    <param id="0" name="X">Planta.X</param>
+                                                    <param id="1" name="Y">Planta.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="473376289935526">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="494954178766133" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;cigarrinha&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="183241019006023">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="102856957850332" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="992498327108351" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-22" name="Set angle toward position" sid="679170808184802" type="Inseto">
+                                                            <param id="0" name="X">Planta.X</param>
+                                                            <param id="1" name="Y">Planta.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="158402648150992">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="128049851342536" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;grilo&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="306331838220439">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="476639069151873" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="934695068536150" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="636502551313243" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="744647413996731" type="Planta">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;milho&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-22" name="Set angle toward position" sid="908708377579433" type="Inseto">
+                                                            <param id="0" name="X">Planta.X</param>
+                                                            <param id="1" name="Y">Planta.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="854696150539167" title="PredadoresPerseguicao">
+                            <sub-events>
+                                <event-block sid="369997847843032">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="388564599143717" type="Besouro">
+                                            <param id="0" name="Object">Grilo</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="106249410596064" type="Besouro">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">85</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="317774218708533" type="Besouro">
+                                            <param id="0" name="X">Grilo.X</param>
+                                            <param id="1" name="Y">Grilo.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="235636791715348">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="817849741055519" type="Besouro">
+                                            <param id="0" name="Object">Pulgao</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="801071577686807" type="Besouro">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">85</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="992685471159200" type="Besouro">
+                                            <param id="0" name="X">Pulgao.X</param>
+                                            <param id="1" name="Y">Pulgao.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="756124397455840">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="229396910689350" type="Joaninha">
+                                            <param id="0" name="Object">Lagarta</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="525612885740022" type="Joaninha">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">85</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="474074571339879" type="Joaninha">
+                                            <param id="0" name="X">Lagarta.X</param>
+                                            <param id="1" name="Y">Lagarta.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="739781795366722">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="355099040928928" type="Joaninha">
+                                            <param id="0" name="Object">Cigarrinha</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="901621720474857" type="Joaninha">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">85</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="735252080422752" type="Joaninha">
+                                            <param id="0" name="X">Cigarrinha.X</param>
+                                            <param id="1" name="Y">Cigarrinha.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="213521277976136" title="Migracao">
                     <sub-events>
                         <event-block sid="367609290417477">
@@ -1090,16 +1287,11 @@
                                 <condition id="-6" name="Every X seconds" sid="657100142722646" type="System">
                                     <param id="0" name="Interval (seconds)">30</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="794926830228886" type="System">
-                                    <param id="0" name="Variable">pragasEmJogo</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="295891771579916" type="System">
                                     <param id="0" name="Variable">SelecaoPraga</param>
-                                    <param id="1" name="Value">floor(random(10))</param>
+                                    <param id="1" name="Value">floor(random(1,11))</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="388715111393754" type="System">
                                     <param id="0" name="Variable">taxaMigracao</param>
@@ -1109,11 +1301,6 @@
                                     <param id="0" name="Variable">localMigracaoX</param>
                                     <param id="1" name="Value">choose(25, 754)</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="416219369956449" type="System">
-                                    <param id="0" name="Variable">localMigracaoY</param>
-                                    <param id="1" name="Value">random(25,465)</param>
-                                </action>
-                                <action id="0" name="Clear" sid="394185292518896" type="Array" />
                                 <action id="-15" name="Set visible" sid="356281787316658" type="MigracaoFundo">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
@@ -1135,213 +1322,312 @@
                                 <action id="-15" name="Set visible" sid="618409175081356" type="MigracaoFundo">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="656334665272655" type="System">
+                                    <param id="0" name="Variable">gramaProbabilidade</param>
+                                    <param id="1" name="Value">10*gramaEmJogo/plantasEmJogo</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="389338247204184" type="System">
+                                    <param id="0" name="Variable">couveProbabilidade</param>
+                                    <param id="1" name="Value">10*couveEmJogo/plantasEmJogo</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="570610944108369" type="System">
+                                    <param id="0" name="Variable">milhoProbabilidade</param>
+                                    <param id="1" name="Value">10*milhoEmJogo/plantasEmJogo</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="295116362338654" type="System">
+                                    <param id="0" name="Variable">tomateProbabilidade</param>
+                                    <param id="1" name="Value">10*tomateEmJogo/plantasEmJogo</param>
+                                </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="740282118495269">
+                                <event-block sid="940762369478267">
                                     <conditions>
-                                        <condition id="-10" name="For" sid="240101449559674" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">1</param>
-                                            <param id="2" name="End index">floor(10*couveEmJogo/PlantasEmJogo)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="5" name="Push" sid="684911216887045" type="Array">
-                                            <param id="0" name="Where">0</param>
-                                            <param id="1" name="Value">0</param>
-                                            <param id="2" name="Axis">0</param>
-                                        </action>
-                                        <action id="6" name="Pop" sid="716099917591189" type="Array">
-                                            <param id="0" name="Where">1</param>
-                                            <param id="1" name="Axis">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="203402054999021">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="355187499677474" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">1</param>
-                                            <param id="2" name="End index">floor(10*gramaEmJogo/PlantasEmJogo)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="5" name="Push" sid="392935535252985" type="Array">
-                                            <param id="0" name="Where">0</param>
-                                            <param id="1" name="Value">1</param>
-                                            <param id="2" name="Axis">0</param>
-                                        </action>
-                                        <action id="6" name="Pop" sid="412693582873376" type="Array">
-                                            <param id="0" name="Where">1</param>
-                                            <param id="1" name="Axis">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="847488020263231">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="504033754401108" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">1</param>
-                                            <param id="2" name="End index">floor(10*milhoEmJogo/PlantasEmJogo)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="5" name="Push" sid="288499999243757" type="Array">
-                                            <param id="0" name="Where">0</param>
-                                            <param id="1" name="Value">2</param>
-                                            <param id="2" name="Axis">0</param>
-                                        </action>
-                                        <action id="6" name="Pop" sid="858399808751256" type="Array">
-                                            <param id="0" name="Where">1</param>
-                                            <param id="1" name="Axis">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="407130217274045">
-                                    <conditions>
-                                        <condition id="-10" name="For" sid="178012475289420" type="System">
-                                            <param id="0" name="Name">&quot;&quot;</param>
-                                            <param id="1" name="Start index">1</param>
-                                            <param id="2" name="End index">floor(10*tomateEmJogo/PlantasEmJogo)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="5" name="Push" sid="996401189861200" type="Array">
-                                            <param id="0" name="Where">0</param>
-                                            <param id="1" name="Value">3</param>
-                                            <param id="2" name="Axis">0</param>
-                                        </action>
-                                        <action id="6" name="Pop" sid="965280924952201" type="Array">
-                                            <param id="0" name="Where">1</param>
-                                            <param id="1" name="Axis">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="117212391320278">
-                                    <conditions>
-                                        <condition id="0" name="Compare at X" sid="638302656516513" type="Array">
-                                            <param id="0" name="X">SelecaoPraga</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
+                                        <condition id="-14" name="Compare variable" sid="774163063370425" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">gramaProbabilidade</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="860640900145915">
+                                        <event-block sid="414613868100925">
                                             <conditions>
-                                                <condition id="-10" name="For" sid="180180374583517" type="System">
+                                                <condition id="-10" name="For" sid="826922036705031" type="System">
                                                     <param id="0" name="Name">&quot;&quot;</param>
                                                     <param id="1" name="Start index">1</param>
                                                     <param id="2" name="End index">taxaMigracao</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-3" name="Create object" sid="651026606240892" type="System">
-                                                    <param id="0" name="Object to create">Lagarta</param>
-                                                    <param id="1" name="Layer">2</param>
-                                                    <param id="2" name="X">localMigracaoX</param>
-                                                    <param id="3" name="Y">localMigracaoY</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="611582721174595" type="System">
+                                                <action id="-16" name="Wait" sid="749213592922647" type="System">
                                                     <param id="0" name="Seconds">1</param>
                                                 </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="818309895038318">
-                                    <conditions>
-                                        <condition id="0" name="Compare at X" sid="658991149177853" type="Array">
-                                            <param id="0" name="X">SelecaoPraga</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="608625950328160">
-                                            <conditions>
-                                                <condition id="-10" name="For" sid="825864316150442" type="System">
-                                                    <param id="0" name="Name">&quot;&quot;</param>
-                                                    <param id="1" name="Start index">1</param>
-                                                    <param id="2" name="End index">taxaMigracao</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-3" name="Create object" sid="894902302128355" type="System">
+                                                <action id="-9" name="Set value" sid="356960264464913" type="System">
+                                                    <param id="0" name="Variable">localMigracaoY</param>
+                                                    <param id="1" name="Value">random(25,465)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="991743566693094" type="System">
                                                     <param id="0" name="Object to create">Cigarrinha</param>
-                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                                     <param id="2" name="X">localMigracaoX</param>
                                                     <param id="3" name="Y">localMigracaoY</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="203969908036349" type="System">
-                                                    <param id="0" name="Seconds">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="959280085397643">
+                                <event-block sid="775847570023893">
                                     <conditions>
-                                        <condition id="0" name="Compare at X" sid="646347632823056" type="Array">
-                                            <param id="0" name="X">SelecaoPraga</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
+                                        <condition id="-22" name="Else" sid="420192377562031" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="174285852505539" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">gramaProbabilidade+couveProbabilidade</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="400547184558337">
+                                        <event-block sid="766616983538665">
                                             <conditions>
-                                                <condition id="-10" name="For" sid="992788328067185" type="System">
+                                                <condition id="-10" name="For" sid="316339988507430" type="System">
                                                     <param id="0" name="Name">&quot;&quot;</param>
                                                     <param id="1" name="Start index">1</param>
                                                     <param id="2" name="End index">taxaMigracao</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-3" name="Create object" sid="554603418883323" type="System">
+                                                <action id="-9" name="Set value" sid="984586310510215" type="System">
+                                                    <param id="0" name="Variable">localMigracaoY</param>
+                                                    <param id="1" name="Value">random(25,465)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="563550283771567" type="System">
+                                                    <param id="0" name="Object to create">Lagarta</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
+                                                    <param id="2" name="X">localMigracaoX</param>
+                                                    <param id="3" name="Y">localMigracaoY</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="363613360900860">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="527926521914062" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="791082767540385" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">gramaProbabilidade+couveProbabilidade+milhoProbabilidade</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="569657894051094">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="451332290132992" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">taxaMigracao</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="227229962046963" type="System">
+                                                    <param id="0" name="Variable">localMigracaoY</param>
+                                                    <param id="1" name="Value">random(25,465)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="569415376327978" type="System">
                                                     <param id="0" name="Object to create">Grilo</param>
-                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                                     <param id="2" name="X">localMigracaoX</param>
                                                     <param id="3" name="Y">localMigracaoY</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="637388366263302" type="System">
-                                                    <param id="0" name="Seconds">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="449100376465689">
+                                <event-block sid="224859007282002">
                                     <conditions>
-                                        <condition id="0" name="Compare at X" sid="557253362681936" type="Array">
-                                            <param id="0" name="X">SelecaoPraga</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
+                                        <condition id="-22" name="Else" sid="397908660168620" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="236873250486469" type="System">
+                                            <param id="0" name="Variable">SelecaoPraga</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">gramaProbabilidade+couveProbabilidade+milhoProbabilidade+tomateProbabilidade</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="555280515940619">
+                                        <event-block sid="609894635191832">
                                             <conditions>
-                                                <condition id="-10" name="For" sid="555492321583008" type="System">
+                                                <condition id="-10" name="For" sid="108697787414387" type="System">
                                                     <param id="0" name="Name">&quot;&quot;</param>
                                                     <param id="1" name="Start index">1</param>
                                                     <param id="2" name="End index">taxaMigracao</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-3" name="Create object" sid="680370491307670" type="System">
+                                                <action id="-9" name="Set value" sid="810917853477826" type="System">
+                                                    <param id="0" name="Variable">localMigracaoY</param>
+                                                    <param id="1" name="Value">random(25,465)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="870830727727110" type="System">
                                                     <param id="0" name="Object to create">Pulgao</param>
-                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                                     <param id="2" name="X">localMigracaoX</param>
                                                     <param id="3" name="Y">localMigracaoY</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="376933194018655" type="System">
-                                                    <param id="0" name="Seconds">1</param>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="367233480962458">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="320612382587424" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="migracaoAleatoria" sid="531570355190124" static="0" type="number">0</variable>
+                                        <event-block sid="266413631543843">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="730628476205487" type="System">
+                                                    <param id="0" name="Variable">migracaoAleatoria</param>
+                                                    <param id="1" name="Value">floor(random(4))</param>
                                                 </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="584381650381819">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="491912547545435" type="System">
+                                                    <param id="0" name="Variable">migracaoAleatoria</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="976138313618311">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="309688383519934" type="System">
+                                                            <param id="0" name="Name">&quot;&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">taxaMigracao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="259975073791862" type="System">
+                                                            <param id="0" name="Variable">localMigracaoY</param>
+                                                            <param id="1" name="Value">random(25,465)</param>
+                                                        </action>
+                                                        <action id="-3" name="Create object" sid="272931961852686" type="System">
+                                                            <param id="0" name="Object to create">Pulgao</param>
+                                                            <param id="1" name="Layer">&quot;Insetos&quot;</param>
+                                                            <param id="2" name="X">localMigracaoX</param>
+                                                            <param id="3" name="Y">localMigracaoY</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="685458469317987">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="599717215700898" type="System">
+                                                    <param id="0" name="Variable">migracaoAleatoria</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="809797911963905">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="497306715119453" type="System">
+                                                            <param id="0" name="Name">&quot;&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">taxaMigracao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="379925944586193" type="System">
+                                                            <param id="0" name="Seconds">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="474569170050849" type="System">
+                                                            <param id="0" name="Variable">localMigracaoY</param>
+                                                            <param id="1" name="Value">random(25,465)</param>
+                                                        </action>
+                                                        <action id="-3" name="Create object" sid="206945269370656" type="System">
+                                                            <param id="0" name="Object to create">Cigarrinha</param>
+                                                            <param id="1" name="Layer">&quot;Insetos&quot;</param>
+                                                            <param id="2" name="X">localMigracaoX</param>
+                                                            <param id="3" name="Y">localMigracaoY</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="677718450950428">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="850096610489907" type="System">
+                                                    <param id="0" name="Variable">migracaoAleatoria</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="224423071828523">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="649600502499934" type="System">
+                                                            <param id="0" name="Name">&quot;&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">taxaMigracao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="427997743496816" type="System">
+                                                            <param id="0" name="Variable">localMigracaoY</param>
+                                                            <param id="1" name="Value">random(25,465)</param>
+                                                        </action>
+                                                        <action id="-3" name="Create object" sid="315776225042420" type="System">
+                                                            <param id="0" name="Object to create">Lagarta</param>
+                                                            <param id="1" name="Layer">&quot;Insetos&quot;</param>
+                                                            <param id="2" name="X">localMigracaoX</param>
+                                                            <param id="3" name="Y">localMigracaoY</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="140861655344990">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="798255683897483" type="System">
+                                                    <param id="0" name="Variable">migracaoAleatoria</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="916305144206662">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="612005702630490" type="System">
+                                                            <param id="0" name="Name">&quot;&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">taxaMigracao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="351930599113893" type="System">
+                                                            <param id="0" name="Variable">localMigracaoY</param>
+                                                            <param id="1" name="Value">random(25,465)</param>
+                                                        </action>
+                                                        <action id="-3" name="Create object" sid="388712693638872" type="System">
+                                                            <param id="0" name="Object to create">Grilo</param>
+                                                            <param id="1" name="Layer">&quot;Insetos&quot;</param>
+                                                            <param id="2" name="X">localMigracaoX</param>
+                                                            <param id="3" name="Y">localMigracaoY</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -1505,7 +1791,7 @@
                                                     <param id="0" name="Seconds">0.3</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="921443329130337" type="Planta" />
-                                                <action id="-11" name="Add to" sid="622805440545474" type="Pulgao">
+                                                <action id="-11" name="Add to" sid="622805440545474" type="Inseto">
                                                     <param id="0" name="Instance variable">Energia2</param>
                                                     <param id="1" name="Value">Planta.ValorNutricional2</param>
                                                 </action>
@@ -1513,16 +1799,16 @@
                                             <sub-events>
                                                 <event-block sid="125957721058701">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="639007959655799" type="Pulgao">
+                                                        <condition id="-7" name="Compare instance variable" sid="639007959655799" type="Inseto">
                                                             <param id="0" name="Instance variable">Energia2</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Pulgao.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-10" name="Set value" sid="430550683593979" type="Pulgao">
+                                                        <action id="-10" name="Set value" sid="430550683593979" type="Inseto">
                                                             <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Pulgao.EnergiaMax2</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2054,7 +2340,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="226581801387952" type="pontoRepoducao">
                                     <param id="0" name="Object">Besouro</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>
@@ -2113,7 +2399,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="373049088524122" type="pontoRepoducao">
                                     <param id="0" name="Object">Joaninha</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>
@@ -2172,7 +2458,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="631482808730983" type="pontoRepoducao">
                                     <param id="0" name="Object">Cigarrinha</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>
@@ -2231,7 +2517,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="156504395266439" type="pontoRepoducao">
                                     <param id="0" name="Object">Grilo</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>
@@ -2290,7 +2576,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="144805838146362" type="pontoRepoducao">
                                     <param id="0" name="Object">Lagarta</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>
@@ -2349,7 +2635,7 @@
                                 </action>
                                 <action id="0" name="Spawn another object" sid="737551678665863" type="pontoRepoducao">
                                     <param id="0" name="Object">Pulgao</param>
-                                    <param id="1" name="Layer">2</param>
+                                    <param id="1" name="Layer">&quot;Insetos&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                             </actions>

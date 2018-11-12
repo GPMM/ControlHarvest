@@ -40,11 +40,7 @@
             </sub-events>
         </event-block>
         <event-block sid="312118658115740">
-            <conditions>
-                <condition id="3" name="On touched object" sid="990941695229699" type="Touch">
-                    <param id="0" name="Object">botaoOk</param>
-                </condition>
-            </conditions>
+            <conditions />
             <actions>
                 <action id="-21" name="Reset global variables" sid="990405726085155" type="System" />
                 <action id="-2" name="Go to layout" sid="171101190406511" type="System">

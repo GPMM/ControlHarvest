@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.2.0.0</version>
+    <version>1.3.0.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -10,7 +10,6 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -20,6 +19,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -55,7 +55,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227696163584128" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\weave.jpg" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\Dirt_1024.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -68,7 +68,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="263132790766065" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Barra.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\madeiras2.jpg">
                         <collision-poly>
                             <point x="1" y="0" />
                             <point x="1" y="1" />
@@ -92,13 +92,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773175957988842" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Besouro.png">
                         <collision-poly>
-                            <point x="0.24" y="0.321429" />
-                            <point x="0.733333" y="0.357143" />
-                            <point x="0.84" y="0.5" />
-                            <point x="0.733333" y="0.642857" />
-                            <point x="0.493333" y="0.928571" />
-                            <point x="0.0933333" y="0.875" />
-                            <point x="0.0266667" y="0.5" />
+                            <point x="0.0266667" y="0.285715" />
+                            <point x="0.756666" y="0.285714" />
+                            <point x="0.756666" y="0.933035" />
+                            <point x="0.0366666" y="0.933036" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -188,7 +185,7 @@
                         <collision-poly>
                             <point x="0.48" y="0.48" />
                             <point x="0.5" y="0.26" />
-                            <point x="0.82" y="0.18" />
+                            <point x="0.985" y="0.035" />
                             <point x="0.9" y="0.5" />
                             <point x="0.86" y="0.86" />
                             <point x="0.5" y="1" />
@@ -304,14 +301,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459584376690566" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\joaninha.png">
                         <collision-poly>
-                            <point x="0.106667" y="0.142857" />
-                            <point x="0.493333" y="0" />
-                            <point x="0.893333" y="0.142857" />
-                            <point x="0.96" y="0.5" />
-                            <point x="0.866667" y="0.821429" />
-                            <point x="0.493333" y="0.982143" />
-                            <point x="0.106667" y="0.857143" />
-                            <point x="0" y="0.5" />
+                            <point x="0.00999999" y="0.0133928" />
+                            <point x="0.973333" y="0.0133928" />
+                            <point x="0.976667" y="0.910714" />
+                            <point x="0.00999999" y="0.90625" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -456,25 +449,6 @@
         <object-type name="nome" sid="243902468887094">
             <plugin id="TextBox" />
         </object-type>
-        <object-type name="botaoOk" sid="427595733672050">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911603704936589" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.52" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\ok.png">
-                        <collision-poly>
-                            <point x="0.02" y="0.08" />
-                            <point x="0.5" y="0" />
-                            <point x="0.97" y="0.12" />
-                            <point x="0.99" y="0.48" />
-                            <point x="0.97" y="0.88" />
-                            <point x="0.5" y="0.96" />
-                            <point x="0.03" y="0.88" />
-                            <point x="0" y="0.48" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Cigarrinha" sid="445829387738581">
             <plugin id="Sprite" />
             <instance-variables>
@@ -490,14 +464,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227149131302205" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Cigarrinha.png">
                         <collision-poly>
-                            <point x="0.12" y="0.160714" />
-                            <point x="0.493333" y="0.0892857" />
-                            <point x="0.92" y="0.107143" />
-                            <point x="0.96" y="0.5" />
-                            <point x="0.813333" y="0.75" />
-                            <point x="0.493333" y="0.767857" />
-                            <point x="0.24" y="0.678571" />
-                            <point x="0" y="0.5" />
+                            <point x="0.0166667" y="0.0267855" />
+                            <point x="0.976667" y="0.0267859" />
+                            <point x="0.979999" y="0.857143" />
+                            <point x="0.0266667" y="0.857143" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -523,14 +493,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="323858110190884" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\Grilo.png">
                         <collision-poly>
-                            <point x="0.133333" y="0.178571" />
-                            <point x="0.493333" y="0.339286" />
-                            <point x="0.76" y="0.321429" />
-                            <point x="0.853333" y="0.5" />
-                            <point x="0.8" y="0.732143" />
-                            <point x="0.493333" y="0.928571" />
-                            <point x="0.226667" y="0.696429" />
-                            <point x="0.106667" y="0.5" />
+                            <point x="0.05" y="0.0982139" />
+                            <point x="0.89" y="0.0982147" />
+                            <point x="0.89" y="0.964286" />
+                            <point x="0.05" y="0.964286" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -551,14 +517,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601563698203351" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\lagarta.png">
                         <collision-poly>
-                            <point x="0.133333" y="0.178571" />
-                            <point x="0.493333" y="0.0892857" />
-                            <point x="0.853333" y="0.196429" />
-                            <point x="0.986667" y="0.5" />
-                            <point x="0.88" y="0.839286" />
-                            <point x="0.493333" y="0.892857" />
-                            <point x="0.106667" y="0.857143" />
-                            <point x="0" y="0.5" />
+                            <point x="0.0133333" y="0.120535" />
+                            <point x="0.973333" y="0.116072" />
+                            <point x="0.966667" y="0.897322" />
+                            <point x="0.00666667" y="0.897321" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -579,13 +541,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="637829725198496" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\pulgao.png">
                         <collision-poly>
-                            <point x="0.226667" y="0.303571" />
-                            <point x="0.493333" y="0.125" />
-                            <point x="0.866667" y="0.178571" />
-                            <point x="1" y="0.5" />
-                            <point x="0.906667" y="0.875" />
-                            <point x="0.493333" y="0.839286" />
-                            <point x="0.253333" y="0.660714" />
+                            <point x="0.24" y="0.303571" />
+                            <point x="0.983333" y="0.196428" />
+                            <point x="0.983333" y="0.892857" />
+                            <point x="0.24" y="0.839286" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -729,7 +688,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="idiomaSelecao" sid="207331104151782">
+        <object-type name="sobreTexto" sid="207331104151782">
             <plugin id="Text" />
         </object-type>
         <object-type name="iniciarTexto" sid="847086724179636">
@@ -742,9 +701,6 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type global="1" name="Array" sid="665537130806333">
-            <plugin id="Arr" />
         </object-type>
         <object-type name="TextBox" sid="812567632090417">
             <plugin id="TextBox" />
@@ -761,6 +717,72 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="152117882639170" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="moeda" sid="270297673196517">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="709943156542028" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\coin_100877.jpg">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoSobre" sid="523164976647585">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="591513705193817" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundoBandeira" sid="548627723381492">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="825460675184209" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="botaoIniciar" sid="353414449921242">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="101506401610278" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -788,6 +810,9 @@
             <behaviors>
                 <behavior-type name="Bullet2" sid="972012087453345">
                     <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="420049796766328">
+                    <behavior id="LOS" />
                 </behavior-type>
             </behaviors>
             <effects>
