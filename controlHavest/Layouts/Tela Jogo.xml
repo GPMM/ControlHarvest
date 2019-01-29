@@ -46,11 +46,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>427</x>
-                        <y>441.5</y>
+                        <x>432</x>
+                        <y>444.000030518</y>
                         <z>0</z>
-                        <width>78</width>
-                        <height>854</height>
+                        <width>83</width>
+                        <height>864</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -148,11 +148,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-7</x>
-                        <y>240</y>
+                        <x>-2</x>
+                        <y>242.500030518</y>
                         <z>0</z>
-                        <width>18</width>
-                        <height>480</height>
+                        <width>23</width>
+                        <height>490</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -177,11 +177,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>429</x>
-                        <y>-3.5</y>
+                        <x>434</x>
+                        <y>-0.999969482</y>
                         <z>0</z>
-                        <width>858</width>
-                        <height>14</height>
+                        <width>863</width>
+                        <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -206,11 +206,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>858</x>
-                        <y>236</y>
+                        <x>863</x>
+                        <y>238.500030518</y>
                         <z>0</z>
-                        <width>18</width>
-                        <height>480</height>
+                        <width>23</width>
+                        <height>490</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -266,6 +266,10 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <Nome></Nome>
+                        <ValorNutricional>0</ValorNutricional>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -455,8 +459,8 @@
                         <TempoDeCurva2>0.2</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
                         <Nome>besouro</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -477,8 +481,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -519,8 +523,8 @@
                         <TempoDeCurva2>0.2</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
                         <Nome>pulgao</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -543,8 +547,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -585,8 +589,8 @@
                         <TempoDeCurva2>0.5</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.5</TempoDeCurvaMax2>
                         <Nome>lagarta</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -609,8 +613,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -651,8 +655,8 @@
                         <TempoDeCurva2>0.3</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
                         <Nome>joaninha</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <Predacao>0</Predacao>
                         <VelocidadeMaxima>200</VelocidadeMaxima>
@@ -674,8 +678,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -716,8 +720,8 @@
                         <TempoDeCurva2>0.3</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
                         <Nome>grilo</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -740,8 +744,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -787,8 +791,8 @@
                         <TempoDeCurva2>0.4</TempoDeCurva2>
                         <TempoDeCurvaMax2>0.4</TempoDeCurvaMax2>
                         <Nome>cigarrinha</Nome>
-                        <TempoReproducao>10</TempoReproducao>
-                        <taxaDeReproducao>30</taxaDeReproducao>
+                        <TempoDeReproducao>10</TempoDeReproducao>
+                        <TaxaDeReproducao>30</TaxaDeReproducao>
                         <Energia>100</Energia>
                         <VelocidadeMaxima>150</VelocidadeMaxima>
                         <EnergiaMaxima>100</EnergiaMaxima>
@@ -811,8 +815,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>80</range>
-                                <cone-of-view>100</cone-of-view>
+                                <range>100</range>
+                                <cone-of-view>120</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>

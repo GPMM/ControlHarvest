@@ -4,6 +4,19 @@
     <name>Tela Inicial sheet</name>
     <events>
         <variable constant="0" name="Idioma" sid="731009031618456" static="0" type="text">br</variable>
+        <event-block sid="740901890457979">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="564112038256436" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="395121356831860" type="Trilha">
+                    <param id="0" name="Audio file">Casual game track</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Trilha_Inicial&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="106724911472372">
             <conditions>
                 <condition id="3" name="On touched object" sid="589004564007290" type="Touch">
@@ -37,6 +50,15 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="6" name="Stop" sid="899002424637452" type="Trilha">
+                    <param id="0" name="Tag">&quot;Trilha_Inicial&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="489647774571938" type="Trilha">
+                    <param id="0" name="Audio file">appear-online</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
                 <action id="-2" name="Go to layout" sid="399719331647747" type="System">
                     <param id="0" name="Layout">Tela Jogo</param>
                 </action>

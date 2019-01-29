@@ -7,7 +7,14 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="740947231671981" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Play" sid="258499075434008" type="Trilha">
+                    <param id="0" name="Audio file">jingles_SAX07</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="299407929805886">
                     <conditions>
@@ -40,7 +47,9 @@
             </sub-events>
         </event-block>
         <event-block sid="312118658115740">
-            <conditions />
+            <conditions>
+                <condition id="14" name="On tap" sid="135893484290077" type="Touch" />
+            </conditions>
             <actions>
                 <action id="-21" name="Reset global variables" sid="990405726085155" type="System" />
                 <action id="-2" name="Go to layout" sid="171101190406511" type="System">

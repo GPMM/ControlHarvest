@@ -2,14 +2,15 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.3.0.0</version>
+    <version>1.4.0.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
     <app-id>com.cefet.controlHavest</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
-    <saved-with-version>25900</saved-with-version>
+    <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -329,6 +330,10 @@
         </object-type>
         <object-type name="plantaEstagio2" sid="701694340723363">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Nome" sid="344495387178511" type="string" />
+                <instance-variable name="ValorNutricional" sid="207487044264726" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="743931418758343" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\estagio2.png">
@@ -786,6 +791,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Trilha" sid="297250373051434">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Inseto" plugin-id="Sprite" sid="815178117630363">
@@ -804,8 +812,8 @@
                 <instance-variable name="TempoDeCurva2" sid="702087756487792" type="number" />
                 <instance-variable name="TempoDeCurvaMax2" sid="727229062256064" type="number" />
                 <instance-variable name="Nome" sid="426708037954921" type="string" />
-                <instance-variable name="TempoReproducao" sid="762728080634965" type="number" />
-                <instance-variable name="taxaDeReproducao" sid="722712951251096" type="number" />
+                <instance-variable name="TempoDeReproducao" sid="762728080634965" type="number" />
+                <instance-variable name="TaxaDeReproducao" sid="722712951251096" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet2" sid="972012087453345">
@@ -874,9 +882,49 @@
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
+        <global-instance type="Trilha" uid="39">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
-    <music-folder />
+    <sounds-folder>
+        <file name="jingles_SAX07.ogg" />
+        <file name="appear-online.ogg" />
+        <file name="dustbin.ogg" />
+        <file name="knifesharpener1.m4a" />
+        <file name="knifesharpener1.ogg" />
+        <file name="jingles_SAX00.ogg" />
+        <file name="Coins_Several_01.m4a" />
+        <file name="Coins_Several_01.ogg" />
+        <file name="drop.ogg" />
+        <file name="bug_04.ogg" />
+        <file name="monster_14.ogg" />
+        <file name="bug_02.ogg" />
+        <file name="bug_03.ogg" />
+        <file name="eat_01.ogg" />
+        <file name="eat_04.ogg" />
+        <file name="attack_03.ogg" />
+        <file name="bug_05.ogg" />
+        <file name="bug_06.ogg" />
+        <file name="monster_01.ogg" />
+        <file name="monster_02.ogg" />
+        <file name="jingles_SAX13.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="Casual game track.ogg" />
+        <file name="Joy Ride.m4a" />
+        <file name="Joy Ride.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

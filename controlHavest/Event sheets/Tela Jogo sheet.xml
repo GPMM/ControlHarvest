@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Tela Jogo sheet</name>
     <events>
+        <variable constant="0" name="predadoresEmJogo" sid="731866003162771" static="0" type="number">0</variable>
         <variable constant="0" name="gramaProbabilidade" sid="520162327413380" static="0" type="number">0</variable>
         <variable constant="0" name="couveProbabilidade" sid="295779060179214" static="0" type="number">0</variable>
         <variable constant="0" name="milhoProbabilidade" sid="392548754585982" static="0" type="number">0</variable>
@@ -79,6 +80,12 @@
                         <action id="-9" name="Set value" sid="634344391319407" type="System">
                             <param id="0" name="Variable">couveEmJogo</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="259621125742103" type="Trilha">
+                            <param id="0" name="Audio file">Joy Ride</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Trilha_Jogo&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -180,15 +187,40 @@
                                     <param id="0" name="Object">Inseto</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="536868050808044" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-12" name="Subtract from" sid="725974307875351" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="901865089518086">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="218627311842441" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="177683275357165">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="896279575985564" type="System">
+                                    <param id="0" name="Variable">predadoresEmJogo</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="610175889336537" type="System">
+                                    <param id="0" name="Variable">Pontuacao</param>
+                                    <param id="1" name="Value">30</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -297,6 +329,16 @@
                                     <param id="0" name="Variable">besouros</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Add to" sid="346871933351386" type="System">
+                                    <param id="0" name="Variable">predadoresEmJogo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="813594301363226" type="Trilha">
+                                    <param id="0" name="Audio file">bug_02</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="980883294829211">
@@ -307,6 +349,16 @@
                                 <action id="-11" name="Subtract from" sid="968611681554689" type="System">
                                     <param id="0" name="Variable">besouros</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="984862839892496" type="System">
+                                    <param id="0" name="Variable">predadoresEmJogo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="817349163877685" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -319,6 +371,16 @@
                                     <param id="0" name="Variable">joaninhas</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-10" name="Add to" sid="233889830267877" type="System">
+                                    <param id="0" name="Variable">predadoresEmJogo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="907070407063667" type="Trilha">
+                                    <param id="0" name="Audio file">bug_03</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="115492004764478">
@@ -329,6 +391,16 @@
                                 <action id="-11" name="Subtract from" sid="633194718019561" type="System">
                                     <param id="0" name="Variable">joaninhas</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="965246210590777" type="System">
+                                    <param id="0" name="Variable">predadoresEmJogo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="238424164340517" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -345,6 +417,12 @@
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="748753516649642" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="462134573065099">
@@ -359,6 +437,12 @@
                                 <action id="-11" name="Subtract from" sid="732117859992221" type="System">
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="394388462218045" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -375,6 +459,12 @@
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="304333246292393" type="Trilha">
+                                    <param id="0" name="Audio file">bug_05</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="880825391768008">
@@ -389,6 +479,12 @@
                                 <action id="-11" name="Subtract from" sid="964027871684621" type="System">
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="595734180002817" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -405,6 +501,12 @@
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="500823430321332" type="Trilha">
+                                    <param id="0" name="Audio file">bug_06</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="503772216196207">
@@ -419,6 +521,12 @@
                                 <action id="-11" name="Subtract from" sid="625975220790789" type="System">
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="558824664555447" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -435,6 +543,12 @@
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="892657549888083" type="Trilha">
+                                    <param id="0" name="Audio file">monster_01</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="225613751380496">
@@ -449,6 +563,12 @@
                                 <action id="-11" name="Subtract from" sid="839711307168680" type="System">
                                     <param id="0" name="Variable">pragasEmJogo</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="930381696388862" type="Trilha">
+                                    <param id="0" name="Audio file">bug_04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -468,6 +588,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="6" name="Stop" sid="921716977430118" type="Trilha">
+                            <param id="0" name="Tag">&quot;Trilha_Jogo&quot;</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="564059967770249" type="System">
                             <param id="0" name="Layout">Game Over</param>
                         </action>
@@ -503,6 +626,12 @@
                         <action id="-15" name="Set visible" sid="427010042725535" type="telaFundoPopup">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                        <action id="0" name="Play" sid="163788665714605" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="129633027939575">
@@ -527,6 +656,12 @@
                         <action id="-15" name="Set visible" sid="691735709289796" type="telaFundoPopup">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="0" name="Play" sid="500413599744502" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -548,6 +683,12 @@
                                 <action id="-9" name="Set value" sid="815838396639179" type="System">
                                     <param id="0" name="Variable">ColherSelecionado</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="155284308077556" type="Trilha">
+                                    <param id="0" name="Audio file">appear-online</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -580,6 +721,12 @@
                                         <action id="-10" name="Add to" sid="676726054696615" type="System">
                                             <param id="0" name="Variable">plantasColhidas</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="704183477622121" type="Trilha">
+                                            <param id="0" name="Audio file">Coins_Several_01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -622,6 +769,12 @@
                                     <param id="0" name="Variable">redeSelecionado</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Play" sid="427920859061891" type="Trilha">
+                                    <param id="0" name="Audio file">appear-online</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="307312604553391">
@@ -657,6 +810,12 @@
                                             <param id="0" name="Variable">besourosRecolhidos</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action id="0" name="Play" sid="293367253689719" type="Trilha">
+                                            <param id="0" name="Audio file">drop</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="471929531484252">
@@ -681,6 +840,12 @@
                                         <action id="-10" name="Add to" sid="224345349696573" type="System">
                                             <param id="0" name="Variable">joaninhasRecolhidas</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="754840457930920" type="Trilha">
+                                            <param id="0" name="Audio file">drop</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -722,6 +887,12 @@
                                     <param id="0" name="Variable">valorCompra</param>
                                     <param id="1" name="Value">botaoPlantas.ValorCompra2</param>
                                 </action>
+                                <action id="0" name="Play" sid="168339799538420" type="Trilha">
+                                    <param id="0" name="Audio file">appear-online</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="157184119215367">
@@ -742,6 +913,9 @@
                                         <condition id="4" inverted="1" name="Is touching object" sid="700581552114729" type="Touch">
                                             <param id="0" name="Object">AreaPlanta</param>
                                         </condition>
+                                        <condition id="4" inverted="1" name="Is touching object" sid="249430656309974" type="Touch">
+                                            <param id="0" name="Object">solido</param>
+                                        </condition>
                                         <condition id="-14" name="Compare variable" sid="282841005325961" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
                                             <param id="1" name="Comparison">5</param>
@@ -756,6 +930,12 @@
                                         <action id="-10" name="Add to" sid="172201089928308" type="System">
                                             <param id="0" name="Variable">PlantasEmJogo</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="767553527551208" type="Trilha">
+                                            <param id="0" name="Audio file">dustbin</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                         <action id="-11" name="Subtract from" sid="940007925979997" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
@@ -797,6 +977,14 @@
                                                     <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="239187883171890" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Value">&quot;couve&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="613622664584237" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">ValorNutricional</param>
+                                                    <param id="1" name="Value">Couve.ValorNutricional2</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="109827694555955" type="System">
                                                     <param id="0" name="Seconds">3</param>
                                                 </action>
@@ -833,6 +1021,14 @@
                                                     <param id="0" name="Object">plantaEstagio2</param>
                                                     <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="803375536807325" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Value">&quot;grama&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="491676285913433" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">ValorNutricional</param>
+                                                    <param id="1" name="Value">Grama.ValorNutricional2</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="724857680110105" type="System">
                                                     <param id="0" name="Seconds">3</param>
@@ -871,8 +1067,16 @@
                                                     <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="146564095125315" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Value">&quot;milho&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="356056655992361" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">ValorNutricional</param>
+                                                    <param id="1" name="Value">Milho.ValorNutricional2</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="654255405721220" type="System">
-                                                    <param id="0" name="Seconds">3</param>
+                                                    <param id="0" name="Seconds">4</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="118573127753750" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="383458548907763" type="plantaEstagio2">
@@ -908,8 +1112,16 @@
                                                     <param id="1" name="Layer">&quot;plantas&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="681699823442278" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Value">&quot;tomate&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="265075357149634" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">ValorNutricional</param>
+                                                    <param id="1" name="Value">Tomate.ValorNutricional2</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="905148974485748" type="System">
-                                                    <param id="0" name="Seconds">3</param>
+                                                    <param id="0" name="Seconds">5</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="911069150835860" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="816064513114891" type="plantaEstagio2">
@@ -966,6 +1178,12 @@
                                 <action id="-9" name="Set value" sid="639749726145934" type="System">
                                     <param id="0" name="Variable">valorCompra</param>
                                     <param id="1" name="Value">botaoPredadores.ValorCompra2</param>
+                                </action>
+                                <action id="0" name="Play" sid="571572634993561" type="Trilha">
+                                    <param id="0" name="Audio file">appear-online</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1200,6 +1418,135 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="442256334114894">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="769650769297497" type="Inseto">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="166940372428924" type="Inseto">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="118886466765438">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="657711601824092" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;lagarta&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="924828455512770" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;couve&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="924970147499286" type="Inseto">
+                                                    <param id="0" name="X">plantaEstagio2.X</param>
+                                                    <param id="1" name="Y">plantaEstagio2.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="727046084498990">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="132912799916783" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;pulgao&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="549001730764296" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="843629237301001" type="Inseto">
+                                                    <param id="0" name="X">plantaEstagio2.X</param>
+                                                    <param id="1" name="Y">plantaEstagio2.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="923997504107168">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="478407582675324" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;cigarrinha&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="480582130549040">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="453808861432207" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="290019894897065" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-22" name="Set angle toward position" sid="923445139990779" type="Inseto">
+                                                            <param id="0" name="X">plantaEstagio2.X</param>
+                                                            <param id="1" name="Y">plantaEstagio2.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="724417844043880">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="305022598412061" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;grilo&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="458896433034356">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="203188610512946" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="168301890766232" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="870862518130961" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="944854764579278" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;milho&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-22" name="Set angle toward position" sid="374250102427073" type="Inseto">
+                                                            <param id="0" name="X">plantaEstagio2.X</param>
+                                                            <param id="1" name="Y">plantaEstagio2.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                             </sub-events>
                         </event-group>
                         <event-group description="" sid="854696150539167" title="PredadoresPerseguicao">
@@ -1312,6 +1659,12 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="290218874666013" type="TextoMigracao">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="904013901598167" type="Trilha">
+                                    <param id="0" name="Audio file">jingles_SAX13</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="924584123484703" type="System">
                                     <param id="0" name="Seconds">2.0</param>
@@ -1728,6 +2081,12 @@
                                                 <action behavior="Bullet2" id="0" name="Set speed" sid="222912255702396" type="Inseto">
                                                     <param id="0" name="Speed">0</param>
                                                 </action>
+                                                <action id="0" name="Play" sid="388906888541119" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="903965597683401" type="System">
                                                     <param id="0" name="Seconds">0.3</param>
                                                 </action>
@@ -1783,6 +2142,12 @@
                                             <actions>
                                                 <action id="11" name="Set collisions enabled" sid="379885834308102" type="Planta">
                                                     <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="339450460753838" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
                                                 <action behavior="Bullet2" id="0" name="Set speed" sid="664119269116812" type="Inseto">
                                                     <param id="0" name="Speed">0</param>
@@ -1855,6 +2220,12 @@
                                                         </action>
                                                         <action behavior="Bullet2" id="0" name="Set speed" sid="443688248248844" type="Inseto">
                                                             <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="647202441738183" type="Trilha">
+                                                            <param id="0" name="Audio file">eat_01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="426339329871817" type="System">
                                                             <param id="0" name="Seconds">0.3</param>
@@ -1937,6 +2308,12 @@
                                                         <action behavior="Bullet2" id="0" name="Set speed" sid="463999211967954" type="Inseto">
                                                             <param id="0" name="Speed">0</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="143015299144514" type="Trilha">
+                                                            <param id="0" name="Audio file">eat_01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
                                                         <action id="-16" name="Wait" sid="487188595334309" type="System">
                                                             <param id="0" name="Seconds">0.3</param>
                                                         </action>
@@ -1972,6 +2349,315 @@
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-9" name="Destroy" sid="758013378459628" type="AreaPlanta" />
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="183559102495314">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="574334963344076" type="Inseto">
+                                            <param id="0" name="Object">plantaEstagio2</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="657821826835133" type="Inseto">
+                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="495013137890185">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="287919243393230" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;lagarta&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="470092089674722" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;couve&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="853218875963907" type="plantaEstagio2">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet2" id="0" name="Set speed" sid="232683432364541" type="Inseto">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="631649811009812" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="371274806110210" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="905808531630300" type="plantaEstagio2" />
+                                                <action id="-11" name="Add to" sid="234872306841193" type="Inseto">
+                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="969779943383278">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="139306035211694" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="228584661933086" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="206248447964750">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="839420407685386" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Planta.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="115679013558039" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="972978501664639">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="295664643273512" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;pulgao&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="854431476205176" type="plantaEstagio2">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="493450108458900" type="plantaEstagio2">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Bullet2" id="0" name="Set speed" sid="815653345892786" type="Inseto">
+                                                    <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="371936767228844" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_01</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="924674486589706" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="641048359070259" type="plantaEstagio2" />
+                                                <action id="-11" name="Add to" sid="526984436642793" type="Inseto">
+                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="727679933846281">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="293211164812641" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="220812511231588" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="831728203264721">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="223258433439377" type="AreaPlanta">
+                                                            <param id="0" name="Instance variable">IdPlanta</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Planta.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="592698235202759" type="AreaPlanta" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="785603139925942">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="617781101335320" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;cigarrinha&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="423725248707496">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="671276156406818" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="688926171446882" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="594513313198736" type="plantaEstagio2">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet2" id="0" name="Set speed" sid="664063930183752" type="Inseto">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="827570435930605" type="Trilha">
+                                                            <param id="0" name="Audio file">eat_01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="378945685453721" type="System">
+                                                            <param id="0" name="Seconds">0.3</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="389267406825487" type="plantaEstagio2" />
+                                                        <action id="-11" name="Add to" sid="527636341442634" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="691991147155082">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="128777196855483" type="Inseto">
+                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="341408418542909" type="Inseto">
+                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="397404983259028">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="211740455470531" type="AreaPlanta">
+                                                                    <param id="0" name="Instance variable">IdPlanta</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">Planta.UID</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Destroy" sid="767798480505149" type="AreaPlanta" />
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="238846119302757">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="455145432915466" type="Inseto">
+                                                    <param id="0" name="Instance variable">Nome</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;grilo&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block any="1" sid="305264404425384">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="548685976998754" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;couve&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="618202567845169" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;grama&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="393616868868233" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;tomate&quot;</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="853779468137850" type="plantaEstagio2">
+                                                            <param id="0" name="Instance variable">Nome</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;milho&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="298921205783775" type="plantaEstagio2">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Bullet2" id="0" name="Set speed" sid="857886764321274" type="Inseto">
+                                                            <param id="0" name="Speed">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="152956989604504" type="Trilha">
+                                                            <param id="0" name="Audio file">eat_01</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="852364726313918" type="System">
+                                                            <param id="0" name="Seconds">0.3</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="893225795223722" type="plantaEstagio2" />
+                                                        <action id="-11" name="Add to" sid="779953283969282" type="Inseto">
+                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="242389938530661">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="464056233135778" type="Inseto">
+                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="183107650943015" type="Inseto">
+                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="382249414144624">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="881522569607152" type="AreaPlanta">
+                                                                    <param id="0" name="Instance variable">IdPlanta</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">Planta.UID</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Destroy" sid="824904128125756" type="AreaPlanta" />
                                                             </actions>
                                                         </event-block>
                                                     </sub-events>
@@ -2028,6 +2714,12 @@
                                                 </action>
                                                 <action id="11" name="Set collisions enabled" sid="468235424715879" type="Grilo">
                                                     <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="609990878307111" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_04</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="642634226406116" type="System">
                                                     <param id="0" name="Seconds">0.5</param>
@@ -2099,6 +2791,12 @@
                                                 </action>
                                                 <action behavior="Bullet2" id="0" name="Set speed" sid="924785774947029" type="Pulgao">
                                                     <param id="0" name="Speed">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="331488388641805" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_04</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
                                                 <action id="11" name="Set collisions enabled" sid="594505629733128" type="Pulgao">
                                                     <param id="0" name="Collisions">0</param>
@@ -2177,6 +2875,12 @@
                                                 <action id="11" name="Set collisions enabled" sid="984042940545956" type="Lagarta">
                                                     <param id="0" name="Collisions">0</param>
                                                 </action>
+                                                <action id="0" name="Play" sid="231362406942285" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_04</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="442404657084142" type="System">
                                                     <param id="0" name="Seconds">0.5</param>
                                                 </action>
@@ -2251,6 +2955,12 @@
                                                 <action id="11" name="Set collisions enabled" sid="530630300688113" type="Cigarrinha">
                                                     <param id="0" name="Collisions">0</param>
                                                 </action>
+                                                <action id="0" name="Play" sid="674018424242619" type="Trilha">
+                                                    <param id="0" name="Audio file">eat_04</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="514145132692656" type="System">
                                                     <param id="0" name="Seconds">0.5</param>
                                                 </action>
@@ -2297,7 +3007,7 @@
                                     <param id="2" name="Value">&quot;besouro&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="331817855629870" type="Besouro">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2307,12 +3017,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="524193848384355" type="Besouro">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="742066714952443" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2323,6 +3033,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="840457235872504" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="916193720371508" type="Besouro">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Besouro.Energia2-25</param>
@@ -2356,7 +3072,7 @@
                                     <param id="2" name="Value">&quot;joaninha&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="716024362211524" type="Joaninha">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2366,12 +3082,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="942378171422440" type="Joaninha">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="228942535808108" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2382,6 +3098,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="376882638612219" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="916501415721206" type="Joaninha">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Joaninha.Energia2-25</param>
@@ -2415,7 +3137,7 @@
                                     <param id="2" name="Value">&quot;cigarrinha&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="165515751068417" type="Cigarrinha">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2425,12 +3147,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="673009812500008" type="Cigarrinha">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="258897596172355" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2441,6 +3163,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="332873456143782" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="608018223437319" type="Cigarrinha">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Cigarrinha.Energia2-25</param>
@@ -2474,7 +3202,7 @@
                                     <param id="2" name="Value">&quot;grilo&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="162032560197385" type="Grilo">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2484,12 +3212,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="462037576016725" type="Grilo">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="350233756824938" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2500,6 +3228,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="172542637501084" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="171224210500885" type="Grilo">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Grilo.Energia2-25</param>
@@ -2533,7 +3267,7 @@
                                     <param id="2" name="Value">&quot;lagarta&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="681145954500284" type="Lagarta">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2543,12 +3277,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="931731357029020" type="Lagarta">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="498047831998328" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2559,6 +3293,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="821695730357324" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="268878310536855" type="Lagarta">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Lagarta.Energia2-25</param>
@@ -2592,7 +3332,7 @@
                                     <param id="2" name="Value">&quot;pulgao&quot;</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="338542153592052" type="Pulgao">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2602,12 +3342,12 @@
                                     <param id="2" name="Value">30</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="876183759996868" type="Pulgao">
-                                    <param id="0" name="Instance variable">taxaDeReproducao</param>
+                                    <param id="0" name="Instance variable">TaxaDeReproducao</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">random(0,100)</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="505985647139077" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoReproducao</param>
+                                    <param id="0" name="Instance variable">TempoDeReproducao</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2618,6 +3358,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="440359819364258" type="Trilha">
+                                    <param id="0" name="Audio file">monster_14</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="500910142043358" type="Pulgao">
                                     <param id="0" name="Instance variable">Energia2</param>
                                     <param id="1" name="Value">Pulgao.Energia2-25</param>
