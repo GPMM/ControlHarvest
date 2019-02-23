@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.4.0.0</version>
+    <version>1.5.0.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -83,11 +83,7 @@
         <object-type name="Besouro" sid="102051997552975">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="334167025968473" type="number" />
                 <instance-variable name="Predacao" sid="938317103126149" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="968328974256978" type="number" />
-                <instance-variable name="TempoDeCurva" sid="881066231405747" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="841263402536955" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773175957988842" speed="5">
@@ -291,12 +287,7 @@
         <object-type name="Joaninha" sid="876700562005191">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="453434862054030" type="number" />
                 <instance-variable name="Predacao" sid="676704842993935" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="173315506473558" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="896062769813146" type="number" />
-                <instance-variable name="TempoDeCurva" sid="902703754387288" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="588646307627154" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="459584376690566" speed="5">
@@ -352,10 +343,6 @@
         </object-type>
         <object-type name="Couve" sid="903657254342703">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ValorNutricional" sid="734179202984394" type="number" />
-                <instance-variable name="ValorVenda" sid="484740431590921" type="number" />
-            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="627466654902542" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\couve.png">
@@ -375,10 +362,6 @@
         </object-type>
         <object-type name="Grama" sid="230577099176237">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ValorNutricional" sid="511574859084284" type="number" />
-                <instance-variable name="ValorVenda" sid="157880812287704" type="number" />
-            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="874507985794374" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\grass.png">
@@ -398,10 +381,6 @@
         </object-type>
         <object-type name="Milho" sid="487694025749087">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ValorNutricional" sid="474825998684280" type="number" />
-                <instance-variable name="ValorVenda" sid="915784331220672" type="number" />
-            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="281481331490189" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\milho.png">
@@ -421,10 +400,6 @@
         </object-type>
         <object-type name="Tomate" sid="743694211223915">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ValorNutricional" sid="190791035366663" type="number" />
-                <instance-variable name="ValorVenda" sid="994045860135706" type="number" />
-            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="107465473502745" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Projetos Construct2\controlHavest\Files\tomate.png">
@@ -457,13 +432,8 @@
         <object-type name="Cigarrinha" sid="445829387738581">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="210714667701501" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="559074588773014" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="357048122185510" type="number" />
                 <instance-variable name="Fuga" sid="676667608006856" type="number" />
                 <instance-variable name="ValorNutricional" sid="633278592531425" type="number" />
-                <instance-variable name="TempoDeCurva" sid="755275294587511" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="586451027508989" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="227149131302205" speed="5">
@@ -481,13 +451,8 @@
         <object-type name="Grilo" sid="399764132175995">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="545987882820121" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="331797215080390" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="117848448164677" type="number" />
                 <instance-variable name="Fuga" sid="560587258664597" type="number" />
                 <instance-variable name="ValorNutricional" sid="227142051216799" type="number" />
-                <instance-variable name="TempoDeCurva" sid="799739688434274" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="796946583313242" type="number" />
             </instance-variables>
             <effects>
                 <effect-type name="Grayscale">
@@ -510,13 +475,8 @@
         <object-type name="Lagarta" sid="982935695220722">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="738059768499326" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="988558532675782" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="786675912819053" type="number" />
                 <instance-variable name="Fuga" sid="246326836896781" type="number" />
                 <instance-variable name="ValorNutricional" sid="525260708693602" type="number" />
-                <instance-variable name="TempoDeCurva" sid="494359382697090" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="580345440841189" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601563698203351" speed="5">
@@ -534,13 +494,8 @@
         <object-type name="Pulgao" sid="425633475440525">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="Energia" sid="785959333601251" type="number" />
-                <instance-variable name="VelocidadeMaxima" sid="751812722390259" type="number" />
-                <instance-variable name="EnergiaMaxima" sid="695893672211466" type="number" />
                 <instance-variable name="Fuga" sid="621626831227981" type="number" />
                 <instance-variable name="ValorNutricional" sid="838128434458878" type="number" />
-                <instance-variable name="TempoDeCurva" sid="597383533508061" type="number" />
-                <instance-variable name="TempoDeCurvaMax" sid="488374305871754" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="637829725198496" speed="5">
@@ -613,8 +568,16 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="554675417329162" speed="5">
-                    <frame duration="1" hotspotX="0.500383" hotspotY="0.500343" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\level_select\bg.png">
-                        <image-point name="Imagepoint 1" x="0.82479" y="0.124228" />
+                    <frame duration="1" hotspotX="0.48355" hotspotY="0.500343" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\level_select\bg.png">
+                        <image-point name="Imagepoint 1" x="0.847743" y="0.10501" />
+                        <image-point name="Imagepoint 2" x="0.20505" y="0.368566" />
+                        <image-point name="Imagepoint 3" x="0.20505" y="0.530542" />
+                        <image-point name="Imagepoint 4" x="0.20811" y="0.689773" />
+                        <image-point name="Imagepoint 5" x="0.20811" y="0.849005" />
+                        <image-point name="Imagepoint 6" x="0.388676" y="0.335621" />
+                        <image-point name="Imagepoint 7" x="0.388676" y="0.489362" />
+                        <image-point name="Imagepoint 8" x="0.388676" y="0.656829" />
+                        <image-point name="Imagepoint 9" x="0.382555" y="0.818806" />
                         <collision-poly>
                             <point x="0.020658" y="0.0185312" />
                             <point x="0.499617" y="0.00205903" />
@@ -794,6 +757,182 @@
         <object-type name="Trilha" sid="297250373051434">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="btnRecomecar" sid="687350756419872">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="526971507506843" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnTerminar" sid="142009957952998">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="803991481193403" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textoRecomecar" sid="924444884611566">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="textoTerminar" sid="185929802176365">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TiledBackground" sid="893461371316757">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="multaFundo" sid="181492452758662">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="538244689778672" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503356" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\barraMensagens.png">
+                        <image-point name="Imagepoint 1" x="0.952" y="0.147651" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textoMulta" sid="616329604778099">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="btnFecharMulta" sid="236606763241487">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="486093593189422" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnSom" sid="958778387094503">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="384420699164560" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\sound.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\sound_off.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnGraficos" sid="262995461733147">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404117774281192" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\about.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnInfo" sid="560281080264569">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="400464445725025" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\faq.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnQuit" sid="692005002742046">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="600774352971359" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.147982" y="0.147982" />
+                            <point x="0.497758" y="0" />
+                            <point x="0.852018" y="0.147982" />
+                            <point x="1" y="0.497758" />
+                            <point x="0.856502" y="0.856502" />
+                            <point x="0.497758" y="1" />
+                            <point x="0.147982" y="0.852018" />
+                            <point x="0" y="0.497758" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textoSom" sid="572269136197815">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="textoGraficos" sid="738404004116026">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="textoInfo" sid="936255024351810">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="textoSair" sid="951566054579710">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Inseto" plugin-id="Sprite" sid="815178117630363">
@@ -806,11 +945,11 @@
                 <member>Pulgao</member>
             </members>
             <instance-variables>
-                <instance-variable name="Energia2" sid="143695799736734" type="number" />
-                <instance-variable name="VelocidadeMax2" sid="378123203188729" type="number" />
-                <instance-variable name="EnergiaMax2" sid="569396499070187" type="number" />
-                <instance-variable name="TempoDeCurva2" sid="702087756487792" type="number" />
-                <instance-variable name="TempoDeCurvaMax2" sid="727229062256064" type="number" />
+                <instance-variable name="Energia" sid="143695799736734" type="number" />
+                <instance-variable name="VelocidadeMax" sid="378123203188729" type="number" />
+                <instance-variable name="EnergiaMax" sid="569396499070187" type="number" />
+                <instance-variable name="TempoDeCurva" sid="702087756487792" type="number" />
+                <instance-variable name="TempoDeCurvaMax" sid="727229062256064" type="number" />
                 <instance-variable name="Nome" sid="426708037954921" type="string" />
                 <instance-variable name="TempoDeReproducao" sid="762728080634965" type="number" />
                 <instance-variable name="TaxaDeReproducao" sid="722712951251096" type="number" />
@@ -838,8 +977,8 @@
             </members>
             <instance-variables>
                 <instance-variable name="Nome" sid="313905935411198" type="string" />
-                <instance-variable name="ValorNutricional2" sid="529036215678101" type="number" />
-                <instance-variable name="ValorDeVenda2" sid="472560062064035" type="number" />
+                <instance-variable name="ValorNutricional" sid="529036215678101" type="number" />
+                <instance-variable name="ValorDeVenda" sid="472560062064035" type="number" />
             </instance-variables>
         </family>
         <family name="botaoPlantas" plugin-id="Sprite" sid="851623914142127">
@@ -869,11 +1008,13 @@
         <layout>Tela Inicial.xml</layout>
         <layout>Tela Jogo.xml</layout>
         <layout>Game Over.xml</layout>
+        <layout>Game Finish.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Tela Jogo sheet.xml</event-sheet>
         <event-sheet>Tela Inicial sheet.xml</event-sheet>
         <event-sheet>Game Over sheet.xml</event-sheet>
+        <event-sheet>Game Finish sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="15" />
@@ -919,6 +1060,7 @@
         <file name="monster_01.ogg" />
         <file name="monster_02.ogg" />
         <file name="jingles_SAX13.ogg" />
+        <file name="the_reel_winner_by_memoraphile_CC0.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="Casual game track.ogg" />

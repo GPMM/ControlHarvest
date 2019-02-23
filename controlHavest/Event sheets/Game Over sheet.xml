@@ -28,6 +28,12 @@
                         <action id="0" name="Set text" sid="138768984629859" type="FimDeJogo">
                             <param id="0" name="Text">&quot;End of the game! You ran out of money :(&quot;</param>
                         </action>
+                        <action id="0" name="Set text" sid="194651816439397" type="textoRecomecar">
+                            <param id="0" name="Text">&quot;Restart&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="229261169295431" type="textoTerminar">
+                            <param id="0" name="Text">&quot;Exit&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="837789695938843">
@@ -42,17 +48,38 @@
                         <action id="0" name="Set text" sid="717911118983638" type="FimDeJogo">
                             <param id="0" name="Text">&quot;Fim de Jogo! Você ficou sem dinheiro :(&quot;</param>
                         </action>
+                        <action id="0" name="Set text" sid="619036296269986" type="textoRecomecar">
+                            <param id="0" name="Text">&quot;Recomeçar&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="935805553661527" type="textoTerminar">
+                            <param id="0" name="Text">&quot;Terminar&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
         <event-block sid="312118658115740">
             <conditions>
-                <condition id="14" name="On tap" sid="135893484290077" type="Touch" />
+                <condition id="17" name="On tap object" sid="135893484290077" type="Touch">
+                    <param id="0" name="Object">btnRecomecar</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-21" name="Reset global variables" sid="990405726085155" type="System" />
                 <action id="-2" name="Go to layout" sid="171101190406511" type="System">
+                    <param id="0" name="Layout">Tela Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="212804759105917">
+            <conditions>
+                <condition id="17" name="On tap object" sid="100303052069501" type="Touch">
+                    <param id="0" name="Object">btnTerminar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="585481655159692" type="System" />
+                <action id="-2" name="Go to layout" sid="460151885624932" type="System">
                     <param id="0" name="Layout">Tela Inicial</param>
                 </action>
             </actions>

@@ -69,10 +69,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>427</x>
-                        <y>240</y>
+                        <y>206</y>
                         <z>0</z>
                         <width>854</width>
-                        <height>480</height>
+                        <height>412</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -294,10 +294,8 @@
                     </properties>
                     <instance-variables>
                         <Nome>couve</Nome>
-                        <ValorNutricional2>30</ValorNutricional2>
-                        <ValorDeVenda2>230</ValorDeVenda2>
                         <ValorNutricional>30</ValorNutricional>
-                        <ValorVenda>230</ValorVenda>
+                        <ValorDeVenda>230</ValorDeVenda>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -323,10 +321,8 @@
                     </properties>
                     <instance-variables>
                         <Nome>grama</Nome>
-                        <ValorNutricional2>20</ValorNutricional2>
-                        <ValorDeVenda2>140</ValorDeVenda2>
                         <ValorNutricional>20</ValorNutricional>
-                        <ValorVenda>140</ValorVenda>
+                        <ValorDeVenda>140</ValorDeVenda>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -352,10 +348,8 @@
                     </properties>
                     <instance-variables>
                         <Nome>milho</Nome>
-                        <ValorNutricional2>40</ValorNutricional2>
-                        <ValorDeVenda2>240</ValorDeVenda2>
                         <ValorNutricional>40</ValorNutricional>
-                        <ValorVenda>240</ValorVenda>
+                        <ValorDeVenda>240</ValorDeVenda>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -381,10 +375,8 @@
                     </properties>
                     <instance-variables>
                         <Nome>tomate</Nome>
-                        <ValorNutricional2>50</ValorNutricional2>
-                        <ValorDeVenda2>290</ValorDeVenda2>
                         <ValorNutricional>50</ValorNutricional>
-                        <ValorVenda>290</ValorVenda>
+                        <ValorDeVenda>290</ValorDeVenda>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -417,8 +409,8 @@
                         <x>46</x>
                         <y>548</y>
                         <z>0</z>
-                        <width>60</width>
-                        <height>60</height>
+                        <width>70</width>
+                        <height>70</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -453,19 +445,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>200</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.2</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>200</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.2</TempoDeCurva>
+                        <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                         <Nome>besouro</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
                         <Predacao>0</Predacao>
-                        <EnergiaMaxima>100</EnergiaMaxima>
-                        <TempoDeCurva>0.2</TempoDeCurva>
-                        <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -481,8 +469,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -517,21 +505,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>150</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.2</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.2</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>150</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.2</TempoDeCurva>
+                        <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                         <Nome>pulgao</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
-                        <VelocidadeMaxima>150</VelocidadeMaxima>
-                        <EnergiaMaxima>100</EnergiaMaxima>
                         <Fuga>0</Fuga>
                         <ValorNutricional>60</ValorNutricional>
-                        <TempoDeCurva>0.2</TempoDeCurva>
-                        <TempoDeCurvaMax>0.2</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -547,8 +530,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -583,21 +566,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>150</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.5</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.5</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>150</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.5</TempoDeCurva>
+                        <TempoDeCurvaMax>0.5</TempoDeCurvaMax>
                         <Nome>lagarta</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
-                        <VelocidadeMaxima>150</VelocidadeMaxima>
-                        <EnergiaMaxima>100</EnergiaMaxima>
                         <Fuga>0</Fuga>
                         <ValorNutricional>30</ValorNutricional>
-                        <TempoDeCurva>0.5</TempoDeCurva>
-                        <TempoDeCurvaMax>0.5</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -613,8 +591,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -649,20 +627,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>200</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.3</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>200</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.3</TempoDeCurva>
+                        <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                         <Nome>joaninha</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
                         <Predacao>0</Predacao>
-                        <VelocidadeMaxima>200</VelocidadeMaxima>
-                        <EnergiaMaxima>100</EnergiaMaxima>
-                        <TempoDeCurva>0.3</TempoDeCurva>
-                        <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -678,8 +651,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -714,21 +687,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>150</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.3</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.3</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>150</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.3</TempoDeCurva>
+                        <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                         <Nome>grilo</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
-                        <VelocidadeMaxima>150</VelocidadeMaxima>
-                        <EnergiaMaxima>100</EnergiaMaxima>
                         <Fuga>0</Fuga>
                         <ValorNutricional>50</ValorNutricional>
-                        <TempoDeCurva>0.3</TempoDeCurva>
-                        <TempoDeCurvaMax>0.3</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -744,8 +712,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -785,21 +753,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Energia2>100</Energia2>
-                        <VelocidadeMax2>150</VelocidadeMax2>
-                        <EnergiaMax2>100</EnergiaMax2>
-                        <TempoDeCurva2>0.4</TempoDeCurva2>
-                        <TempoDeCurvaMax2>0.4</TempoDeCurvaMax2>
+                        <Energia>100</Energia>
+                        <VelocidadeMax>150</VelocidadeMax>
+                        <EnergiaMax>100</EnergiaMax>
+                        <TempoDeCurva>0.4</TempoDeCurva>
+                        <TempoDeCurvaMax>0.4</TempoDeCurvaMax>
                         <Nome>cigarrinha</Nome>
                         <TempoDeReproducao>10</TempoDeReproducao>
                         <TaxaDeReproducao>30</TaxaDeReproducao>
-                        <Energia>100</Energia>
-                        <VelocidadeMaxima>150</VelocidadeMaxima>
-                        <EnergiaMaxima>100</EnergiaMaxima>
                         <Fuga>0</Fuga>
                         <ValorNutricional>40</ValorNutricional>
-                        <TempoDeCurva>0.4</TempoDeCurva>
-                        <TempoDeCurvaMax>0.4</TempoDeCurvaMax>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet2">
@@ -815,8 +778,8 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>100</range>
-                                <cone-of-view>120</cone-of-view>
+                                <range>150</range>
+                                <cone-of-view>160</cone-of-view>
                                 <use-collision-cells>No</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -1068,9 +1031,9 @@
                 </instance>
                 <instance type="TextoPontuacao" uid="38">
                     <properties>
-                        <text>Pontuação: </text>
+                        <text></text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-27,700,0</font>
+                        <font>Arial,-24,700,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -1081,11 +1044,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>70</x>
+                        <x>73</x>
                         <y>417</y>
                         <z>0</z>
                         <width>146</width>
-                        <height>63</height>
+                        <height>65</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1097,7 +1060,7 @@
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial Rounded MT Bold,-19,400,0</font>
+                        <font>Arial Rounded MT Bold,-21,400,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -1257,13 +1220,13 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-149</x>
-                        <y>258</y>
+                        <x>-225.217315674</x>
+                        <y>301</y>
                         <z>0</z>
-                        <width>200</width>
-                        <height>200</height>
+                        <width>300</width>
+                        <height>333</height>
                         <depth>0</depth>
-                        <hotspotX>0.500382543</hotspotX>
+                        <hotspotX>0.483550102</hotspotX>
                         <hotspotY>0.500343144</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -1282,14 +1245,281 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-112</x>
-                        <y>424</y>
+                        <x>-184</x>
+                        <y>176</y>
                         <z>0</z>
                         <width>45</width>
                         <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="multaFundo" uid="57">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>428</x>
+                        <y>241</y>
+                        <z>0</z>
+                        <width>470</width>
+                        <height>160</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.503355682</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textoMulta" uid="58">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-21,700,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>220</x>
+                        <y>187.5</y>
+                        <z>0</z>
+                        <width>416</width>
+                        <height>105</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="btnFecharMulta" uid="59">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1</x>
+                        <y>532</y>
+                        <z>0</z>
+                        <width>40</width>
+                        <height>40</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="btnSom" uid="56">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-325</x>
+                        <y>257</y>
+                        <z>0</z>
+                        <width>45</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="btnGraficos" uid="60">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-327</x>
+                        <y>310</y>
+                        <z>0</z>
+                        <width>45</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="btnInfo" uid="61">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-326</x>
+                        <y>367</y>
+                        <z>0</z>
+                        <width>45</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="btnQuit" uid="62">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-328</x>
+                        <y>420</y>
+                        <z>0</z>
+                        <width>45</width>
+                        <height>45</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.502325594</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textoSom" uid="66">
+                    <properties>
+                        <text>SOM</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Rounded MT Bold,-24,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-357</x>
+                        <y>240</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textoGraficos" uid="68">
+                    <properties>
+                        <text>GRÁFICOS</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Rounded MT Bold,-24,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-355</x>
+                        <y>296</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textoInfo" uid="70">
+                    <properties>
+                        <text>INFO</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Rounded MT Bold,-24,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-361</x>
+                        <y>351</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textoSair" uid="71">
+                    <properties>
+                        <text>SAIR DO JOGO</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial Rounded MT Bold,-24,400,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-290</x>
+                        <y>407</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

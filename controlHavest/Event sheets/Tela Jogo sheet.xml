@@ -99,7 +99,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="131904517122418" type="TextoPontuacao">
-                                    <param id="0" name="Text">&quot;Dinheiro: &quot;&amp;Pontuacao</param>
+                                    <param id="0" name="Text">&quot;&quot;&amp;Pontuacao</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -113,7 +113,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="846320863728651" type="TextoPontuacao">
-                                    <param id="0" name="Text">&quot;Money: &quot;&amp;Pontuacao</param>
+                                    <param id="0" name="Text">&quot;&quot;&amp;Pontuacao</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -122,7 +122,7 @@
                 <event-block sid="905422416440940">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="207621704942987" type="System">
-                            <param id="0" name="Variable">plantasColhidas</param>
+                            <param id="0" name="Variable">plantasPlantadas</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -148,14 +148,14 @@
                                     <param id="0" name="Object">Inseto</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="659881696658290" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-12" name="Subtract from" sid="976668606988789" type="Inseto">
-                                    <param id="0" name="Instance variable">TempoDeCurva2</param>
+                                    <param id="0" name="Instance variable">TempoDeCurva</param>
                                     <param id="1" name="Value">0.1</param>
                                 </action>
                             </actions>
@@ -163,7 +163,7 @@
                                 <event-block sid="175978366272243">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="274508666957282" type="Inseto">
-                                            <param id="0" name="Instance variable">TempoDeCurva2</param>
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
@@ -174,8 +174,8 @@
                                             <param id="1" name="Angle">choose(90,-90)</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="954768176376110" type="Inseto">
-                                            <param id="0" name="Instance variable">TempoDeCurva2</param>
-                                            <param id="1" name="Value">Inseto.TempoDeCurvaMax2</param>
+                                            <param id="0" name="Instance variable">TempoDeCurva</param>
+                                            <param id="1" name="Value">Inseto.TempoDeCurvaMax</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -201,33 +201,12 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="901865089518086">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="218627311842441" type="System">
-                            <param id="0" name="Interval (seconds)">10</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="177683275357165">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="896279575985564" type="System">
-                                    <param id="0" name="Variable">predadoresEmJogo</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">10</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="610175889336537" type="System">
-                                    <param id="0" name="Variable">Pontuacao</param>
-                                    <param id="1" name="Value">30</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block sid="584943564349870">
                     <conditions>
+                        <condition id="-7" name="Compare time" sid="695472447742125" type="System">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Time (seconds)">0.1</param>
+                        </condition>
                         <condition id="-1" name="Every tick" sid="243211518036677" type="System" />
                     </conditions>
                     <actions />
@@ -572,29 +551,29 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="923801935345634">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="434657150657179" type="System">
+                                    <param id="0" name="Variable">Pontuacao</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="271445423251841" type="System">
+                                    <param id="0" name="Variable">PlantasEmJogo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="921716977430118" type="Trilha">
+                                    <param id="0" name="Tag">&quot;Trilha_Jogo&quot;</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="564059967770249" type="System">
+                                    <param id="0" name="Layout">Game Over</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="923801935345634">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="434657150657179" type="System">
-                            <param id="0" name="Variable">Pontuacao</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">75</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="271445423251841" type="System">
-                            <param id="0" name="Variable">PlantasEmJogo</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="6" name="Stop" sid="921716977430118" type="Trilha">
-                            <param id="0" name="Tag">&quot;Trilha_Jogo&quot;</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="564059967770249" type="System">
-                            <param id="0" name="Layout">Game Over</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -611,8 +590,8 @@
                             <param id="0" name="Time scale">0</param>
                         </action>
                         <action id="-3" name="Set position" sid="366288774215893" type="telaMenu">
-                            <param id="0" name="X">392</param>
-                            <param id="1" name="Y">240</param>
+                            <param id="0" name="X">428</param>
+                            <param id="1" name="Y">220</param>
                         </action>
                         <action id="0" name="Spawn another object" sid="553979613722254" type="telaMenu">
                             <param id="0" name="Object">botaoFechar</param>
@@ -632,6 +611,46 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
+                        <action id="0" name="Spawn another object" sid="771811672925805" type="telaMenu">
+                            <param id="0" name="Object">btnQuit</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="598033429484761" type="telaMenu">
+                            <param id="0" name="Object">btnSom</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="379083489917771" type="telaMenu">
+                            <param id="0" name="Object">btnGraficos</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="857652106394376" type="telaMenu">
+                            <param id="0" name="Object">btnInfo</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">4</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="613081995096954" type="telaMenu">
+                            <param id="0" name="Object">textoSom</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">6</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="578459894762541" type="telaMenu">
+                            <param id="0" name="Object">textoGraficos</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">7</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="895735274256801" type="telaMenu">
+                            <param id="0" name="Object">textoInfo</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">8</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="547305696864238" type="telaMenu">
+                            <param id="0" name="Object">textoSair</param>
+                            <param id="1" name="Layer">&quot;popup&quot;</param>
+                            <param id="2" name="Image point">9</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="129633027939575">
@@ -649,6 +668,10 @@
                             <param id="1" name="Y">240</param>
                         </action>
                         <action id="-9" name="Destroy" sid="188934804350820" type="botaoFechar" />
+                        <action id="-9" name="Destroy" sid="313041451346505" type="btnQuit" />
+                        <action id="-9" name="Destroy" sid="225569453733271" type="btnSom" />
+                        <action id="-9" name="Destroy" sid="428342407973486" type="btnGraficos" />
+                        <action id="-9" name="Destroy" sid="374761807483683" type="btnInfo" />
                         <action id="-12" name="Set group active" sid="318362592469233" type="System">
                             <param id="0" name="Group name">&quot;Botoes&quot;</param>
                             <param id="1" name="State">1</param>
@@ -657,6 +680,103 @@
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="0" name="Play" sid="500413599744502" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="211987806501755">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="806587836968289" type="Touch">
+                            <param id="0" name="Object">btnQuit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="998569268237228" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="857522808508060" type="Trilha">
+                            <param id="0" name="Tag">&quot;Trilha_Jogo&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="798852289764781" type="System">
+                            <param id="0" name="Layout">Game Finish</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="612137587930938">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="658053254695207" type="Touch">
+                            <param id="0" name="Object">btnSom</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="977332947645237" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="654825244176488">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="497473864957563" type="btnSom">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set silent" sid="898460204241519" type="Trilha">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="561352586946255" type="btnSom">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="203791246314078">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="537457547815605" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Set silent" sid="814245338599926" type="Trilha">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="556713999319789" type="btnSom">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="235746623376654">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="939722509627632" type="Touch">
+                            <param id="0" name="Object">btnGraficos</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="479676556211553" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="596097507309559">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="686369149204306" type="Touch">
+                            <param id="0" name="Object">btnInfo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="299541014757521" type="Trilha">
                             <param id="0" name="Audio file">appear-online</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
@@ -715,7 +835,7 @@
                                         <action id="-9" name="Destroy" sid="113977238079250" type="AreaPlanta" />
                                         <action id="-10" name="Add to" sid="896280729778273" type="System">
                                             <param id="0" name="Variable">Pontuacao</param>
-                                            <param id="1" name="Value">Planta.ValorDeVenda2</param>
+                                            <param id="1" name="Value">Planta.ValorDeVenda</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="413348228668362" type="Planta" />
                                         <action id="-10" name="Add to" sid="676726054696615" type="System">
@@ -983,10 +1103,10 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="613622664584237" type="plantaEstagio2">
                                                     <param id="0" name="Instance variable">ValorNutricional</param>
-                                                    <param id="1" name="Value">Couve.ValorNutricional2</param>
+                                                    <param id="1" name="Value">Couve.ValorNutricional</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="109827694555955" type="System">
-                                                    <param id="0" name="Seconds">3</param>
+                                                    <param id="0" name="Seconds">6</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="548662093634522" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="117091970155978" type="plantaEstagio2">
@@ -1028,10 +1148,10 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="491676285913433" type="plantaEstagio2">
                                                     <param id="0" name="Instance variable">ValorNutricional</param>
-                                                    <param id="1" name="Value">Grama.ValorNutricional2</param>
+                                                    <param id="1" name="Value">Grama.ValorNutricional</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="724857680110105" type="System">
-                                                    <param id="0" name="Seconds">3</param>
+                                                    <param id="0" name="Seconds">4</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="627392791458340" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="881211761379972" type="plantaEstagio2">
@@ -1073,10 +1193,10 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="356056655992361" type="plantaEstagio2">
                                                     <param id="0" name="Instance variable">ValorNutricional</param>
-                                                    <param id="1" name="Value">Milho.ValorNutricional2</param>
+                                                    <param id="1" name="Value">Milho.ValorNutricional</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="654255405721220" type="System">
-                                                    <param id="0" name="Seconds">4</param>
+                                                    <param id="0" name="Seconds">8</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="118573127753750" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="383458548907763" type="plantaEstagio2">
@@ -1118,10 +1238,10 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="265075357149634" type="plantaEstagio2">
                                                     <param id="0" name="Instance variable">ValorNutricional</param>
-                                                    <param id="1" name="Value">Tomate.ValorNutricional2</param>
+                                                    <param id="1" name="Value">Tomate.ValorNutricional</param>
                                                 </action>
                                                 <action id="-16" name="Wait" sid="905148974485748" type="System">
-                                                    <param id="0" name="Seconds">5</param>
+                                                    <param id="0" name="Seconds">8</param>
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="911069150835860" type="plantaEstagio2" />
                                                 <action id="0" name="Spawn another object" sid="816064513114891" type="plantaEstagio2">
@@ -1285,6 +1405,151 @@
         </event-group>
         <event-group description="" sid="260784922299131" title="Regras do Jogo">
             <sub-events>
+                <event-group description="" sid="435971767005185" title="MultaPredador">
+                    <sub-events>
+                        <event-block sid="901865089518086">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="218627311842441" type="System">
+                                    <param id="0" name="Interval (seconds)">15</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="multa" sid="637275589508065" static="0" type="number">0</variable>
+                                <event-block sid="177683275357165">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="896279575985564" type="System">
+                                            <param id="0" name="Variable">predadoresEmJogo</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="208940116933927" type="System">
+                                            <param id="0" name="Variable">multa</param>
+                                            <param id="1" name="Value">predadoresEmJogo*5</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="610175889336537" type="System">
+                                            <param id="0" name="Variable">Pontuacao</param>
+                                            <param id="1" name="Value">multa</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="141192969349528">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="216046104316453" type="System">
+                                                    <param id="0" name="Variable">Idioma</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;br&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set time scale" sid="115299790140481" type="System">
+                                                    <param id="0" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="630094701932078" type="telaFundoPopup">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="455276532598160" type="multaFundo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="159181473469736" type="multaFundo">
+                                                    <param id="0" name="Object">btnFecharMulta</param>
+                                                    <param id="1" name="Layer">&quot;popup&quot;</param>
+                                                    <param id="2" name="Image point">1</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="727437290331101" type="textoMulta">
+                                                    <param id="0" name="Text">&quot;Você foi multado em &quot;&amp;multa&amp;&quot; moedas!!&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="679270581736710" type="textoMulta">
+                                                    <param id="0" name="Text">&quot;&quot;&amp; newline &amp;&quot;Seus predadores estão fora de controle. Reduza a população. &quot; </param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="163779051291687" type="textoMulta">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="969299636531155" type="Trilha">
+                                                    <param id="0" name="Audio file">jingles_SAX13</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="225645316717748">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="393883356724008" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="887897232965534" type="System">
+                                                    <param id="0" name="Variable">Idioma</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;us&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set time scale" sid="101721630861665" type="System">
+                                                    <param id="0" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="110861138255505" type="telaFundoPopup">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="421507558881588" type="multaFundo">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="310066187871354" type="multaFundo">
+                                                    <param id="0" name="Object">btnFecharMulta</param>
+                                                    <param id="1" name="Layer">&quot;popup&quot;</param>
+                                                    <param id="2" name="Image point">1</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="193319407567657" type="textoMulta">
+                                                    <param id="0" name="Text">&quot;You were fined &quot;&amp;multa&amp;&quot; coins!!&quot;</param>
+                                                </action>
+                                                <action id="1" name="Append text" sid="665902330536324" type="textoMulta">
+                                                    <param id="0" name="Text">&quot;&quot;&amp; newline &amp;&quot;Your predators are out of control. Reduce population.&quot;</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="539677092314620" type="textoMulta">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="963413385163684" type="Trilha">
+                                                    <param id="0" name="Audio file">jingles_SAX13</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="891766503978983">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="220658029215695" type="Touch">
+                            <param id="0" name="Object">btnFecharMulta</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="322627479482361" type="btnFecharMulta" />
+                        <action id="-15" name="Set visible" sid="768790509321941" type="telaFundoPopup">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="888618150427705" type="textoMulta">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="739255390653242" type="multaFundo">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="381076144252326" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                        <action id="0" name="Play" sid="418104885215879" type="Trilha">
+                            <param id="0" name="Audio file">appear-online</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-group description="" sid="975658341887584" title="Perseguicao">
                     <sub-events>
                         <event-group description="" sid="243455228151387" title="PragasPersiguicao">
@@ -1295,7 +1560,7 @@
                                             <param id="0" name="Object">Planta</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="665489562061370" type="Inseto">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">80</param>
                                         </condition>
@@ -1424,7 +1689,7 @@
                                             <param id="0" name="Object">plantaEstagio2</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="166940372428924" type="Inseto">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">50</param>
                                         </condition>
@@ -1557,7 +1822,7 @@
                                             <param id="0" name="Object">Grilo</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="106249410596064" type="Besouro">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -1575,7 +1840,7 @@
                                             <param id="0" name="Object">Pulgao</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="801071577686807" type="Besouro">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -1593,7 +1858,7 @@
                                             <param id="0" name="Object">Lagarta</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="525612885740022" type="Joaninha">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -1611,7 +1876,7 @@
                                             <param id="0" name="Object">Cigarrinha</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="901621720474857" type="Joaninha">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -1648,33 +1913,6 @@
                                     <param id="0" name="Variable">localMigracaoX</param>
                                     <param id="1" name="Value">choose(25, 754)</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="356281787316658" type="MigracaoFundo">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="0" name="Set text" sid="632146924612747" type="TextoMigracao">
-                                    <param id="0" name="Text">&quot; &quot;&amp;taxaMigracao</param>
-                                </action>
-                                <action id="1" name="Append text" sid="907977939467312" type="TextoMigracao">
-                                    <param id="0" name="Text">&quot; novas pragas chegaram a sua colheita!&quot; </param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="290218874666013" type="TextoMigracao">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="0" name="Play" sid="904013901598167" type="Trilha">
-                                    <param id="0" name="Audio file">jingles_SAX13</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="924584123484703" type="System">
-                                    <param id="0" name="Seconds">2.0</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="215449945921420" type="TextoMigracao">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="618409175081356" type="MigracaoFundo">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
                                 <action id="-9" name="Set value" sid="656334665272655" type="System">
                                     <param id="0" name="Variable">gramaProbabilidade</param>
                                     <param id="1" name="Value">10*gramaEmJogo/plantasEmJogo</param>
@@ -1693,6 +1931,83 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="677287769183260">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="392444111196974" type="System">
+                                            <param id="0" name="Variable">Idioma</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;br&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="590389343625194" type="MigracaoFundo">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="876382200171732" type="TextoMigracao">
+                                            <param id="0" name="Text">&quot; &quot;&amp;taxaMigracao</param>
+                                        </action>
+                                        <action id="1" name="Append text" sid="896403329534403" type="TextoMigracao">
+                                            <param id="0" name="Text">&quot; novas pragas chegaram a sua colheita!&quot; </param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="664727057646189" type="TextoMigracao">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="990620200188815" type="Trilha">
+                                            <param id="0" name="Audio file">jingles_SAX13</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="626051895067349" type="System">
+                                            <param id="0" name="Seconds">2.0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="391108736695213" type="TextoMigracao">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="677135124505383" type="MigracaoFundo">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="293730100308316">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="792153496783468" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="588853657605234" type="System">
+                                            <param id="0" name="Variable">Idioma</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;us&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="156776985231572" type="MigracaoFundo">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="193001459053464" type="TextoMigracao">
+                                            <param id="0" name="Text">&quot; &quot;&amp;taxaMigracao</param>
+                                        </action>
+                                        <action id="1" name="Append text" sid="659730396344004" type="TextoMigracao">
+                                            <param id="0" name="Text">&quot; new plagues have come to your harvest!&quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="418096051373448" type="TextoMigracao">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="102660546317479" type="Trilha">
+                                            <param id="0" name="Audio file">jingles_SAX13</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="595676583239065" type="System">
+                                            <param id="0" name="Seconds">2.0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="790459296865045" type="TextoMigracao">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="212768813142856" type="MigracaoFundo">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="940762369478267">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="774163063370425" type="System">
@@ -2006,16 +2321,16 @@
                                     </conditions>
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="158867962799463" type="Inseto">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Value">2</param>
                                         </action>
                                         <action behavior="Bullet2" id="0" name="Set speed" sid="460389600252686" type="Inseto">
-                                            <param id="0" name="Speed">Inseto.VelocidadeMax2*Inseto.Energia2/Inseto.EnergiaMax2</param>
+                                            <param id="0" name="Speed">Inseto.VelocidadeMax*Inseto.Energia/Inseto.EnergiaMax</param>
                                         </action>
                                         <action id="-28" name="Set effect parameter" sid="284838408585486" type="Inseto">
                                             <param id="0" name="Effect">&quot;Grayscale2&quot;</param>
                                             <param id="1" name="Parameter index">0</param>
-                                            <param id="2" name="Value">100-Inseto.Energia2</param>
+                                            <param id="2" name="Value">100-Inseto.Energia</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2024,7 +2339,7 @@
                         <event-block sid="564523136142794">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="284109467801480" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -2054,7 +2369,7 @@
                                             <param id="0" name="Object">Planta</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="365342251875887" type="Inseto">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">80</param>
                                         </condition>
@@ -2092,23 +2407,23 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="172357698475746" type="Planta" />
                                                 <action id="-11" name="Add to" sid="700818695121698" type="Inseto">
-                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                    <param id="1" name="Value">Planta.ValorNutricional2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Planta.ValorNutricional</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
                                                 <event-block sid="129371107277285">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="311030293590971" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="222582563296383" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2157,23 +2472,23 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="921443329130337" type="Planta" />
                                                 <action id="-11" name="Add to" sid="622805440545474" type="Inseto">
-                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                    <param id="1" name="Value">Planta.ValorNutricional2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
+                                                    <param id="1" name="Value">Planta.ValorNutricional</param>
                                                 </action>
                                             </actions>
                                             <sub-events>
                                                 <event-block sid="125957721058701">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="639007959655799" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="430550683593979" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2206,11 +2521,6 @@
                                                         <condition id="-7" name="Compare instance variable" sid="790552764526953" type="Planta">
                                                             <param id="0" name="Instance variable">Nome</param>
                                                             <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;couve&quot;</param>
-                                                        </condition>
-                                                        <condition id="-7" name="Compare instance variable" sid="209661812364395" type="Planta">
-                                                            <param id="0" name="Instance variable">Nome</param>
-                                                            <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">&quot;grama&quot;</param>
                                                         </condition>
                                                     </conditions>
@@ -2232,23 +2542,23 @@
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="538373573754186" type="Planta" />
                                                         <action id="-11" name="Add to" sid="898897377359566" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Planta.ValorNutricional2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Planta.ValorNutricional</param>
                                                         </action>
                                                     </actions>
                                                     <sub-events>
                                                         <event-block sid="242871986083210">
                                                             <conditions>
                                                                 <condition id="-7" name="Compare instance variable" sid="337325771688211" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
                                                                     <param id="1" name="Comparison">4</param>
-                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-10" name="Set value" sid="393165325343103" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -2280,22 +2590,7 @@
                                             <sub-events>
                                                 <event-block any="1" sid="792536787431259">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="758336246290471" type="Planta">
-                                                            <param id="0" name="Instance variable">Nome</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;couve&quot;</param>
-                                                        </condition>
-                                                        <condition id="-7" name="Compare instance variable" sid="545718559962972" type="Planta">
-                                                            <param id="0" name="Instance variable">Nome</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;grama&quot;</param>
-                                                        </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="246682260195351" type="Planta">
-                                                            <param id="0" name="Instance variable">Nome</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;tomate&quot;</param>
-                                                        </condition>
-                                                        <condition id="-7" name="Compare instance variable" sid="155875300992863" type="Planta">
                                                             <param id="0" name="Instance variable">Nome</param>
                                                             <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">&quot;milho&quot;</param>
@@ -2319,23 +2614,23 @@
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="279753334154718" type="Planta" />
                                                         <action id="-11" name="Add to" sid="122429498660092" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Planta.ValorNutricional2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Planta.ValorNutricional</param>
                                                         </action>
                                                     </actions>
                                                     <sub-events>
                                                         <event-block sid="170342170604788">
                                                             <conditions>
                                                                 <condition id="-7" name="Compare instance variable" sid="890669608666962" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
                                                                     <param id="1" name="Comparison">4</param>
-                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-10" name="Set value" sid="579507977013088" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -2363,7 +2658,7 @@
                                             <param id="0" name="Object">plantaEstagio2</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="657821826835133" type="Inseto">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">50</param>
                                         </condition>
@@ -2401,7 +2696,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="905808531630300" type="plantaEstagio2" />
                                                 <action id="-11" name="Add to" sid="234872306841193" type="Inseto">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2409,15 +2704,15 @@
                                                 <event-block sid="969779943383278">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="139306035211694" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="228584661933086" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2466,7 +2761,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="641048359070259" type="plantaEstagio2" />
                                                 <action id="-11" name="Add to" sid="526984436642793" type="Inseto">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2474,15 +2769,15 @@
                                                 <event-block sid="727679933846281">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="293211164812641" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="220812511231588" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2541,7 +2836,7 @@
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="389267406825487" type="plantaEstagio2" />
                                                         <action id="-11" name="Add to" sid="527636341442634" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
                                                         </action>
                                                     </actions>
@@ -2549,15 +2844,15 @@
                                                         <event-block sid="691991147155082">
                                                             <conditions>
                                                                 <condition id="-7" name="Compare instance variable" sid="128777196855483" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
                                                                     <param id="1" name="Comparison">4</param>
-                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-10" name="Set value" sid="341408418542909" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -2628,7 +2923,7 @@
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="893225795223722" type="plantaEstagio2" />
                                                         <action id="-11" name="Add to" sid="779953283969282" type="Inseto">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Value">plantaEstagio2.ValorNutricional</param>
                                                         </action>
                                                     </actions>
@@ -2636,15 +2931,15 @@
                                                         <event-block sid="242389938530661">
                                                             <conditions>
                                                                 <condition id="-7" name="Compare instance variable" sid="464056233135778" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
                                                                     <param id="1" name="Comparison">4</param>
-                                                                    <param id="2" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="2" name="Value">Inseto.EnergiaMax</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
                                                                 <action id="-10" name="Set value" sid="183107650943015" type="Inseto">
-                                                                    <param id="0" name="Instance variable">Energia2</param>
-                                                                    <param id="1" name="Value">Inseto.EnergiaMax2</param>
+                                                                    <param id="0" name="Instance variable">Energia</param>
+                                                                    <param id="1" name="Value">Inseto.EnergiaMax</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -2676,7 +2971,7 @@
                                             <param id="0" name="Object">Grilo</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="529183728425327" type="Besouro">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -2697,12 +2992,12 @@
                                                 <condition id="-7" name="Compare instance variable" sid="475138334374583" type="Besouro">
                                                     <param id="0" name="Instance variable">Predacao</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Besouro.Energia2</param>
+                                                    <param id="2" name="Value">Besouro.Energia</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="463189255861166" type="Grilo">
                                                     <param id="0" name="Instance variable">Fuga</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Grilo.Energia2</param>
+                                                    <param id="2" name="Value">Grilo.Energia</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2726,7 +3021,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="763311251192064" type="Grilo" />
                                                 <action id="-11" name="Add to" sid="853392869396323" type="Besouro">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">Grilo.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2734,15 +3029,15 @@
                                                 <event-block sid="634703818563489">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="145334994254644" type="Besouro">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Besouro.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Besouro.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="695940174814630" type="Besouro">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Besouro.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Besouro.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2756,7 +3051,7 @@
                                             <param id="0" name="Object">Pulgao</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="179141832711393" type="Besouro">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -2777,12 +3072,12 @@
                                                 <condition id="-7" name="Compare instance variable" sid="842219380044651" type="Besouro">
                                                     <param id="0" name="Instance variable">Predacao</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Besouro.Energia2</param>
+                                                    <param id="2" name="Value">Besouro.Energia</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="556719800463410" type="Pulgao">
                                                     <param id="0" name="Instance variable">Fuga</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Pulgao.Energia2</param>
+                                                    <param id="2" name="Value">Pulgao.Energia</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2806,7 +3101,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="919733672583132" type="Pulgao" />
                                                 <action id="-11" name="Add to" sid="453104476723643" type="Besouro">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">Pulgao.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2814,15 +3109,15 @@
                                                 <event-block sid="576664973393885">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="381042750374797" type="Besouro">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Besouro.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Besouro.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="126279198929679" type="Besouro">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Besouro.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Besouro.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2836,7 +3131,7 @@
                                             <param id="0" name="Object">Lagarta</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="605799875670027" type="Joaninha">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -2857,12 +3152,12 @@
                                                 <condition id="-7" name="Compare instance variable" sid="640743107786635" type="Joaninha">
                                                     <param id="0" name="Instance variable">Predacao</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Joaninha.Energia2</param>
+                                                    <param id="2" name="Value">Joaninha.Energia</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="764607933360458" type="Lagarta">
                                                     <param id="0" name="Instance variable">Fuga</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Lagarta.Energia2</param>
+                                                    <param id="2" name="Value">Lagarta.Energia</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2886,7 +3181,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="442870634509327" type="Lagarta" />
                                                 <action id="-11" name="Add to" sid="772017198639642" type="Joaninha">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">Lagarta.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2894,15 +3189,15 @@
                                                 <event-block sid="444902114449051">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="160332907888938" type="Joaninha">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Joaninha.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Joaninha.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="207946866034301" type="Joaninha">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Joaninha.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Joaninha.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -2916,7 +3211,7 @@
                                             <param id="0" name="Object">Cigarrinha</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="691069250822179" type="Joaninha">
-                                            <param id="0" name="Instance variable">Energia2</param>
+                                            <param id="0" name="Instance variable">Energia</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">85</param>
                                         </condition>
@@ -2937,12 +3232,12 @@
                                                 <condition id="-7" name="Compare instance variable" sid="498942728443374" type="Joaninha">
                                                     <param id="0" name="Instance variable">Predacao</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Joaninha.Energia2</param>
+                                                    <param id="2" name="Value">Joaninha.Energia</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="115686959540142" type="Cigarrinha">
                                                     <param id="0" name="Instance variable">Fuga</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">Cigarrinha.Energia2</param>
+                                                    <param id="2" name="Value">Cigarrinha.Energia</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2966,7 +3261,7 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="724140735883990" type="Cigarrinha" />
                                                 <action id="-11" name="Add to" sid="645420323696712" type="Joaninha">
-                                                    <param id="0" name="Instance variable">Energia2</param>
+                                                    <param id="0" name="Instance variable">Energia</param>
                                                     <param id="1" name="Value">Cigarrinha.ValorNutricional</param>
                                                 </action>
                                             </actions>
@@ -2974,15 +3269,15 @@
                                                 <event-block sid="582016314499849">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="997420478096653" type="Joaninha">
-                                                            <param id="0" name="Instance variable">Energia2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
                                                             <param id="1" name="Comparison">4</param>
-                                                            <param id="2" name="Value">Joaninha.EnergiaMax2</param>
+                                                            <param id="2" name="Value">Joaninha.EnergiaMax</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-10" name="Set value" sid="862210034678107" type="Joaninha">
-                                                            <param id="0" name="Instance variable">Energia2</param>
-                                                            <param id="1" name="Value">Joaninha.EnergiaMax2</param>
+                                                            <param id="0" name="Instance variable">Energia</param>
+                                                            <param id="1" name="Value">Joaninha.EnergiaMax</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3012,7 +3307,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="300140991580022" type="Besouro">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3027,7 +3322,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="730716546393544" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3040,12 +3335,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="916193720371508" type="Besouro">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Besouro.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Besouro.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="771375889212467" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="874581675491676" type="System">
                                     <param id="0" name="Seconds">1.5</param>
@@ -3077,7 +3372,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="913747490187402" type="Joaninha">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3092,7 +3387,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="587273564276689" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3105,12 +3400,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="916501415721206" type="Joaninha">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Joaninha.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Joaninha.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="870429474640440" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="737403851994671" type="System">
                                     <param id="0" name="Seconds">1.5</param>
@@ -3142,7 +3437,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="159541425089278" type="Cigarrinha">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3157,7 +3452,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="308248024964140" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3170,12 +3465,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="608018223437319" type="Cigarrinha">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Cigarrinha.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Cigarrinha.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="828101773640253" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="740377459229262" type="System">
                                     <param id="0" name="Seconds">1.5</param>
@@ -3207,7 +3502,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="956563178217198" type="Grilo">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3222,7 +3517,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="290939344805711" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3235,12 +3530,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="171224210500885" type="Grilo">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Grilo.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Grilo.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="152566573974551" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="669243688721334" type="System">
                                     <param id="0" name="Seconds">1.5</param>
@@ -3272,7 +3567,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="695782984924070" type="Lagarta">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3287,7 +3582,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="507571595570914" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3300,12 +3595,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="268878310536855" type="Lagarta">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Lagarta.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Lagarta.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="632180835885745" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="595358924849951" type="System">
                                     <param id="0" name="Seconds">1.5</param>
@@ -3337,7 +3632,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="946990415928437" type="Pulgao">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">30</param>
                                 </condition>
@@ -3352,7 +3647,7 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="585409344283625" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
+                                    <param id="0" name="Instance variable">Energia</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">20</param>
                                 </condition>
@@ -3365,12 +3660,12 @@
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="500910142043358" type="Pulgao">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Pulgao.Energia2-25</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Pulgao.Energia-25</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="515720325987347" type="Inseto">
-                                    <param id="0" name="Instance variable">Energia2</param>
-                                    <param id="1" name="Value">Inseto.Energia2-15</param>
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Inseto.Energia-15</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="706364102001459" type="System">
                                     <param id="0" name="Seconds">1.5</param>
