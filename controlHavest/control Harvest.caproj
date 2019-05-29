@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.5.0.0</version>
+    <version>1.6.2.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -10,13 +10,18 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>26500</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -426,9 +431,6 @@
         <object-type name="TextoTelaInicial" sid="201253851290264">
             <plugin id="Text" />
         </object-type>
-        <object-type name="nome" sid="243902468887094">
-            <plugin id="TextBox" />
-        </object-type>
         <object-type name="Cigarrinha" sid="445829387738581">
             <plugin id="Sprite" />
             <instance-variables>
@@ -567,17 +569,13 @@
         <object-type name="telaMenu" sid="436079658937521">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="554675417329162" speed="5">
-                    <frame duration="1" hotspotX="0.48355" hotspotY="0.500343" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\level_select\bg.png">
-                        <image-point name="Imagepoint 1" x="0.847743" y="0.10501" />
-                        <image-point name="Imagepoint 2" x="0.20505" y="0.368566" />
-                        <image-point name="Imagepoint 3" x="0.20505" y="0.530542" />
-                        <image-point name="Imagepoint 4" x="0.20811" y="0.689773" />
-                        <image-point name="Imagepoint 5" x="0.20811" y="0.849005" />
-                        <image-point name="Imagepoint 6" x="0.388676" y="0.335621" />
-                        <image-point name="Imagepoint 7" x="0.388676" y="0.489362" />
-                        <image-point name="Imagepoint 8" x="0.388676" y="0.656829" />
-                        <image-point name="Imagepoint 9" x="0.382555" y="0.818806" />
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="554675417329162" speed="5">
+                    <frame duration="1" hotspotX="0.48324" hotspotY="0.501502" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\bg-BR.png">
+                        <image-point name="Imagepoint 1" x="0.899441" y="0.0780781" />
+                        <image-point name="Imagepoint 2" x="0.120112" y="0.285285" />
+                        <image-point name="Imagepoint 3" x="0.122905" y="0.459459" />
+                        <image-point name="Imagepoint 4" x="0.125698" y="0.630631" />
+                        <image-point name="Imagepoint 5" x="0.125698" y="0.816817" />
                         <collision-poly>
                             <point x="0.020658" y="0.0185312" />
                             <point x="0.499617" y="0.00205903" />
@@ -588,6 +586,13 @@
                             <point x="0.0382555" y="0.965683" />
                             <point x="0.00765111" y="0.499657" />
                         </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501502" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\bg - US.png">
+                        <image-point name="Imagepoint 1" x="0.899441" y="0.0780781" />
+                        <image-point name="Imagepoint 2" x="0.122905" y="0.285285" />
+                        <image-point name="Imagepoint 3" x="0.125698" y="0.459459" />
+                        <image-point name="Imagepoint 4" x="0.125698" y="0.633634" />
+                        <image-point name="Imagepoint 5" x="0.125698" y="0.81982" />
                     </frame>
                 </animation>
             </animation-folder>
@@ -933,6 +938,244 @@
         <object-type name="textoSair" sid="951566054579710">
             <plugin id="Text" />
         </object-type>
+        <object-type name="telaInfo" sid="782703057400285">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="246959423445119" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\infoPrecosBR.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\infoPrecosUS.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnFechaInfo" sid="609188774587165">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="118250238407566" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\x.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundoMeta" sid="789750102988353">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="749651901991227" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503356" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\barraMensagens.png">
+                        <image-point name="Imagepoint 1" x="0.954" y="0.14094" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnFechaMeta" sid="411156345920316">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125397175476982" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextoMeta" sid="614302242777562">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="textoContador" sid="683414985885844">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Canvas" sid="785778659290741">
+            <plugin id="c2canvas" />
+            <texture />
+        </object-type>
+        <object-type name="Grafico" sid="302508475008481">
+            <plugin id="c2canvas" />
+            <texture original-source="C:\Users\Flávio\Desktop\TCC\Sprites\grafico.png" />
+        </object-type>
+        <object-type name="btFechaGrafico" sid="355762434463578">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471323488705911" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\x.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array" sid="155883104797384">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="AJAX" sid="287292888618506">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="TextoNome" sid="704192235262773">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="fundoPop" sid="386024566110546">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="908302407712283" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="967198329490045">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386735296477608" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503356" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\barraMensagens.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mensagem" sid="392702191075567">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SpriteFont" sid="756843719675761">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="telaRank" sid="729205357527890">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="487916779590404" speed="5">
+                    <frame duration="1" hotspotX="0.500383" hotspotY="0.500343" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\level_select\bg.png">
+                        <collision-poly>
+                            <point x="0.020658" y="0.0185312" />
+                            <point x="0.499617" y="0.00205903" />
+                            <point x="0.960214" y="0.0356898" />
+                            <point x="0.973221" y="0.499657" />
+                            <point x="0.957919" y="0.962251" />
+                            <point x="0.499617" y="0.978037" />
+                            <point x="0.0382555" y="0.965683" />
+                            <point x="0.00765111" y="0.499657" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textRank" sid="623958129752115">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fundoRank" sid="692505761415611">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363695986939234" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GraficoUS" sid="955966061227128">
+            <plugin id="c2canvas" />
+            <texture original-source="C:\Users\Flávio\Desktop\TCC\Sprites\graficoUS.png" />
+        </object-type>
+        <object-type name="botaoOkNome" sid="302192884856109">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="540566993203266" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0310786" y="0.138211" />
+                            <point x="0.499086" y="0.0894309" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.983547" y="0.926829" />
+                            <point x="0.499086" y="0.99187" />
+                            <point x="0.0164534" y="0.926829" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextoOkNome" sid="752333715207005">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="telaSobreBR" sid="437241724675007">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="703558554607768" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobre_ComoPlantar.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobre_ComoColher.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobre_Predadores.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobre_RecolherPredador.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobre_Finalizando.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="telaSobreUS" sid="995421210565704">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="135516908158290" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobreUS_Plantar.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobreUS_Colher.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobreUS_Predador.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobreUS_predadorRemove.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Flávio\Desktop\TCC\sobre\telaSobreUS_Sir.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnProx" sid="343147698100163">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="657602789693553" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\next.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnAnt" sid="221427995081878">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="680799979393358" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\prew.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnClose" sid="999250955886574">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="778880456868806" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="tabelaJogador" sid="642943808496573">
+            <plugin id="Dictionary" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Inseto" plugin-id="Sprite" sid="815178117630363">
@@ -1006,6 +1249,7 @@
     </families>
     <layout-folder>
         <layout>Tela Inicial.xml</layout>
+        <layout>Tela Sobre.xml</layout>
         <layout>Tela Jogo.xml</layout>
         <layout>Game Over.xml</layout>
         <layout>Game Finish.xml</layout>
@@ -1015,6 +1259,7 @@
         <event-sheet>Tela Inicial sheet.xml</event-sheet>
         <event-sheet>Game Over sheet.xml</event-sheet>
         <event-sheet>Game Finish sheet.xml</event-sheet>
+        <event-sheet>Tela Sobre sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="15" />
@@ -1037,6 +1282,7 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="AJAX" uid="77" />
     </global-instances>
     <sounds-folder>
         <file name="jingles_SAX07.ogg" />

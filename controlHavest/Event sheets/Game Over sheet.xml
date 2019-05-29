@@ -8,6 +8,9 @@
                 <condition id="-2" name="On start of layout" sid="740947231671981" type="System" />
             </conditions>
             <actions>
+                <action id="8" name="Set silent" sid="484314707254482" type="Trilha">
+                    <param id="0" name="Mode">1</param>
+                </action>
                 <action id="0" name="Play" sid="258499075434008" type="Trilha">
                     <param id="0" name="Audio file">jingles_SAX07</param>
                     <param id="2" name="Loop">0</param>

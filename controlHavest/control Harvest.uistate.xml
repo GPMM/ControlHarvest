@@ -10,14 +10,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="2">Tela Jogo</layout>
-        <layout order="0">Tela Inicial</layout>
-        <layout order="4">Game Over</layout>
-        <layout order="7">Game Finish</layout>
-        <event-sheet order="3">Tela Jogo sheet</event-sheet>
-        <event-sheet order="1">Tela Inicial sheet</event-sheet>
-        <event-sheet order="5">Game Over sheet</event-sheet>
+        <layout order="1">Tela Inicial</layout>
+        <layout order="3">Tela Jogo</layout>
+        <layout order="5">Game Finish</layout>
+        <layout order="7">Tela Sobre</layout>
+        <event-sheet order="2">Tela Inicial sheet</event-sheet>
+        <event-sheet active="1" order="4">Tela Jogo sheet</event-sheet>
         <event-sheet order="6">Game Finish sheet</event-sheet>
+        <event-sheet order="8">Tela Sobre sheet</event-sheet>
+        <event-sheet order="9">Game Over sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -32,7 +33,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="botaoPredadores" />
     </families-expanded>
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
@@ -83,5 +84,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/btnGraficos/" />
         <folder expanded="1" path="animation-folder/btnInfo/" />
         <folder expanded="1" path="animation-folder/btnQuit/" />
+        <folder expanded="1" path="animation-folder/telaInfo/" />
+        <folder expanded="1" path="animation-folder/btnFechaInfo/" />
+        <folder expanded="1" path="animation-folder/fundoMeta/" />
+        <folder expanded="1" path="animation-folder/btnFechaMeta/" />
+        <folder expanded="1" path="animation-folder/btFechaGrafico/" />
+        <folder expanded="1" path="animation-folder/fundoPop/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/telaRank/" />
+        <folder expanded="1" path="animation-folder/fundoRank/" />
+        <folder expanded="1" path="animation-folder/botaoOkNome/" />
+        <folder expanded="1" path="animation-folder/telaSobreBR/" />
+        <folder expanded="1" path="animation-folder/telaSobreUS/" />
+        <folder expanded="1" path="animation-folder/btnProx/" />
+        <folder expanded="1" path="animation-folder/btnAnt/" />
+        <folder expanded="1" path="animation-folder/btnClose/" />
     </folders-expanded>
 </c2uistate>

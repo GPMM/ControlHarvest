@@ -4,6 +4,7 @@
     <name>Tela Inicial sheet</name>
     <events>
         <variable constant="0" name="Idioma" sid="731009031618456" static="0" type="text">br</variable>
+        <variable constant="0" name="Nome" sid="213631376307890" static="0" type="text"></variable>
         <event-block sid="740901890457979">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="564112038256436" type="System" />
@@ -50,16 +51,53 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="6" name="Stop" sid="899002424637452" type="Trilha">
+                <action id="-4" name="Set layer visible" sid="647340499508439" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="678549835303511">
+            <conditions>
+                <condition id="3" name="On touched object" sid="119828568304449" type="Touch">
+                    <param id="0" name="Object">botaoSobre</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="580954115769416" type="System">
+                    <param id="0" name="Layout">&quot;Tela Sobre&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="382167467438730">
+            <conditions>
+                <condition id="3" name="On touched object" sid="432936131604089" type="Touch">
+                    <param id="0" name="Object">botaoOkNome</param>
+                </condition>
+                <condition id="0" inverted="1" name="Compare text" sid="294980885464615" type="TextoNome">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="576533607913121" type="Trilha">
                     <param id="0" name="Tag">&quot;Trilha_Inicial&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="489647774571938" type="Trilha">
+                <action id="0" name="Play" sid="453235508358977" type="Trilha">
                     <param id="0" name="Audio file">appear-online</param>
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="399719331647747" type="System">
+                <action id="-4" name="Set layer visible" sid="413399250874548" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="560260195111151" type="System">
+                    <param id="0" name="Variable">Nome</param>
+                    <param id="1" name="Value">TextoNome.Text</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="278435717042914" type="System">
                     <param id="0" name="Layout">Tela Jogo</param>
                 </action>
             </actions>
@@ -79,6 +117,9 @@
                 <action id="0" name="Set text" sid="470096156046354" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Iniciar&quot;</param>
                 </action>
+                <action id="0" name="Set text" sid="250833529644964" type="mensagem">
+                    <param id="0" name="Text">&quot;Insira seu nome para começar o jogo&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="942406132501108">
@@ -95,6 +136,9 @@
                 </action>
                 <action id="0" name="Set text" sid="514931111910510" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Start&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="300068145023446" type="mensagem">
+                    <param id="0" name="Text">&quot;Insert your name to start the game&quot;</param>
                 </action>
             </actions>
         </event-block>

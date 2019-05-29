@@ -3,16 +3,35 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Finish sheet</name>
     <events>
+        <variable constant="0" name="cliqueMensagem" sid="837799834574883" static="0" type="number">0</variable>
+        <variable constant="0" name="urlData" sid="456299550844996" static="0" type="text"></variable>
         <event-block sid="869578199756845">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="324505362623182" type="System" />
             </conditions>
             <actions>
+                <action id="8" name="Set silent" sid="305935783211155" type="Trilha">
+                    <param id="0" name="Mode">1</param>
+                </action>
                 <action id="0" name="Play" sid="985357698880835" type="Trilha">
                     <param id="0" name="Audio file">the_reel_winner_by_memoraphile_CC0</param>
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action disabled="1" id="0" name="Add key" sid="494040999498669" type="tabelaJogador">
+                    <param id="0" name="Key">&quot;nome&quot;</param>
+                    <param id="1" name="Value">&quot;teste&quot;</param>
+                </action>
+                <action disabled="1" id="2" name="Post to URL" sid="235333761377567" type="AJAX">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="URL">&quot;http://albali.eic.cefet-rj.br/tomcat/dsws/jogador.spring?json=&quot;</param>
+                    <param id="2" name="Data">URLEncode(tabelaJogador.AsJSON)</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+                <action disabled="1" id="-9" name="Set value" sid="272401183864634" type="System">
+                    <param id="0" name="Variable">urlData</param>
+                    <param id="1" name="Value">&quot;{&quot;&amp;tokenat(tokenat(tabelaJogador.AsJSON,2,&quot;{&quot;),0,&quot;}&quot;)&amp;&quot;}&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -42,6 +61,9 @@
                         <action id="0" name="Set text" sid="397436646955645" type="FimDeJogo">
                             <param id="0" name="Text">&quot;Fim de Jogo! &quot; &amp; newline &amp; &quot;Você terminou com: &quot; &amp;Pontuacao &amp;&quot; Pontos&quot;</param>
                         </action>
+                        <action disabled="1" id="0" name="Set text" sid="625564562531253" type="FimDeJogo">
+                            <param id="0" name="Text">urlData</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -53,8 +75,14 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-21" name="Reset global variables" sid="104332006705886" type="System" />
-                <action id="-2" name="Go to layout" sid="475286063312546" type="System">
+                <action disabled="1" id="2" name="Post to URL" sid="181038870606585" type="AJAX">
+                    <param id="0" name="Tag">&quot;add&quot;</param>
+                    <param id="1" name="URL">&quot;http://eic.cefet-rj.br/app/dsws/survey.spring?json=&quot;</param>
+                    <param id="2" name="Data">URLEncode(Array.AsJSON)</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="583579173769115" type="System" />
+                <action id="-2" name="Go to layout" sid="459664193266299" type="System">
                     <param id="0" name="Layout">Tela Inicial</param>
                 </action>
             </actions>
