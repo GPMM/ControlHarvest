@@ -16,6 +16,53 @@
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;Trilha_Inicial&quot;</param>
                 </action>
+                <action disabled="1" id="0" name="Request URL" sid="120453231096744" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                    <param id="1" name="URL">&quot;http://localhost:8080/controlharvest/rank.spring&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="679902116749256" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                    <param id="1" name="URL">&quot;http://albali.eic.cefet-rj.br/tomcat/controlharvest/rank.spring&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="986717842005922">
+            <conditions>
+                <condition id="0" name="On completed" sid="697736401316906" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Append text" sid="409396640497364" type="TextoPrimeiroLugar">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,0,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="1" name="Append text" sid="795270270138930" type="TextoSegundoLugar">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,2,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="1" name="Append text" sid="830191115271043" type="TextoTerceiroLugar">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,4,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="1" name="Append text" sid="218356645306462" type="TextoQuartoLugar">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,6,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="1" name="Append text" sid="862304512330558" type="TextoQuintoLugar">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,8,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="419623432430040" type="PontuacaoPrimeiro">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,1,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="351087510224593" type="PontuacaoSegundo">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,3,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="678763314778480" type="PontuacaoTerceiro">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,5,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="122554632598454" type="PontuacaoQuarto">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,7,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="461050312618634" type="PontuacaoQuinto">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,9,&quot;&amp;&quot;)</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="106724911472372">
@@ -54,6 +101,32 @@
                 <action id="-4" name="Set layer visible" sid="647340499508439" type="System">
                     <param id="0" name="Layer">&quot;popup&quot;</param>
                     <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="858112980803710">
+            <conditions>
+                <condition id="3" name="On touched object" sid="500492799199778" type="Touch">
+                    <param id="0" name="Object">BotaoRank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="766142036947167" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="646889158700519">
+            <conditions>
+                <condition id="3" name="On touched object" sid="380892497138574" type="Touch">
+                    <param id="0" name="Object">BotaoFecharRank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="900293891967273" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                    <param id="1" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -117,8 +190,11 @@
                 <action id="0" name="Set text" sid="470096156046354" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Iniciar&quot;</param>
                 </action>
-                <action id="0" name="Set text" sid="250833529644964" type="mensagem">
+                <action id="0" name="Set text" sid="250833529644964" type="mensagemNome">
                     <param id="0" name="Text">&quot;Insira seu nome para começar o jogo&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="280071082354714" type="TextoRankInicio">
+                    <param id="0" name="Text">&quot;Melhores Pontuações&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -137,8 +213,11 @@
                 <action id="0" name="Set text" sid="514931111910510" type="iniciarTexto">
                     <param id="0" name="Text">&quot;Start&quot;</param>
                 </action>
-                <action id="0" name="Set text" sid="300068145023446" type="mensagem">
+                <action id="0" name="Set text" sid="300068145023446" type="mensagemNome">
                     <param id="0" name="Text">&quot;Insert your name to start the game&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="147991568581965" type="TextoRankInicio">
+                    <param id="0" name="Text">&quot;Best Scores&quot;</param>
                 </action>
             </actions>
         </event-block>

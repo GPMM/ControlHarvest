@@ -1635,6 +1635,7 @@
             </properties>
         </instance>
         <instance type="tabelaJogador" uid="91" />
+        <instance type="TabelaEvento" uid="54" />
     </nonworld-instances>
     <effects />
 </c2layout>

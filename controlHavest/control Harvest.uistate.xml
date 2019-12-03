@@ -12,13 +12,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="1">Tela Inicial</layout>
         <layout order="3">Tela Jogo</layout>
-        <layout order="5">Game Finish</layout>
-        <layout order="7">Tela Sobre</layout>
+        <layout order="7">Game Over</layout>
         <event-sheet order="2">Tela Inicial sheet</event-sheet>
+        <event-sheet order="5">Game Finish sheet</event-sheet>
         <event-sheet active="1" order="4">Tela Jogo sheet</event-sheet>
-        <event-sheet order="6">Game Finish sheet</event-sheet>
-        <event-sheet order="8">Tela Sobre sheet</event-sheet>
-        <event-sheet order="9">Game Over sheet</event-sheet>
+        <event-sheet order="6">Game Over sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -91,13 +89,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/btFechaGrafico/" />
         <folder expanded="1" path="animation-folder/fundoPop/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
-        <folder expanded="1" path="animation-folder/telaRank/" />
-        <folder expanded="1" path="animation-folder/fundoRank/" />
+        <folder expanded="1" path="animation-folder/telaNome/" />
+        <folder expanded="1" path="animation-folder/fundoNome/" />
         <folder expanded="1" path="animation-folder/botaoOkNome/" />
         <folder expanded="1" path="animation-folder/telaSobreBR/" />
         <folder expanded="1" path="animation-folder/telaSobreUS/" />
         <folder expanded="1" path="animation-folder/btnProx/" />
         <folder expanded="1" path="animation-folder/btnAnt/" />
         <folder expanded="1" path="animation-folder/btnClose/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/BotaoRank/" />
+        <folder expanded="1" path="animation-folder/fundoRank/" />
+        <folder expanded="1" path="animation-folder/telaRank/" />
+        <folder expanded="1" path="animation-folder/BotaoFecharRank/" />
     </folders-expanded>
 </c2uistate>

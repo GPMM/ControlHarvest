@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>1.6.2.0</version>
+    <version>2.0.0.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Date" version="1">Date</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -1042,14 +1043,14 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="mensagem" sid="392702191075567">
+        <object-type name="mensagemNome" sid="392702191075567">
             <plugin id="Text" />
         </object-type>
         <object-type name="SpriteFont" sid="756843719675761">
             <plugin id="Spritefont2" />
             <texture />
         </object-type>
-        <object-type name="telaRank" sid="729205357527890">
+        <object-type name="telaNome" sid="729205357527890">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="487916779590404" speed="5">
@@ -1071,7 +1072,7 @@
         <object-type name="textRank" sid="623958129752115">
             <plugin id="Text" />
         </object-type>
-        <object-type name="fundoRank" sid="692505761415611">
+        <object-type name="fundoNome" sid="692505761415611">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363695986939234" speed="5">
@@ -1175,6 +1176,105 @@
         </object-type>
         <object-type global="1" name="tabelaJogador" sid="642943808496573">
             <plugin id="Dictionary" />
+        </object-type>
+        <object-type global="1" name="Date" sid="786393219222239">
+            <plugin id="Rex_Date" />
+        </object-type>
+        <object-type global="1" name="TabelaEvento" sid="361940230661456">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="Sprite2" sid="239303116916429">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="485822571601239" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BotaoRank" sid="503860583677587">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="346959592193323" speed="5">
+                    <frame duration="1" hotspotX="0.500914" hotspotY="0.504065" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\botaoMadeira.png">
+                        <collision-poly>
+                            <point x="0.0146252" y="0.105691" />
+                            <point x="0.97989" y="0.0894309" />
+                            <point x="0.981718" y="1" />
+                            <point x="0.0164534" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textoRank" sid="585185067650401">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="textoBotaoRank" sid="576528583457946">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fundoRank" sid="402835917786207">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="579382517962757" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="telaRank" sid="274956762247866">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="514234741991894" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500568" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\pause\bg.png">
+                        <collision-poly>
+                            <point x="0.0200422" y="0.0215664" />
+                            <point x="0.959916" y="0.0431328" />
+                            <point x="0.96308" y="0.960272" />
+                            <point x="0.0379747" y="0.959137" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextoRankInicio" sid="598593141678510">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextoPrimeiroLugar" sid="584756550677484">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextoSegundoLugar" sid="444111005493624">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextoTerceiroLugar" sid="915562790964520">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextoQuartoLugar" sid="320940421674070">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextoQuintoLugar" sid="474594537303507">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BotaoFecharRank" sid="716164888885752">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="648938848334611" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PontuacaoPrimeiro" sid="726581208623731">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PontuacaoSegundo" sid="203027097743375">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PontuacaoTerceiro" sid="835624019810929">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PontuacaoQuarto" sid="456192993663556">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PontuacaoQuinto" sid="163488502317582">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>
