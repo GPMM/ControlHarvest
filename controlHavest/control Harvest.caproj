@@ -2,7 +2,7 @@
 <c2project>
     <name>control Harvest</name>
     <description>Jogo de Controle Biológico</description>
-    <version>2.0.0.0</version>
+    <version>2.0.2.0</version>
     <author>Flávio Marques</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -53,7 +53,7 @@
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
-        <prop name="Preview browser">NW.js</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -1275,6 +1275,146 @@
         </object-type>
         <object-type name="PontuacaoQuinto" sid="163488502317582">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="btn_fecharStart" sid="923879089955447">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="171245369773024" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="conect_check" sid="360692938585346">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="755233002019843" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\about.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="384430167813364">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="305949693779071" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\faq.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="870349457134694">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="148766938071715" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\faq.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundoNome2" sid="456891594009263">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521797142584136" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundoNome3" sid="294814166966931">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983524206754356" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundo_conect" sid="701674928562661">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="419813436065071" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="telaConect" sid="705177513008671">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="520346865031296" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500568" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\you_lose\bg.png">
+                        <collision-poly>
+                            <point x="0.0200422" y="0.0215664" />
+                            <point x="0.5" y="0.00113507" />
+                            <point x="0.959916" y="0.0431328" />
+                            <point x="0.981013" y="0.499432" />
+                            <point x="0.96308" y="0.960272" />
+                            <point x="0.5" y="0.981839" />
+                            <point x="0.0379747" y="0.959137" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="textoConect" sid="108719997638949">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fecha_conect" sid="335909287444282">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="916826266359491" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502326" original-source="C:\Users\Flávio\Desktop\TCC\Sprites\PNG\btn\close.png">
+                        <collision-poly>
+                            <point x="0.0981308" y="0.0976744" />
+                            <point x="0.5" y="0" />
+                            <point x="0.88785" y="0.111628" />
+                            <point x="0.971963" y="0.497674" />
+                            <point x="0.873832" y="0.874419" />
+                            <point x="0.5" y="0.962791" />
+                            <point x="0.116822" y="0.883721" />
+                            <point x="0.0046729" y="0.497674" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>

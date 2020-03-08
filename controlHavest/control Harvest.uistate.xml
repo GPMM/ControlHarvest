@@ -14,8 +14,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="3">Tela Jogo</layout>
         <layout order="7">Game Over</layout>
         <event-sheet order="2">Tela Inicial sheet</event-sheet>
-        <event-sheet order="5">Game Finish sheet</event-sheet>
         <event-sheet active="1" order="4">Tela Jogo sheet</event-sheet>
+        <event-sheet order="5">Game Finish sheet</event-sheet>
         <event-sheet order="6">Game Over sheet</event-sheet>
     </open-tabs>
     <properties>
@@ -24,7 +24,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
+    <families-expanded root="1">
         <family expanded="0" name="Inseto" />
         <family expanded="0" name="Planta" />
         <family expanded="0" name="botaoPlantas" />
@@ -102,5 +102,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/fundoRank/" />
         <folder expanded="1" path="animation-folder/telaRank/" />
         <folder expanded="1" path="animation-folder/BotaoFecharRank/" />
+        <folder expanded="1" path="animation-folder/btn_fecharStart/" />
+        <folder expanded="1" path="animation-folder/conect_check/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/fundoNome2/" />
+        <folder expanded="1" path="animation-folder/fundoNome3/" />
+        <folder expanded="1" path="animation-folder/fundo_conect/" />
+        <folder expanded="1" path="animation-folder/telaConect/" />
+        <folder expanded="1" path="animation-folder/fecha_conect/" />
     </folders-expanded>
 </c2uistate>

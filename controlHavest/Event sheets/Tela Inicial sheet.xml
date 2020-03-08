@@ -16,13 +16,9 @@
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;Trilha_Inicial&quot;</param>
                 </action>
-                <action disabled="1" id="0" name="Request URL" sid="120453231096744" type="AJAX">
-                    <param id="0" name="Tag">&quot;rank&quot;</param>
-                    <param id="1" name="URL">&quot;http://localhost:8080/controlharvest/rank.spring&quot;</param>
-                </action>
                 <action id="0" name="Request URL" sid="679902116749256" type="AJAX">
                     <param id="0" name="Tag">&quot;rank&quot;</param>
-                    <param id="1" name="URL">&quot;http://albali.eic.cefet-rj.br/tomcat/controlharvest/rank.spring&quot;</param>
+                    <param id="1" name="URL">&quot;https://albali.eic.cefet-rj.br/controlharvest/rank.php&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -33,20 +29,20 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="1" name="Append text" sid="409396640497364" type="TextoPrimeiroLugar">
-                    <param id="0" name="Text">tokenat(AJAX.LastData,0,&quot;&amp;&quot;)</param>
+                <action id="0" name="Set text" sid="409396640497364" type="TextoPrimeiroLugar">
+                    <param id="0" name="Text">&quot;1° - &quot;&amp;tokenat(AJAX.LastData,0,&quot;&amp;&quot;)</param>
                 </action>
-                <action id="1" name="Append text" sid="795270270138930" type="TextoSegundoLugar">
-                    <param id="0" name="Text">tokenat(AJAX.LastData,2,&quot;&amp;&quot;)</param>
+                <action id="0" name="Set text" sid="795270270138930" type="TextoSegundoLugar">
+                    <param id="0" name="Text">&quot;2° - &quot;&amp;tokenat(AJAX.LastData,2,&quot;&amp;&quot;)</param>
                 </action>
-                <action id="1" name="Append text" sid="830191115271043" type="TextoTerceiroLugar">
-                    <param id="0" name="Text">tokenat(AJAX.LastData,4,&quot;&amp;&quot;)</param>
+                <action id="0" name="Set text" sid="830191115271043" type="TextoTerceiroLugar">
+                    <param id="0" name="Text">&quot;3° - &quot;&amp;tokenat(AJAX.LastData,4,&quot;&amp;&quot;)</param>
                 </action>
-                <action id="1" name="Append text" sid="218356645306462" type="TextoQuartoLugar">
-                    <param id="0" name="Text">tokenat(AJAX.LastData,6,&quot;&amp;&quot;)</param>
+                <action id="0" name="Set text" sid="218356645306462" type="TextoQuartoLugar">
+                    <param id="0" name="Text">&quot;4° - &quot;&amp;tokenat(AJAX.LastData,6,&quot;&amp;&quot;)</param>
                 </action>
-                <action id="1" name="Append text" sid="862304512330558" type="TextoQuintoLugar">
-                    <param id="0" name="Text">tokenat(AJAX.LastData,8,&quot;&amp;&quot;)</param>
+                <action id="0" name="Set text" sid="862304512330558" type="TextoQuintoLugar">
+                    <param id="0" name="Text">&quot;5° - &quot;&amp;tokenat(AJAX.LastData,8,&quot;&amp;&quot;)</param>
                 </action>
                 <action id="0" name="Set text" sid="419623432430040" type="PontuacaoPrimeiro">
                     <param id="0" name="Text">tokenat(AJAX.LastData,1,&quot;&amp;&quot;)</param>
@@ -96,6 +92,9 @@
                 <condition id="3" name="On touched object" sid="549141767117115" type="Touch">
                     <param id="0" name="Object">botaoIniciar</param>
                 </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="286371743036998" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-4" name="Set layer visible" sid="647340499508439" type="System">
@@ -109,8 +108,15 @@
                 <condition id="3" name="On touched object" sid="500492799199778" type="Touch">
                     <param id="0" name="Object">BotaoRank</param>
                 </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="963318359210584" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                </condition>
             </conditions>
             <actions>
+                <action id="0" name="Request URL" sid="167819335702524" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                    <param id="1" name="URL">&quot;https://albali.eic.cefet-rj.br/controlharvest/rank.php&quot;</param>
+                </action>
                 <action id="-4" name="Set layer visible" sid="766142036947167" type="System">
                     <param id="0" name="Layer">&quot;popupRank&quot;</param>
                     <param id="1" name="Visibility">1</param>
@@ -130,10 +136,42 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="777239328171411">
+            <conditions>
+                <condition id="3" name="On touched object" sid="308082765731683" type="Touch">
+                    <param id="0" name="Object">btn_fecharStart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="997389479757666" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="696984279890821">
+            <conditions>
+                <condition id="3" name="On touched object" sid="483014214946206" type="Touch">
+                    <param id="0" name="Object">fecha_conect</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="507290963520622" type="System">
+                    <param id="0" name="Layer">&quot;conect&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="678549835303511">
             <conditions>
                 <condition id="3" name="On touched object" sid="119828568304449" type="Touch">
                     <param id="0" name="Object">botaoSobre</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="769839584876697" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="171028858817330" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -150,6 +188,9 @@
                 <condition id="0" inverted="1" name="Compare text" sid="294980885464615" type="TextoNome">
                     <param id="0" name="Text">&quot;&quot;</param>
                     <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="497775034569791" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
                 </condition>
             </conditions>
             <actions>
