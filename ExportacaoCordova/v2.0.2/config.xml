@@ -17,13 +17,13 @@
 	<config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
 	<config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
 
-	<preference name="phonegap-version" value="cli-9.0.0" />
+
+	<preference name="deployment-target" value="10.0" />
 	<preference name="android-minSdkVersion" value="28" />
 	<access origin="*" />
 
 	<plugin name="cordova-custom-config" />
 	<plugin name="cordova-plugin-file" />
-	<plugin name="cordova-plugin-media" />
 	<plugin name="cordova-plugin-statusbar" />
 	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-wkwebview-engine" />

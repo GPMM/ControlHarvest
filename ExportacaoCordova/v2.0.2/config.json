@@ -23,7 +23,6 @@
 	"plugins": [
 		{ "id": "cordova-custom-config", "version": null },
 		{ "id": "cordova-plugin-file", "version": null },
-		{ "id": "cordova-plugin-media", "version": null },
 		{ "id": "cordova-plugin-statusbar", "version": null },
 		{ "id": "cordova-plugin-whitelist", "version": null },
 		{ "id": "cordova-plugin-wkwebview-engine", "version": null }
