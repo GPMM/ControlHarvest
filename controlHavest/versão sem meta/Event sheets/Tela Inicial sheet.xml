@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Tela Inicial sheet</name>
+    <events>
+        <variable constant="0" name="Idioma" sid="731009031618456" static="0" type="text">br</variable>
+        <variable constant="0" name="Nome" sid="213631376307890" static="0" type="text"></variable>
+        <event-block sid="740901890457979">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="564112038256436" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="395121356831860" type="Trilha">
+                    <param id="0" name="Audio file">Casual game track</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;Trilha_Inicial&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="679902116749256" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                    <param id="1" name="URL">&quot;https://albali.eic.cefet-rj.br/controlharvest/rank.php&quot;</param>
+                </action>
+                <action disabled="1" id="3" name="Clear storage" sid="109079853281809" type="LocalStorage" />
+            </actions>
+        </event-block>
+        <event-block sid="986717842005922">
+            <conditions>
+                <condition id="0" name="On completed" sid="697736401316906" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="409396640497364" type="TextoPrimeiroLugar">
+                    <param id="0" name="Text">&quot;1° - &quot;&amp;tokenat(AJAX.LastData,0,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="795270270138930" type="TextoSegundoLugar">
+                    <param id="0" name="Text">&quot;2° - &quot;&amp;tokenat(AJAX.LastData,2,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="830191115271043" type="TextoTerceiroLugar">
+                    <param id="0" name="Text">&quot;3° - &quot;&amp;tokenat(AJAX.LastData,4,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="218356645306462" type="TextoQuartoLugar">
+                    <param id="0" name="Text">&quot;4° - &quot;&amp;tokenat(AJAX.LastData,6,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="862304512330558" type="TextoQuintoLugar">
+                    <param id="0" name="Text">&quot;5° - &quot;&amp;tokenat(AJAX.LastData,8,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="419623432430040" type="PontuacaoPrimeiro">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,1,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="351087510224593" type="PontuacaoSegundo">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,3,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="678763314778480" type="PontuacaoTerceiro">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,5,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="122554632598454" type="PontuacaoQuarto">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,7,&quot;&amp;&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="461050312618634" type="PontuacaoQuinto">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,9,&quot;&amp;&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="106724911472372">
+            <conditions>
+                <condition id="3" name="On touched object" sid="589004564007290" type="Touch">
+                    <param id="0" name="Object">BrasilFlag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="524337943157103" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Value">&quot;br&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="325423666586770">
+            <conditions>
+                <condition id="3" name="On touched object" sid="287491074132403" type="Touch">
+                    <param id="0" name="Object">UsaFlag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="405819296686190" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Value">&quot;us&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="509317281204166">
+            <conditions>
+                <condition id="3" name="On touched object" sid="549141767117115" type="Touch">
+                    <param id="0" name="Object">botaoIniciar</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="286371743036998" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="647340499508439" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="858112980803710">
+            <conditions>
+                <condition id="3" name="On touched object" sid="500492799199778" type="Touch">
+                    <param id="0" name="Object">BotaoRank</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="963318359210584" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="167819335702524" type="AJAX">
+                    <param id="0" name="Tag">&quot;rank&quot;</param>
+                    <param id="1" name="URL">&quot;https://albali.eic.cefet-rj.br/controlharvest/rank.php&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="766142036947167" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="646889158700519">
+            <conditions>
+                <condition id="3" name="On touched object" sid="380892497138574" type="Touch">
+                    <param id="0" name="Object">BotaoFecharRank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="900293891967273" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="777239328171411">
+            <conditions>
+                <condition id="3" name="On touched object" sid="308082765731683" type="Touch">
+                    <param id="0" name="Object">btn_fecharStart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="997389479757666" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="696984279890821">
+            <conditions />
+            <actions>
+                <action id="-4" name="Set layer visible" sid="507290963520622" type="System">
+                    <param id="0" name="Layer">&quot;conect&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="678549835303511">
+            <conditions>
+                <condition id="3" name="On touched object" sid="119828568304449" type="Touch">
+                    <param id="0" name="Object">botaoSobre</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="769839584876697" type="System">
+                    <param id="0" name="Layer">&quot;popupRank&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="171028858817330" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="580954115769416" type="System">
+                    <param id="0" name="Layout">&quot;Tela Sobre&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="382167467438730">
+            <conditions>
+                <condition id="3" name="On touched object" sid="432936131604089" type="Touch">
+                    <param id="0" name="Object">botaoOkNome</param>
+                </condition>
+                <condition id="0" inverted="1" name="Compare text" sid="294980885464615" type="TextoNome">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="497775034569791" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="576533607913121" type="Trilha">
+                    <param id="0" name="Tag">&quot;Trilha_Inicial&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="453235508358977" type="Trilha">
+                    <param id="0" name="Audio file">appear-online</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="413399250874548" type="System">
+                    <param id="0" name="Layer">&quot;popup&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="560260195111151" type="System">
+                    <param id="0" name="Variable">Nome</param>
+                    <param id="1" name="Value">TextoNome.Text</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="278435717042914" type="System">
+                    <param id="0" name="Layout">Tela Jogo</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="560089103141821">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="892044693099081" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;br&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="589686433638233" type="sobreTexto">
+                    <param id="0" name="Text">&quot;Sobre&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="470096156046354" type="iniciarTexto">
+                    <param id="0" name="Text">&quot;Iniciar&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="250833529644964" type="mensagemNome">
+                    <param id="0" name="Text">&quot;Insira seu nome para começar o jogo&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="280071082354714" type="TextoRankInicio">
+                    <param id="0" name="Text">&quot;Melhores Pontuações&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="942406132501108">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="280875421029642" type="System">
+                    <param id="0" name="Variable">Idioma</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;us&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="332825430277329" type="sobreTexto">
+                    <param id="0" name="Text">&quot;About&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="514931111910510" type="iniciarTexto">
+                    <param id="0" name="Text">&quot;Start&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="300068145023446" type="mensagemNome">
+                    <param id="0" name="Text">&quot;Insert your name to start the game&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="147991568581965" type="TextoRankInicio">
+                    <param id="0" name="Text">&quot;Best Scores&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
